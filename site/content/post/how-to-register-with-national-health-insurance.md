@@ -7,8 +7,12 @@ tags: []
 draft: true
 ---
 
-Cut out summary from your post content here.
+親の扶養から外れたので、国民健康保険に加入しました。
+
+本記事では、加入するまでの手続きをまとめました。
 
 <!--more-->
 
-The remaining content of your post.
+## 国民健康保険とは？
+
+[厚生労働省のページ]()によると、
