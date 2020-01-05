@@ -92,7 +92,7 @@ Hugoをつかってポートフォリオを作ってみたよ
       <header style="margin-top: 0 !important;">
         <h2 class="ui header">
           Hugoをつかってポートフォリオを作ってみたよ
-          <div class="sub header">@ だちけん · Sunday, Jan 5, 2020 · 2 分で読めます · 更新日時 Jan 5, 2020</div>
+          <div class="sub header">@ だちけん · Sunday, Jan 5, 2020 · 3 分で読めます · 更新日時 Jan 5, 2020</div>
         </h2>
       </header>
       <article style="margin-top: 2rem;"><p>Hugoをつかってこのページを作ってみたので、作り方をまとめてみました。</p>
@@ -226,21 +226,109 @@ Visit https://gohugo.io/ for quickstart guide and full documentation.
 <p><code>docker-compose run web hugo new post/sample-page.md</code></p>
 <p>などで記事を作成し、書き始めてください。</p>
 <p>ここあたりで<code>git init</code>など、gitを使える準備をしておくのがいいかもですね。</p>
-<p>現状どんな感じか見たい場合は、</p>
+<p>さて、ここでテーマの設定をしましょう。</p>
+<p>今回は<code>hugo-theme-dream</code>というテーマを適用しています。</p>
+<p><a href="https://themes.gohugo.io/hugo-theme-dream/">Hugoのテーマページ</a></p>
+<p>ターミナルで、以下のように入力してください。
+場所は<code>Dockerfile</code>のあるディレクトリ直下での入力を想定しています。</p>
+<p><code>git submodule add https://github.com/g1eny0ung/hugo-theme-dream.git site/themes/hugo-theme-dream</code></p>
+<p>この後に、<code>site</code>直下の<code>config.toml</code>を以下のように書き換えましょう。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">baseurl</span> = <span style="color:#e6db74">&#34;https://*****.github.io/*****/&#34;</span> <span style="color:#75715e"># 後ほどGitHub Pagesの設定ができたらこちらを修正します。</span>
+<span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;ja&#34;</span>
+<span style="color:#a6e22e">defaultContentLanguage</span> = <span style="color:#e6db74">&#34;ja&#34;</span>
+<span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Title&#34;</span>
+<span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;hugo-theme-dream&#34;</span>
+
+<span style="color:#75715e"># パスの指定。これをしないとcssがうまく反映されません。</span>
+<span style="color:#a6e22e">canonifyurls</span> = <span style="color:#66d9ef">true</span>
+
+<span style="color:#75715e"># copyright = &#34;&#34;</span>
+
+<span style="color:#75715e"># googleAnalyticsのIDをここに入力</span>
+<span style="color:#a6e22e">googleAnalytics</span> = <span style="color:#e6db74">&#34;*************&#34;</span>
+
+<span style="color:#75715e"># disqusのShortnameをここに入力(コメントできるようにしたい場合)</span>
+<span style="color:#a6e22e">disqusShortname</span> = <span style="color:#e6db74">&#34;*************&#34;</span>
+
+<span style="color:#a6e22e">enableRobotsTXT</span> = <span style="color:#66d9ef">true</span>
+
+[<span style="color:#a6e22e">params</span>]
+  <span style="color:#a6e22e">background</span> = <span style="color:#e6db74">&#34;black&#34;</span>
+  <span style="color:#75715e"># backgroundImage = &#34;/me/background.jpg&#34;</span>
+  <span style="color:#a6e22e">linkColor</span> = <span style="color:#e6db74">&#34;seagreen&#34;</span>
+
+  <span style="color:#a6e22e">author</span> = <span style="color:#e6db74">&#34;*************&#34;</span>
+  <span style="color:#75715e"># description = &#34;&#34;</span>
+
+  <span style="color:#75715e"># static以降のURLを指定します。</span>
+  <span style="color:#a6e22e">avatar</span> = <span style="color:#e6db74">&#34;/images/avatar.png&#34;</span>
+
+  <span style="color:#a6e22e">motto</span> = <span style="color:#e6db74">&#34;****************&#34;</span>
+
+  <span style="color:#75715e"># この辺は入れたい人はどうぞ</span>
+  <span style="color:#75715e"># email = &#34;&#34;</span>
+  <span style="color:#75715e"># github = &#34;&#34;</span>
+  <span style="color:#75715e"># linkedin = &#34;&#34;</span>
+  <span style="color:#75715e"># codepen = &#34;&#34;</span>
+  <span style="color:#75715e"># stackoverflow = &#34;&#34;</span>
+
+  <span style="color:#a6e22e">siteStartYear</span> = <span style="color:#ae81ff">2020</span>
+
+  <span style="color:#75715e"># favicon = &#34;/favicon.ico&#34;</span>
+
+  <span style="color:#75715e"># dark mode</span>
+  <span style="color:#a6e22e">darkLinkColor</span> = <span style="color:#e6db74">&#34;darkseagreen&#34;</span>
+  <span style="color:#a6e22e">darkNav</span> = <span style="color:#66d9ef">true</span>
+  <span style="color:#a6e22e">dark404Button</span> = <span style="color:#66d9ef">true</span>
+
+</code></pre></div><p>現状どんな感じか見たい場合は、</p>
 <p><code>docker-compose up</code></p>
 <p>でサーバーを立ち上げ、<code>http://localhost:1313</code>を見てみてください。</p>
+<p>すると、ローカル上ではうまく動いているはずです！</p>
 <h3 id="github-pages1">GitHub Pagesで公開</h3>
 <p>さて、いよいよGitHub Pagesで公開しましょう。</p>
 <p>今回、GitHubにpushするまではできる前提とさせてください。</p>
 <p>多分この辺りはたくさん紹介してくれているページがあるかと思いますので…</p>
 <p>さて、GitHubにpushすると、こんな感じになっているはずです。</p>
-<h2 id="heading2">カスタマイズしよう</h2>
-<h3 id="hugo2">Hugoのテーマを探そう</h3>
-<h3 id="heading3">テーマに合わせたセッティングをしよう</h3>
-<h2 id="heading4">参考にさせていただいたサイト</h2>
+<p>違いとしては、<code>update.sh</code>はまだないはずなので、こちらを追加しておいてください。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># update.sh</span>
+
+<span style="color:#75715e">#!/bin/bash</span>
+
+<span style="color:#75715e"># 既存のdocsフォルダの削除</span>
+rm -rf docs
+
+<span style="color:#75715e"># docsファイルの作成</span>
+docker-compose exec web hugo
+
+<span style="color:#75715e"># docsファイルの移動</span>
+mv site/public docs
+
+<span style="color:#75715e"># Commit comment</span>
+ct<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date +<span style="color:#e6db74">&#39;%Y:%m:%d-%H:%M:%S&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+
+<span style="color:#75715e"># Management</span>
+git add .
+git commit -m $ct
+git push
+</code></pre></div><p><img src="https://kenjiadachi.github.io/my-portfolio/images/how-to-create-this-page/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%882.png" alt="スクリーンショット1"></p>
+<p>ここまでいけばもうすぐです。</p>
+<p>Dockerfileをおいたディレクトリで、以下のコマンドを入力してください。</p>
+<p><code>sh update.sh</code></p>
+<p>すると、自動で静的ページを作成し、それを直下の<code>docs</code>に移動、GitHubにpushまでしてくれるはずです。</p>
+<p>GitHubのページを更新してみると、以下のようになっていませんか？(docsができているはず)</p>
+<p><img src="https://kenjiadachi.github.io/my-portfolio/images/how-to-create-this-page/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%881.png" alt="スクリーンショット2"></p>
+<p>こうなっていれば、Settingsに移動し、部分を選択されているものに変えてください。</p>
+<p><img src="https://kenjiadachi.github.io/my-portfolio/images/how-to-create-this-page/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%883.png" alt="スクリーンショット3"></p>
+<p>すると、緑色の部分にあるURLで静的ページとして公開されているはずです。
+(最初は特に反映まで時間がかかります。気長に待ちましょう。)</p>
+<p>これでポートフォリオサイトの完成です！</p>
+<p>修正して公開したい場合は、再度<code>sh update.sh</code>と打ち込めば自動で反映されるはずです。</p>
+<h2 id="heading2">参考にさせていただいたサイト</h2>
 <ul>
 <li><a href="https://qiita.com/you1978/items/204c2cf75f86043dfe68">[Docker知識不要]Docker上でのHugo環境の作り方</a></li>
 <li><a href="https://qiita.com/bake0937/items/e0914efbd9434be474a4">HugoでWebサイトを立ち上げる+テーマを適用してみる</a></li>
+<li><a href="http://blog.syati.info/post/create_hugo_2/">Hugo Part 2 - Hugo で github にブログを立ち上げる</a></li>
 </ul></article>
     </section>
 

@@ -191,11 +191,78 @@ Visit https://gohugo.io/ for quickstart guide and full documentation.
 
 ここあたりで`git init`など、gitを使える準備をしておくのがいいかもですね。
 
+
+さて、ここでテーマの設定をしましょう。
+
+今回は`hugo-theme-dream`というテーマを適用しています。
+
+[Hugoのテーマページ](https://themes.gohugo.io/hugo-theme-dream/)
+
+ターミナルで、以下のように入力してください。
+場所は`Dockerfile`のあるディレクトリ直下での入力を想定しています。
+
+`git submodule add https://github.com/g1eny0ung/hugo-theme-dream.git site/themes/hugo-theme-dream`
+
+この後に、`site`直下の`config.toml`を以下のように書き換えましょう。
+
+```toml
+baseurl = "https://*****.github.io/*****/" # 後ほどGitHub Pagesの設定ができたらこちらを修正します。
+languageCode = "ja"
+defaultContentLanguage = "ja"
+title = "Title"
+theme = "hugo-theme-dream"
+
+# パスの指定。これをしないとcssがうまく反映されません。
+canonifyurls = true
+
+# copyright = ""
+
+# googleAnalyticsのIDをここに入力
+googleAnalytics = "*************"
+
+# disqusのShortnameをここに入力(コメントできるようにしたい場合)
+disqusShortname = "*************"
+
+enableRobotsTXT = true
+
+[params]
+  background = "black"
+  # backgroundImage = "/me/background.jpg"
+  linkColor = "seagreen"
+
+  author = "*************"
+  # description = ""
+
+  # static以降のURLを指定します。
+  avatar = "/images/avatar.png"
+
+  motto = "****************"
+
+  # この辺は入れたい人はどうぞ
+  # email = ""
+  # github = ""
+  # linkedin = ""
+  # codepen = ""
+  # stackoverflow = ""
+
+  siteStartYear = 2020
+
+  # favicon = "/favicon.ico"
+
+  # dark mode
+  darkLinkColor = "darkseagreen"
+  darkNav = true
+  dark404Button = true
+
+```
+
 現状どんな感じか見たい場合は、
 
 `docker-compose up`
 
 でサーバーを立ち上げ、`http://localhost:1313`を見てみてください。
+
+すると、ローカル上ではうまく動いているはずです！
 
 ### GitHub Pagesで公開
 
@@ -207,16 +274,58 @@ Visit https://gohugo.io/ for quickstart guide and full documentation.
 
 さて、GitHubにpushすると、こんな感じになっているはずです。
 
+違いとしては、`update.sh`はまだないはずなので、こちらを追加しておいてください。
 
+```sh
+# update.sh
 
-## カスタマイズしよう
+#!/bin/bash
 
-### Hugoのテーマを探そう
+# 既存のdocsフォルダの削除
+rm -rf docs
 
-### テーマに合わせたセッティングをしよう
+# docsファイルの作成
+docker-compose exec web hugo
 
+# docsファイルの移動
+mv site/public docs
+
+# Commit comment
+ct="$(date +'%Y:%m:%d-%H:%M:%S')"
+
+# Management
+git add .
+git commit -m $ct
+git push
+```
+
+![スクリーンショット1](/images/how-to-create-this-page/スクリーンショット2.png)
+
+ここまでいけばもうすぐです。
+
+Dockerfileをおいたディレクトリで、以下のコマンドを入力してください。
+
+`sh update.sh`
+
+すると、自動で静的ページを作成し、それを直下の`docs`に移動、GitHubにpushまでしてくれるはずです。
+
+GitHubのページを更新してみると、以下のようになっていませんか？(docsができているはず)
+
+![スクリーンショット2](/images/how-to-create-this-page/スクリーンショット1.png)
+
+こうなっていれば、Settingsに移動し、部分を選択されているものに変えてください。
+
+![スクリーンショット3](/images/how-to-create-this-page/スクリーンショット3.png)
+
+すると、緑色の部分にあるURLで静的ページとして公開されているはずです。
+(最初は特に反映まで時間がかかります。気長に待ちましょう。)
+
+これでポートフォリオサイトの完成です！
+
+修正して公開したい場合は、再度`sh update.sh`と打ち込めば自動で反映されるはずです。
 
 ## 参考にさせていただいたサイト
 
 - [[Docker知識不要]Docker上でのHugo環境の作り方](https://qiita.com/you1978/items/204c2cf75f86043dfe68)
 - [HugoでWebサイトを立ち上げる+テーマを適用してみる](https://qiita.com/bake0937/items/e0914efbd9434be474a4)
+- [Hugo Part 2 - Hugo で github にブログを立ち上げる](http://blog.syati.info/post/create_hugo_2/)
