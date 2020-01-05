@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dev on だちけん</title>
-    <link>https://example.com/categories/dev/</link>
+    <link>https://kenjiadachi.github.io/my-portfolio/categories/dev/</link>
     <description>Recent content in Dev on だちけん</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 05 Jan 2020 02:44:26 +0000</lastBuildDate>
     
-	<atom:link href="https://example.com/categories/dev/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kenjiadachi.github.io/my-portfolio/categories/dev/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugoをつかってポートフォリオを作ってみたよ</title>
-      <link>https://example.com/post/how-to-create-this-page/</link>
+      <link>https://kenjiadachi.github.io/my-portfolio/post/how-to-create-this-page/</link>
       <pubDate>Sun, 05 Jan 2020 02:44:26 +0000</pubDate>
       
-      <guid>https://example.com/post/how-to-create-this-page/</guid>
+      <guid>https://kenjiadachi.github.io/my-portfolio/post/how-to-create-this-page/</guid>
       <description>&lt;p&gt;Hugoをつかってこのページを作ってみたので、作り方をまとめてみました。&lt;/p&gt;
 &lt;p&gt;ローカルでは、Dockerを用いて仮想環境上で動かしています。&lt;/p&gt;
 &lt;p&gt;また、ホスティングサービスはGitHub Pagesを用いています。&lt;/p&gt;
