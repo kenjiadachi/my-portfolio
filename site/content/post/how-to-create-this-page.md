@@ -329,3 +329,4 @@ GitHubのページを更新してみると、以下のようになっていま�
 - [[Docker知識不要]Docker上でのHugo環境の作り方](https://qiita.com/you1978/items/204c2cf75f86043dfe68)
 - [HugoでWebサイトを立ち上げる+テーマを適用してみる](https://qiita.com/bake0937/items/e0914efbd9434be474a4)
 - [Hugo Part 2 - Hugo で github にブログを立ち上げる](http://blog.syati.info/post/create_hugo_2/)
+- [hugo-theme-dreamのドキュメント](https://g1eny0ung.site/hugo-theme-dream/#/)
