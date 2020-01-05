@@ -1,7 +1,7 @@
 baseurl = "https://example.com"
-languageCode = "ja"
-defaultContentLanguage = "ja"
-title = "だちけん"
+languageCode = "en"
+defaultContentLanguage = "en"
+title = "Hugo Theme Dream"
 theme = "hugo-theme-dream"
 
 # copyright = ""
@@ -17,22 +17,22 @@ theme = "hugo-theme-dream"
   # backgroundImage = "/me/background.jpg"
   linkColor = "seagreen"
 
-  author = "だちけん"
+  author = "Yue Yang"
   # description = ""
-  avatar = "/images/avatar.png"
-  motto = "今年の目標はおせっかいになること"
-
+  avatar = "/img/avatar.jpg"
+  motto = "Motto"
+  
   email = "g1enyy0ung@gmail.com"
   # github = ""
   # linkedin = ""
   # codepen = ""
   # stackoverflow = ""
 
-  siteStartYear = 2020
+  siteStartYear = 2016
 
   # favicon = "/favicon.ico"
 
   # dark mode
   darkLinkColor = "darkseagreen"
-  darkNav = true
+  darkNav = true 
   dark404Button = true
