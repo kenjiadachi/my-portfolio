@@ -4,7 +4,7 @@
 rm -rf docs
 
 # docsファイルの作成
-docker-compose exec web hugo -t hugo-theme-dream
+docker-compose exec web hugo
 
 # docsファイルの移動
 mv site/public docs

@@ -1,17 +1,18 @@
 baseurl = "https://kenjiadachi.github.io/my-portfolio/"
 languageCode = "ja"
 defaultContentLanguage = "ja"
-title = "だちけん"
+title = "だちけんのブログ"
 theme = "hugo-theme-dream"
-disqusShortname = "dachiken"
+# パスの指定。これをしないとcssがうまく反映されません。
+canonifyurls = true
 
 # copyright = ""
 
 # googleAnalytics = ""
 
-# disqusShortname = ""
+disqusShortname = "dachiken"
 
-# enableRobotsTXT = true
+enableRobotsTXT = true
 
 [params]
   background = "black"
