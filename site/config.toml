@@ -3,6 +3,7 @@ languageCode = "ja"
 defaultContentLanguage = "ja"
 title = "だちけん"
 theme = "hugo-theme-dream"
+disqusShortname = "dachiken"
 
 # copyright = ""
 
