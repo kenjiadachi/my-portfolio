@@ -8,15 +8,13 @@ canonifyurls = true
 
 # copyright = ""
 
-# googleAnalytics = ""
-
+googleAnalytics = "UA-80233037-7"
 disqusShortname = "dachiken"
 
 enableRobotsTXT = true
 
 [params]
   background = "black"
-  # backgroundImage = "/me/background.jpg"
   linkColor = "seagreen"
 
   author = "だちけん"
@@ -24,7 +22,7 @@ enableRobotsTXT = true
   avatar = "/images/avatar.png"
   motto = "今年の目標はおせっかいになること"
 
-  email = "kenji.183927@gmail.com"
+  # email = "kenji.183927@gmail.com"
   # github = ""
   # linkedin = ""
   # codepen = ""
