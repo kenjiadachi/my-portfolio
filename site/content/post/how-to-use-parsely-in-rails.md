@@ -1,7 +1,6 @@
 ---
-title: 動的なvalidationをParsleyと、Bootstrap4を使っておしゃれに実装する
-date: 2020-01-05T05:03:09Z
-cover: /images/test.jpg
+title: "[Rails]動的なvalidationをParsleyと、Bootstrap4を使っておしゃれに実装する"
+cover: "/images/test.jpg"
 categories: ["dev"]
 tags: ["Parsley", "Rails", "BootStrap4", "LiveDeli"]
 draft: true

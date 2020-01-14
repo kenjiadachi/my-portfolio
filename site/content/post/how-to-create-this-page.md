@@ -1,9 +1,6 @@
 ---
-title: Hugoをつかってポートフォリオを作ってみたよ
-date: 2020-01-05T02:44:26Z
-lastmod: 2020-01-05T02:44:26Z
-author: だちけん
-cover: /images/test.jpg
+title: "[Hugo]Docker上で管理できるポートフォリオを作ってみたよ"
+cover: "/images/test.jpg"
 categories: ["Dev"]
 tags: ["Hugo", "portfolio", "Docker", "GitHub Pages"]
 draft: false

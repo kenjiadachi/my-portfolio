@@ -1,7 +1,6 @@
 ---
-title: 1つのformを複数画面に分割して表示するwizard formを実装する
-date: 2020-01-05T05:03:09Z
-cover: /images/test.jpg
+title: "[Rails]1つのformを複数画面に分割して表示するwizard formを実装する"
+cover: "/images/test.jpg"
 categories: ["dev"]
 tags: ["Wizard Form", "Rails", "ActiveModel", "LiveDeli"]
 draft: true

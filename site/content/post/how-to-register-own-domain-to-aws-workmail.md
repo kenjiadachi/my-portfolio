@@ -1,19 +1,40 @@
 ---
-title: Amazon WorkMailで独自ドメインのメール設定をしたけど届かないよ
-date: 2020-01-05T04:58:52Z
-cover: /images/test.jpg
+title: "[AWS]Amazon WorkMail、SESで独自ドメインのメール設定をした話"
+cover: "/images/test.jpg"
 categories: ["dev"]
-tags: ["AWS", "WorkMail"]
+tags: ["AWS", "WorkMail", "SES", "Route53"]
 draft: true
 ---
 
-Amazon WorkMailで独自ドメインのメール設定をしました。
+Amazon WorkMailとSESとで独自ドメインのメール設定をしました。
 
-現状、送信はできるのですが届きません。
+システムからの自動送信メールはSES、個人のメールアドレスはWorkMailを用いています。
+
+今回はその両方の設定方法についてご紹介します。
 
 <!--more-->
 
-## 背景
+これまで、お名前.comとお名前メールを用いていたのですが、アドレスを増やす必要が出てきたこと、AWSに他のシステムは移行を進めていることから区切りの良いタイミングだということでドメイン周りをRoute 53, システムからの自動返信メールはSES, 個人で持つメールアドレスはWorkMailと、AWSに統一を行いました。
+
+## ことばの紹介
+
+### AWSとは？
+
+
+### WorkMailとは？
+
+
+### SESとは？
+
+
+### Route 53とは？
+
+
+## やっていきましょう
+
+
+
+
 
 ## 参考にさせていただいたサイト
 
