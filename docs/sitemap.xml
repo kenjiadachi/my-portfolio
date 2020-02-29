@@ -3,53 +3,71 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kenjiadachi.github.io/my-portfolio/blog/how-to-create-this-page/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kenjiadachi.github.io/my-portfolio/blog/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kenjiadachi.github.io/my-portfolio/categories/</loc>
-    <lastmod>2020-01-05T02:44:26+00:00</lastmod>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://kenjiadachi.github.io/my-portfolio/categories/dev/</loc>
-    <lastmod>2020-01-05T02:44:26+00:00</lastmod>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://kenjiadachi.github.io/my-portfolio/tags/docker/</loc>
-    <lastmod>2020-01-05T02:44:26+00:00</lastmod>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://kenjiadachi.github.io/my-portfolio/tags/github-pages/</loc>
-    <lastmod>2020-01-05T02:44:26+00:00</lastmod>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://kenjiadachi.github.io/my-portfolio/tags/hugo/</loc>
-    <lastmod>2020-01-05T02:44:26+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kenjiadachi.github.io/my-portfolio/post/how-to-create-this-page/</loc>
-    <lastmod>2020-01-05T02:44:26+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kenjiadachi.github.io/my-portfolio/tags/portfolio/</loc>
-    <lastmod>2020-01-05T02:44:26+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kenjiadachi.github.io/my-portfolio/post/</loc>
-    <lastmod>2020-01-05T02:44:26+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kenjiadachi.github.io/my-portfolio/tags/</loc>
-    <lastmod>2020-01-05T02:44:26+00:00</lastmod>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://kenjiadachi.github.io/my-portfolio/</loc>
-    <lastmod>2020-01-05T02:44:26+00:00</lastmod>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kenjiadachi.github.io/my-portfolio/tags/portfolio/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kenjiadachi.github.io/my-portfolio/tags/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kenjiadachi.github.io/my-portfolio/about/</loc>
+    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kenjiadachi.github.io/my-portfolio/about/_index.fr/</loc>
+    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kenjiadachi.github.io/my-portfolio/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kenjiadachi.github.io/my-portfolio/contact/_index.br/</loc>
   </url>
   
 </urlset>

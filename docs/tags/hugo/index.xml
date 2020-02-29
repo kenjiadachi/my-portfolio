@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo on だちけんのブログ</title>
+    <title>Hugo on kenji adachi</title>
     <link>https://kenjiadachi.github.io/my-portfolio/tags/hugo/</link>
-    <description>Recent content in Hugo on だちけんのブログ</description>
+    <description>Recent content in Hugo on kenji adachi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 05 Jan 2020 02:44:26 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://kenjiadachi.github.io/my-portfolio/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hugoをつかってポートフォリオを作ってみたよ</title>
-      <link>https://kenjiadachi.github.io/my-portfolio/post/how-to-create-this-page/</link>
-      <pubDate>Sun, 05 Jan 2020 02:44:26 +0000</pubDate>
+      <title>[Hugo]Docker上で管理できるポートフォリオを作ってみたよ</title>
+      <link>https://kenjiadachi.github.io/my-portfolio/blog/how-to-create-this-page/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://kenjiadachi.github.io/my-portfolio/post/how-to-create-this-page/</guid>
+      <guid>https://kenjiadachi.github.io/my-portfolio/blog/how-to-create-this-page/</guid>
       <description>&lt;p&gt;Hugoをつかってこのページを作ってみたので、作り方をまとめてみました。&lt;/p&gt;
 &lt;p&gt;ローカルでは、Dockerを用いて仮想環境上で動かしています。&lt;/p&gt;
 &lt;p&gt;また、ホスティングサービスはGitHub Pagesを用いています。&lt;/p&gt;
