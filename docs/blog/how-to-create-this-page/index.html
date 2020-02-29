@@ -22,8 +22,8 @@
 <meta itemprop="description" content="Hugoをつかってこのページを作ってみたので、作り方をまとめてみました。">
 <meta itemprop="datePublished" content="2020-01-06T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-01-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="539">
-<meta itemprop="image" content="https://cpx.business/img/how-to-create-this-page/top.jpg">
+<meta itemprop="wordCount" content="541">
+<meta itemprop="image" content="https://cpx.business/img/header/how-to-create-this-page.png">
 
 
 
@@ -31,11 +31,11 @@
 <meta property="og:description" content="Hugoをつかってこのページを作ってみたので、作り方をまとめてみました。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cpx.business/blog/how-to-create-this-page/" />
-<meta property="og:image" content="https://cpx.business/img/how-to-create-this-page/top.jpg" />
+<meta property="og:image" content="https://cpx.business/img/header/how-to-create-this-page.png" />
 <meta property="article:published_time" content="2020-01-06T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-06T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://cpx.business/img/how-to-create-this-page/top.jpg"/>
+<meta name="twitter:image" content="https://cpx.business/img/header/how-to-create-this-page.png"/>
 
 <meta name="twitter:title" content="[Hugo]Docker上で管理できるポートフォリオを作ってみたよ"/>
 <meta name="twitter:description" content="Hugoをつかってこのページを作ってみたので、作り方をまとめてみました。"/>
@@ -171,6 +171,8 @@
     </time>
     <span class="author">Kenji Adachi</span>
     
+      <p>3 分で読めます</p>
+    
   </div>
 </header>
 
@@ -222,7 +224,7 @@
   
   <a href="https://cpx.business/blog/how-to-create-this-page/" class="image featured">
     
-      <img src="https://cpx.business/img/how-to-create-this-page/top.jpg" alt="">
+      <img src="https://cpx.business/img/header/how-to-create-this-page.png" alt="">
     
   </a>
 
@@ -247,13 +249,14 @@
       </ul>
     </li>
     <li><a href="#heading2">参考にさせていただいたサイト</a></li>
+    <li><a href="#heading3">こちらもぜひご一緒に！</a></li>
   </ul>
 </nav>
       <hr>
     </div>
     <section>
   <h2> この記事はこんな人が書いています</h2>
-  <img src="http://localhost:1313/img/main/logo.jpg" class="circle" width="80" alt="icon">
+  <img src="http://localhost:1313/img/main/icon.jpg" class="circle" width="80" alt="icon">
   <b>だちけん</b>
   <p>
     株式会社ムジカルを設立し、システム開発、webマーケティングを担当。<br>
@@ -494,15 +497,15 @@ ct<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><s
 git add .
 git commit -m $ct
 git push
-</code></pre></div><p><img src="https://cpx.business/img/how-to-create-this-page/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%882.png" alt="スクリーンショット1"></p>
+</code></pre></div><p><img src="./img/1.png" alt="githubの設定1"></p>
 <p>ここまでいけばもうすぐです。</p>
 <p>Dockerfileをおいたディレクトリで、以下のコマンドを入力してください。</p>
 <p><code>sh update.sh</code></p>
 <p>すると、自動で静的ページを作成し、それを直下の<code>docs</code>に移動、GitHubにpushまでしてくれるはずです。</p>
 <p>GitHubのページを更新してみると、以下のようになっていませんか？(docsができているはず)</p>
-<p><img src="https://cpx.business/img/how-to-create-this-page/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%881.png" alt="スクリーンショット2"></p>
+<p><img src="./img/2.png" alt="githubの設定2"></p>
 <p>こうなっていれば、Settingsに移動し、部分を選択されているものに変えてください。</p>
-<p><img src="https://cpx.business/img/how-to-create-this-page/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%883.png" alt="スクリーンショット3"></p>
+<p><img src="./img/3.png" alt="githubの設定3"></p>
 <p>すると、緑色の部分にあるURLで静的ページとして公開されているはずです。
 (最初は特に反映まで時間がかかります。気長に待ちましょう。)</p>
 <p>これでポートフォリオサイトの完成です！</p>
@@ -514,6 +517,11 @@ git push
 <li><a href="https://qiita.com/bake0937/items/e0914efbd9434be474a4">HugoでWebサイトを立ち上げる+テーマを適用してみる</a></li>
 <li><a href="http://blog.syati.info/post/create_hugo_2/">Hugo Part 2 - Hugo で github にブログを立ち上げる</a></li>
 <li><a href="https://g1eny0ung.site/hugo-theme-dream/#/">hugo-theme-dreamのドキュメント</a></li>
+</ul>
+<hr>
+<h2 id="heading3">こちらもぜひご一緒に！</h2>
+<ul>
+<li><a href="../../blog/how-to-set-favicon/">[Hugo]faviconを設定する方法</a></li>
 </ul>
   </div>
   <footer>
@@ -586,6 +594,8 @@ git push
 
 <div class="pagination">
   
+    <a href="https://cpx.business/blog/how-to-set-favicon/" class="button"><div class="previous"><div>[Hugo]faviconを設定する方法</div></div></a>
+  
   
 </div>
 
@@ -603,7 +613,7 @@ git push
           
   <a href="https://cpx.business/blog/how-to-create-this-page/" class="image featured">
     
-      <img src="https://cpx.business/img/how-to-create-this-page/top.jpg" alt="">
+      <img src="https://cpx.business/img/header/how-to-create-this-page.png" alt="">
     
   </a>
 
@@ -611,6 +621,23 @@ git push
         </section>
         <header>
           <h1><a href="https://cpx.business/blog/how-to-create-this-page/">[Hugo]Docker上で管理できるポートフォリオを作ってみたよ</a></h1>
+          <time class="published" datetime="">2020-01-06</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-set-favicon/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-set-favicon.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-set-favicon/">[Hugo]faviconを設定する方法</a></h1>
           <time class="published" datetime="">2020-01-06</time>
         </header>
       </article>
@@ -632,7 +659,7 @@ git push
           
           <li>
             
-              <a href="https://cpx.business/categories/dev/">dev<span class="count">1</span></a>
+              <a href="https://cpx.business/categories/dev/">dev<span class="count">2</span></a>
             
           
           </li>

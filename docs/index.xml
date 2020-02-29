@@ -25,6 +25,17 @@
     </item>
     
     <item>
+      <title>[Hugo]faviconを設定する方法</title>
+      <link>https://cpx.business/blog/how-to-set-favicon/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-set-favicon/</guid>
+      <description>&lt;p&gt;Hugoで作成したこちらのページに、faviconを設定してみました。&lt;/p&gt;
+&lt;p&gt;この記事では、Hugoで作られたページにfaviconを設定する方法を紹介します。&lt;/p&gt;
+&lt;hr&gt;</description>
+    </item>
+    
+    <item>
       <title>À propos de Hugo</title>
       <link>https://cpx.business/about/_index.fr/</link>
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
