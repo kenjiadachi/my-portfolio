@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>kenji adachi</title>
+    <title>CPX</title>
     <link>https://kenjiadachi.github.io/my-portfolio/</link>
-    <description>Recent content on kenji adachi</description>
+    <description>Recent content on CPX</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 06 Jan 2020 00:00:00 +0000</lastBuildDate>
@@ -20,7 +20,8 @@
       <description>&lt;p&gt;Hugoをつかってこのページを作ってみたので、作り方をまとめてみました。&lt;/p&gt;
 &lt;p&gt;ローカルでは、Dockerを用いて仮想環境上で動かしています。&lt;/p&gt;
 &lt;p&gt;また、ホスティングサービスはGitHub Pagesを用いています。&lt;/p&gt;
-&lt;p&gt;この記事では、HugoをDocker上で動かし、それをGitHub Pagesで公開するまでをご紹介します。&lt;/p&gt;</description>
+&lt;p&gt;この記事では、HugoをDocker上で動かし、それをGitHub Pagesで公開するまでをご紹介します。&lt;/p&gt;
+&lt;hr&gt;</description>
     </item>
     
     <item>

@@ -1,7 +1,7 @@
 baseurl = "https://kenjiadachi.github.io/my-portfolio/"
 languageCode = "ja"
 defaultContentLanguage = "ja"
-title = "kenji adachi"
+title = "CPX"
 theme = "hugo-future-imperfect-slim"
 # パスの指定。これをしないとcssがうまく反映されません。
 canonifyurls = true

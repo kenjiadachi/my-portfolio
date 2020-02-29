@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
   <meta charset="utf-8">
-<title>[Hugo]Docker上で管理できるポートフォリオを作ってみたよ - kenji adachi</title>
+<title>[Hugo]Docker上で管理できるポートフォリオを作ってみたよ - CPX</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -10,7 +10,7 @@
 <meta itemprop="description" content="Hugoをつかってこのページを作ってみたので、作り方をまとめてみました。">
 <meta itemprop="datePublished" content="2020-01-06T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-01-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="532">
+<meta itemprop="wordCount" content="539">
 <meta itemprop="image" content="https://kenjiadachi.github.io/my-portfolio/img/2014/04/pic01.jpg">
 
 
@@ -277,9 +277,11 @@
 <p>ローカルでは、Dockerを用いて仮想環境上で動かしています。</p>
 <p>また、ホスティングサービスはGitHub Pagesを用いています。</p>
 <p>この記事では、HugoをDocker上で動かし、それをGitHub Pagesで公開するまでをご紹介します。</p>
+<hr>
 <h2 id="heading">ことばの紹介</h2>
 <p>まずは知らない方もいるかと思うので、ことばの紹介から。</p>
 <p>わかってるよ！って人は飛ばしてください。</p>
+<hr>
 <h3 id="hugo">Hugoとは？</h3>
 <p><a href="https://gohugo.io/">Hugoの公式ページ</a>によると、</p>
 <blockquote>
@@ -300,6 +302,7 @@
 <li><a href="https://www.gatsbyjs.org/">Gatsby</a></li>
 </ul>
 <p>などが有名ですね。</p>
+<hr>
 <h3 id="docker">Dockerとは？</h3>
 <p>これも<a href="https://www.docker.com/why-docker">Dockerの公式ページ</a>によると、</p>
 <blockquote>
@@ -314,6 +317,7 @@
 <p><code>rbenv</code>とか<code>pyenv</code>とかあるにはあるけどめんどくさいですもんね。</p>
 <p>こっちのバージョンでは入ってるけど、こっちでは入ってなかったっけ？とか。</p>
 <p>そーゆーのもふくめて、簡単に作って壊してできるのがDockerのよさかなあと個人でやっている身からは思います。</p>
+<hr>
 <h3 id="github-pages">GitHub Pagesとは？</h3>
 <p>最後はGitHub Pagesですね。</p>
 <p>もちろんこれも<a href="https://help.github.com/en/github/working-with-github-pages/about-github-pages">公式ページ</a>からとってきました。</p>
@@ -333,8 +337,10 @@
 <p>などがありますね。</p>
 <p><a href="https://heroku.com/">Heroku</a>も使おうと思えば使えるんじゃないでしょうか。</p>
 <p>わざわざHerokuを使う意味がよく分かりませんが…</p>
+<hr>
 <h2 id="heading1">つくっていきましょう</h2>
 <p>さあ、いよいよつくっていきましょう。</p>
+<hr>
 <h3 id="docker1">Dockerの環境準備</h3>
 <p>はじめに、Dockerの環境を準備します。</p>
 <p>あたらしいディレクトリを作成して、その中に以下の2ファイルをいれてください。</p>
@@ -382,6 +388,7 @@ services:
     stdin_open: <span style="color:#66d9ef">true</span>
     tty: <span style="color:#66d9ef">true</span>
 </code></pre></div><p>後述しますが、使いたいHugoのthemeがHugoのversionが0.60以上じゃないと使えなかったので、参考にさせていただいたサイトから少し修正してあります。</p>
+<hr>
 <h3 id="hugo1">Hugoの設定</h3>
 <p>次にHugoの設定です。</p>
 <p>Dockerfileをおいたディレクトリにターミナルで移動したのち、下記コマンドを入力します。</p>
@@ -459,10 +466,17 @@ Visit https://gohugo.io/ for quickstart guide and full documentation.
   <span style="color:#a6e22e">darkNav</span> = <span style="color:#66d9ef">true</span>
   <span style="color:#a6e22e">dark404Button</span> = <span style="color:#66d9ef">true</span>
 
-</code></pre></div><p>現状どんな感じか見たい場合は、</p>
+</code></pre></div><hr>
+<h4 id="20200229">2020/02/29追記</h4>
+<p>お気づきの方もいらっしゃるかもしれませんが、こちらのページのテーマを変えました。</p>
+<p><code>hugo-theme-dream</code> → <code>hugo-future-imperfect-slim</code> に変更しています。</p>
+<p>テーマごとに<code>config.toml</code>の設定も結構変わってくるので、<code>themes/[テーマ名]/exampleSite/config.toml</code>をコピペして作り直すのが早いかと思います。</p>
+<hr>
+<p>現状どんな感じか見たい場合は、</p>
 <p><code>docker-compose up</code></p>
 <p>でサーバーを立ち上げ、<code>http://localhost:1313</code>を見てみてください。</p>
 <p>すると、ローカル上ではうまく動いているはずです！</p>
+<hr>
 <h3 id="github-pages1">GitHub Pagesで公開</h3>
 <p>さて、いよいよGitHub Pagesで公開しましょう。</p>
 <p>今回、GitHubにpushするまではできる前提とさせてください。</p>
@@ -502,6 +516,7 @@ git push
 (最初は特に反映まで時間がかかります。気長に待ちましょう。)</p>
 <p>これでポートフォリオサイトの完成です！</p>
 <p>修正して公開したい場合は、再度<code>sh update.sh</code>と打ち込めば自動で反映されるはずです。</p>
+<hr>
 <h2 id="heading2">参考にさせていただいたサイト</h2>
 <ul>
 <li><a href="https://qiita.com/you1978/items/204c2cf75f86043dfe68">[Docker知識不要]Docker上でのHugo環境の作り方</a></li>
@@ -690,7 +705,7 @@ git push
     
       &copy; 2020
       
-        kenji adachi
+        CPX
       
     . <br>
     Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.60.1' target='_blank' rel='noopener'>Hugo</a>

@@ -18,6 +18,11 @@
   </url>
   
   <url>
+    <loc>https://kenjiadachi.github.io/my-portfolio/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kenjiadachi.github.io/my-portfolio/categories/dev/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
@@ -34,11 +39,6 @@
   
   <url>
     <loc>https://kenjiadachi.github.io/my-portfolio/tags/hugo/</loc>
-    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kenjiadachi.github.io/my-portfolio/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
   
