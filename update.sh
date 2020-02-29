@@ -9,6 +9,11 @@ docker-compose exec web hugo
 # docsファイルの移動
 mv site/public docs
 
+
+# ドメイン設定
+touch docs/CNAME
+echo cpx.business >> docs/CNAME
+
 # Commit comment
 ct="$(date +'%Y:%m:%d-%H:%M:%S')"
 
