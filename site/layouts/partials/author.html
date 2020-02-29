@@ -1,0 +1,12 @@
+<section>
+  <h2> この記事はこんな人が書いています</h2>
+  {{ with .Site.Params.intro.pic }}<a href="{{ "/" | relLangURL}}"><img src="{{ .src | relURL }}" class="{{ .shape }}" width="{{ .width }}" alt="{{ .alt }}" /></a>{{ end }}
+  <b>だちけん</b>
+  <p>
+    株式会社ムジカルを設立し、システム開発、webマーケティングを担当。<br>
+    まったくゼロの状態からシステム開発を始めたことで、幅広い知識を学習しながら進めていくプロセスに慣れました。
+    個人で受託開発なども受けながらなんとか食い扶持をつないでいます。
+    詳しくは<a href="/about">about</a>を読んでみてください。
+  </p>
+</section>
+<hr>

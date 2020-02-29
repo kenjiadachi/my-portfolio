@@ -5,9 +5,10 @@ date = "2020-01-06"
 description = "Hugoをつかってこのページを作ってみたので、作り方をまとめてみました。"
 tags = ["Hugo", "portfolio", "Docker", "GitHub Pages"]
 categories = ["dev"]
-images  = ["img/2014/04/pic01.jpg"]
+images  = ["img/how-to-create-this-page/top.jpg"]
 type = "post"
 draft =  false
+toc = true
 +++
 
 Hugoをつかってこのページを作ってみたので、作り方をまとめてみました。
