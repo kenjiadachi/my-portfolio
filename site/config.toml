@@ -1,4 +1,4 @@
-baseurl = "https://kenjiadachi.github.io/my-portfolio/"
+baseurl = "https://cpx.business/"
 languageCode = "ja"
 defaultContentLanguage = "ja"
 title = "CPX"
@@ -48,9 +48,9 @@ enableRobotsTXT = true
     # directory favicon.ico, utlize this funtion. It is recommened to use
     # https://realfavicongenerator.net to generate your icons as that is the basis
     # for the theme's naming.
-    favicon             = false
+    favicon             = true
     svg                 = true
-    faviconVersion      = "1"
+    faviconVersion      = ""
     msColor             = "#ffffff" # Copy from the https://realfavicongenerator.net
     iOSColor            = "#ffffff" # Copy from the https://realfavicongenerator.net
 
@@ -74,10 +74,10 @@ enableRobotsTXT = true
     # This appears at the top of the sidebar above params.intro.header.
     # A width of less than 100px is recommended from a design perspective.
     [params.intro.pic]
-      src                 = "/img/main/logo.jpg"
+      src                 = "/img/main/logo.png"
       # Masks image in a certain shape. Supported are circle, triangle, diamond, and hexagon.
-      shape               = "circle"
-      width               = "80"
+      shape               = ""
+      width               = "120"
       alt                 = "logo"
 
   [params.sidebar]

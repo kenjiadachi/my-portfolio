@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on CPX</title>
-    <link>https://kenjiadachi.github.io/my-portfolio/tags/</link>
+    <link>https://cpx.business/tags/</link>
     <description>Recent content in Tags on CPX</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 06 Jan 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kenjiadachi.github.io/my-portfolio/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cpx.business/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Docker</title>
-      <link>https://kenjiadachi.github.io/my-portfolio/tags/docker/</link>
+      <link>https://cpx.business/tags/docker/</link>
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://kenjiadachi.github.io/my-portfolio/tags/docker/</guid>
+      <guid>https://cpx.business/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GitHub Pages</title>
-      <link>https://kenjiadachi.github.io/my-portfolio/tags/github-pages/</link>
+      <link>https://cpx.business/tags/github-pages/</link>
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://kenjiadachi.github.io/my-portfolio/tags/github-pages/</guid>
+      <guid>https://cpx.business/tags/github-pages/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>https://kenjiadachi.github.io/my-portfolio/tags/hugo/</link>
+      <link>https://cpx.business/tags/hugo/</link>
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://kenjiadachi.github.io/my-portfolio/tags/hugo/</guid>
+      <guid>https://cpx.business/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>portfolio</title>
-      <link>https://kenjiadachi.github.io/my-portfolio/tags/portfolio/</link>
+      <link>https://cpx.business/tags/portfolio/</link>
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://kenjiadachi.github.io/my-portfolio/tags/portfolio/</guid>
+      <guid>https://cpx.business/tags/portfolio/</guid>
       <description></description>
     </item>
     
