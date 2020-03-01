@@ -12,6 +12,20 @@
     
     
     <item>
+      <title>[Rails]ransackで1画面で複数モデルの検索を実装する</title>
+      <link>https://cpx.business/blog/how-to-use-ransack-in-many-models/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-use-ransack-in-many-models/</guid>
+      <description>日本語で書かれている記事が見つからなかったので。
+ 困りごと 複数のモデルに対して1画面で別々に検索したい時に、以下のようにしてしまうとどちらも同じパラメータで検索してしまうため、検索後片方が検索結果から消えてしまう…ということが起こりました。
+その時のコードはこんな感じ
+# index.haml .row .col-6 = search_form_for @model1_search do |f| = f.search_field :column1_cont = f.submit &amp;quot;検索&amp;quot; - @model1s.each do |model1| model1.name .col-6 = search_form_for @model2_search do |f| = f.search_field :column2_cont = f.submit &amp;quot;検索&amp;quot; - @model2s.each do |model2| model2.name # controller.rb def index @model1_search = Model1.ransack(params[:q]) @model1s = @model1_search.result @model2_search = Model2.ransack(params[:q]) @model2s = @model2_search.result end  解決策 ransackのWikiにちゃんとやり方が載ってました。
+こんな感じでパラメータを:q以外にも設定してあげればいいみたいですね。
+# index.haml .row .col-6 = search_form_for @model1_search do |f| = f.</description>
+    </item>
+    
+    <item>
       <title>[Rails]検索情報を保持するcheck_box_tagの作り方</title>
       <link>https://cpx.business/blog/how-to-create-check_box_tag/</link>
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>

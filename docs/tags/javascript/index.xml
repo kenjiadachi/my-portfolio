@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>[Rails]js-cookie.jsを使ってbootstrap4のタブの情報を保持する</title>
+      <link>https://cpx.business/blog/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie/</guid>
+      <description>&lt;p&gt;タブ内にフォームがある時、postするたびに更新でタブが初期値に戻ってしまうのをなんとかしたいと思っていろいろ調べた結果、Cookieに保持するのがいいとわかりました。&lt;/p&gt;
+&lt;p&gt;そこで、こちらの&lt;a href=&#34;https://github.com/js-cookie/js-cookie&#34;&gt;js-cookie.js&lt;/a&gt;を使ってみました。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>[Rails]横から出てくるナビバー、simple-sidebarを導入する</title>
       <link>https://cpx.business/blog/how-to-install-simple-sidebar/</link>
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>

@@ -46,6 +46,30 @@
     </item>
     
     <item>
+      <title>[Rails]js-cookie.jsを使ってbootstrap4のタブの情報を保持する</title>
+      <link>https://cpx.business/blog/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie/</guid>
+      <description>&lt;p&gt;タブ内にフォームがある時、postするたびに更新でタブが初期値に戻ってしまうのをなんとかしたいと思っていろいろ調べた結果、Cookieに保持するのがいいとわかりました。&lt;/p&gt;
+&lt;p&gt;そこで、こちらの&lt;a href=&#34;https://github.com/js-cookie/js-cookie&#34;&gt;js-cookie.js&lt;/a&gt;を使ってみました。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Rails]ransackで1画面で複数モデルの検索を実装する</title>
+      <link>https://cpx.business/blog/how-to-use-ransack-in-many-models/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-use-ransack-in-many-models/</guid>
+      <description>日本語で書かれている記事が見つからなかったので。
+ 困りごと 複数のモデルに対して1画面で別々に検索したい時に、以下のようにしてしまうとどちらも同じパラメータで検索してしまうため、検索後片方が検索結果から消えてしまう…ということが起こりました。
+その時のコードはこんな感じ
+# index.haml .row .col-6 = search_form_for @model1_search do |f| = f.search_field :column1_cont = f.submit &amp;quot;検索&amp;quot; - @model1s.each do |model1| model1.name .col-6 = search_form_for @model2_search do |f| = f.search_field :column2_cont = f.submit &amp;quot;検索&amp;quot; - @model2s.each do |model2| model2.name # controller.rb def index @model1_search = Model1.ransack(params[:q]) @model1s = @model1_search.result @model2_search = Model2.ransack(params[:q]) @model2s = @model2_search.result end  解決策 ransackのWikiにちゃんとやり方が載ってました。
+こんな感じでパラメータを:q以外にも設定してあげればいいみたいですね。
+# index.haml .row .col-6 = search_form_for @model1_search do |f| = f.</description>
+    </item>
+    
+    <item>
       <title>[Rails]render partial collectionでeach_with_indexができる話</title>
       <link>https://cpx.business/blog/how-to-each_with_index-in-render-partial-collection/</link>
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
@@ -60,6 +84,18 @@
 Render partial with collection has &amp;ldquo;hidden&amp;rdquo; indexのコメントにありました。
 省略できる形の場所にあるpartialについてのindex指定方法は日本語の記事が見つかったのですが、省略できない場所のpartialについての記事がなかったので、書いてみました。
  参考にさせていただいたサイト  パーシャルをrenderする際のパフォーマンスに関する注意点 Render partial with collection has &amp;ldquo;hidden&amp;rdquo; index  </description>
+    </item>
+    
+    <item>
+      <title>[Rails]動的なvalidationをParsleyと、Bootstrap4を使っておしゃれに実装する</title>
+      <link>https://cpx.business/blog/how-to-use-parsely-in-rails/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-use-parsely-in-rails/</guid>
+      <description>&lt;p&gt;Form離脱の原因として、validation関連は間違いなくあげられると思います。&lt;/p&gt;
+&lt;p&gt;送信してから、「ここおかしいから直して！」とか言われても「は？(威圧)」ってなりますよね。私もそうです。&lt;/p&gt;
+&lt;p&gt;なので、フォーム入力時にvalidationを行うように変更しました。&lt;/p&gt;
+&lt;hr&gt;</description>
     </item>
     
     <item>

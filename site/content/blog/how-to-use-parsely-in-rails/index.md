@@ -1,10 +1,14 @@
----
-title: "[Rails]動的なvalidationをParsleyと、Bootstrap4を使っておしゃれに実装する"
-cover: "/images/test.jpg"
-categories: ["dev"]
-tags: ["Parsley", "Rails", "BootStrap4", "LiveDeli"]
-draft: true
----
++++
+author = "Kenji Adachi"
+title = "[Rails]動的なvalidationをParsleyと、Bootstrap4を使っておしゃれに実装する"
+date = "2020-01-06"
+description = "Form離脱の原因となる、validationでのイライラをましにします"
+tags = ["Rails", "Parsley", "BootStrap4"]
+categories = ["Rails"]
+images  = ["img/header/how-to-use-parsely-in-rails"]
+type = "post"
+draft =  false
++++
 
 Form離脱の原因として、validation関連は間違いなくあげられると思います。
 
@@ -12,9 +16,11 @@ Form離脱の原因として、validation関連は間違いなくあげられる
 
 なので、フォーム入力時にvalidationを行うように変更しました。
 
+---------
+
 <!--more-->
 
-# Parsleyの導入
+## Parsleyの導入
 
 調べてみると、動的なvalidationをするためのjQueryプラグインっていっぱいあるのですが、今回は割と新しい情報が多いParsleyを使うことにしました。
 
@@ -41,9 +47,11 @@ Form離脱の原因として、validation関連は間違いなくあげられる
 Rails.application.config.assets.precompile += %w( *.js)
 ```
 
-viewの設定は、[公式ページ](https://parsleyjs.org/)を見ればだいたいできるので省略します。
+viewの設定は、[公式ページ](https://parsleyjs.org/)を見ればだいたいできるので省略します。
 
-# Bootstrap4の設定
+-----
+
+## Bootstrap4の設定
 
 さあ、ParsleyをBootstrap4に当てはめましょう。
 
@@ -98,6 +106,16 @@ textarea {
 
 これで、error時もsuccess時も、おしゃれにvalidationの結果をすぐに示せます！
 
+-------
+
 ## 参考にさせていただいたサイト
 
 - [Railsにparsleyというjavascriptのバリデータを導入 - Qiita](https://qiita.com/mekemo_dao/items/4875a45c971091401ff1)
+- [parsley公式ページ](https://parsleyjs.org/)
+
+-------
+
+## こちらもぜひご一緒に！
+
+- [[Rails]横から出てくるナビバー、simple-sidebarを導入する](../../blog/how-to-install-simple-sidebar/)
+- [[Rails]js-cookie.jsを使ってbootstrap4のタブの情報を保持する](../../blog/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie/)

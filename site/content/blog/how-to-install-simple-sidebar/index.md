@@ -109,3 +109,10 @@ $(document).on 'turbolinks:load', ->
 
 - [Ruby On Rails AssetPipelineで読み込まれるJSの順番指定について](http://coa.hateblo.jp/entry/2012/08/03/093928)
 - [simple-sidebar - GitHub](https://github.com/dcdeiv/simple-sidebar)
+
+-------
+
+## こちらもぜひご一緒に！
+
+- [[Rails]js-cookie.jsを使ってbootstrap4のタブの情報を保持する](../../blog/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie/)
+- [[Rails]動的なvalidationをParsleyと、Bootstrap4を使っておしゃれに実装する](../../blog/how-to-use-parsely-in-rails/)

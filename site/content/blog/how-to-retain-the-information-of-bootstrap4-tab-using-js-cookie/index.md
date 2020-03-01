@@ -1,19 +1,28 @@
----
-title: "[Rails]js-cookie.jsを使ってbootstrap4のタブの情報を保持する"
-cover: "/images/test.jpg"
-categories: ["dev"]
-tags: ["Rails", "javascript", "BootStrap4", "LiveDeli"]
-draft: true
----
++++
+author = "Kenji Adachi"
+title = "[Rails]js-cookie.jsを使ってbootstrap4のタブの情報を保持する"
+date = "2020-01-06"
+description = "ページ更新でタブが初期値に戻ってしまうのをCookieを用いてなんとかします"
+tags = ["Rails", "javascript", "BootStrap4"]
+categories = ["Rails"]
+images  = ["img/header/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie.png"]
+type = "post"
+draft =  false
++++
 
-タブ内にフォームがある時、postするたびに更新でタブが初期値に戻ってしまうのをなんとかしたいと思っていろいろ調べてました。
-どうやら、Cookieに情報を保持しておくのが一番良さそうということがわかり、[こちらのjs-cookie.js](https://github.com/js-cookie/js-cookie)を使ってみました。
+タブ内にフォームがある時、postするたびに更新でタブが初期値に戻ってしまうのをなんとかしたいと思っていろいろ調べた結果、Cookieに保持するのがいいとわかりました。
+
+そこで、こちらの[js-cookie.js](https://github.com/js-cookie/js-cookie)を使ってみました。
 
 <!--more-->
 
-# 現状
+---------
 
-```haml:views/user/show.html.haml
+## 現状
+
+```html.haml
+# views/user/show.html.haml
+
 .container.mt-5
   = user.name
   さん
@@ -34,14 +43,17 @@ draft: true
 
 こんな感じのbootstrap4のタブを、更新してもタブは開いていたもののままで残しておきたい！
 
+---------
 
-# 解決策
+## 解決策
 
 [こちら](https://github.com/js-cookie/js-cookie/blob/latest/src/js.cookie.js)をコピーして、app/assets/javascripts/packages内に保存します。
 
 viewを編集します。
 
-```haml:views/user/show.html.haml
+```html.haml
+# views/user/show.html.haml
+
 .container.mt-5
   = user.name
   さん
@@ -80,7 +92,23 @@ viewを編集します。
 
 .tab('show')に関しては、bootstrap4側で準備してくれているイベントです。
 
-http://cccabinet.jpn.org/bootstrap4/components/navs#using-data-attributes
-
 これの一つ微妙なところが、haml内にcoffeescriptを書いてるところですね。
+
 読み込み場所を指定して、別ファイルで作るのが本当はいいのでしょうが、それはそのうちなんとかしようと思います。
+
+-------
+
+## 参考にさせていただいたサイト
+
+- [js-cookie - GitHub](https://github.com/js-cookie/js-cookie)
+- [JavaScriptでcookie処理（読み・書き・削除） - Qiita](https://qiita.com/takanorip/items/4e23b803bb1393176636)
+- [Bootstrap4移行ガイド](http://cccabinet.jpn.org/bootstrap4/components/navs#using-data-attributes)
+
+-------
+
+## こちらもぜひご一緒に！
+
+- [[Rails]enumの値を日本語化してラジオボタンに突っ込む](../../blog/how-to-create-radio-button-using-enum/)
+- [[Rails]検索情報を保持するcheck_box_tagの作り方](../../blog/how-to-create-check_box_tag/)
+- [[Rails]横から出てくるナビバー、simple-sidebarを導入する](../../blog/how-to-install-simple-sidebar/)
+- [[Rails]動的なvalidationをParsleyと、Bootstrap4を使っておしゃれに実装する](../../blog/how-to-use-parsely-in-rails/)

@@ -12,7 +12,7 @@
 
 
   <meta charset="utf-8">
-<title>[Rails]検索情報を保持するcheck_box_tagの作り方 - CPX</title>
+<title>[Rails]js-cookie.jsを使ってbootstrap4のタブの情報を保持する - CPX</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -28,27 +28,27 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.60.1" /><meta itemprop="name" content="[Rails]検索情報を保持するcheck_box_tagの作り方">
-<meta itemprop="description" content="ransackで実装している検索で、チェックボックスに検索条件を保持させました">
+<meta name="generator" content="Hugo 0.60.1" /><meta itemprop="name" content="[Rails]js-cookie.jsを使ってbootstrap4のタブの情報を保持する">
+<meta itemprop="description" content="ページ更新でタブが初期値に戻ってしまうのをCookieを用いてなんとかします">
 <meta itemprop="datePublished" content="2020-01-06T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-01-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="112">
-<meta itemprop="image" content="https://cpx.business/img/header/how-to-create-check_box_tag.png">
+<meta itemprop="wordCount" content="214">
+<meta itemprop="image" content="https://cpx.business/img/header/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie.png">
 
 
 
-<meta itemprop="keywords" content="Rails,ransack,check_box_tag," /><meta property="og:title" content="[Rails]検索情報を保持するcheck_box_tagの作り方" />
-<meta property="og:description" content="ransackで実装している検索で、チェックボックスに検索条件を保持させました" />
+<meta itemprop="keywords" content="Rails,javascript,BootStrap4," /><meta property="og:title" content="[Rails]js-cookie.jsを使ってbootstrap4のタブの情報を保持する" />
+<meta property="og:description" content="ページ更新でタブが初期値に戻ってしまうのをCookieを用いてなんとかします" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cpx.business/blog/how-to-create-check_box_tag/" />
-<meta property="og:image" content="https://cpx.business/img/header/how-to-create-check_box_tag.png" />
+<meta property="og:url" content="https://cpx.business/blog/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie/" />
+<meta property="og:image" content="https://cpx.business/img/header/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie.png" />
 <meta property="article:published_time" content="2020-01-06T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-06T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://cpx.business/img/header/how-to-create-check_box_tag.png"/>
+<meta name="twitter:image" content="https://cpx.business/img/header/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie.png"/>
 
-<meta name="twitter:title" content="[Rails]検索情報を保持するcheck_box_tagの作り方"/>
-<meta name="twitter:description" content="ransackで実装している検索で、チェックボックスに検索条件を保持させました"/>
+<meta name="twitter:title" content="[Rails]js-cookie.jsを使ってbootstrap4のタブの情報を保持する"/>
+<meta name="twitter:description" content="ページ更新でタブが初期値に戻ってしまうのをCookieを用いてなんとかします"/>
 <meta name="twitter:site" content="@dach1_ken"/>
 <link rel="stylesheet" href="https://cpx.business/css/bundle.min.122bf077d53f56b1f764db5a8c387dd81587f604dbf07bbf3f86a62b06e00ca9.css" integrity="sha256-Eivwd9U/VrH3ZNtajDh92BWH9gTb8Hu/P4amKwbgDKk=">
         <link rel="stylesheet" href="https://cpx.business/css/add-on.css">
@@ -122,37 +122,37 @@
 
   
     
-    <a href="//twitter.com/share?text=%5bRails%5d%e6%a4%9c%e7%b4%a2%e6%83%85%e5%a0%b1%e3%82%92%e4%bf%9d%e6%8c%81%e3%81%99%e3%82%8bcheck_box_tag%e3%81%ae%e4%bd%9c%e3%82%8a%e6%96%b9&amp;url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-check_box_tag%2f" target="_blank" rel="noopener" class="share-btn twitter">
+    <a href="//twitter.com/share?text=%5bRails%5djs-cookie.js%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6bootstrap4%e3%81%ae%e3%82%bf%e3%83%96%e3%81%ae%e6%83%85%e5%a0%b1%e3%82%92%e4%bf%9d%e6%8c%81%e3%81%99%e3%82%8b&amp;url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-retain-the-information-of-bootstrap4-tab-using-js-cookie%2f" target="_blank" rel="noopener" class="share-btn twitter">
         <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
       </a>
   
 
   
-      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-check_box_tag%2f" target="_blank" rel="noopener" class="share-btn facebook">
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcpx.business%2fblog%2fhow-to-retain-the-information-of-bootstrap4-tab-using-js-cookie%2f" target="_blank" rel="noopener" class="share-btn facebook">
         <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
         </a>
   
 
   
-    <a href="//www.reddit.com/submit?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-check_box_tag%2f&amp;title=%5bRails%5d%e6%a4%9c%e7%b4%a2%e6%83%85%e5%a0%b1%e3%82%92%e4%bf%9d%e6%8c%81%e3%81%99%e3%82%8bcheck_box_tag%e3%81%ae%e4%bd%9c%e3%82%8a%e6%96%b9" target="_blank" rel="noopener" class="share-btn reddit">
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-retain-the-information-of-bootstrap4-tab-using-js-cookie%2f&amp;title=%5bRails%5djs-cookie.js%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6bootstrap4%e3%81%ae%e3%82%bf%e3%83%96%e3%81%ae%e6%83%85%e5%a0%b1%e3%82%92%e4%bf%9d%e6%8c%81%e3%81%99%e3%82%8b" target="_blank" rel="noopener" class="share-btn reddit">
           <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
         </a>
   
 
   
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-check_box_tag%2f&amp;title=%5bRails%5d%e6%a4%9c%e7%b4%a2%e6%83%85%e5%a0%b1%e3%82%92%e4%bf%9d%e6%8c%81%e3%81%99%e3%82%8bcheck_box_tag%e3%81%ae%e4%bd%9c%e3%82%8a%e6%96%b9" target="_blank" rel="noopener" class="share-btn linkedin">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-retain-the-information-of-bootstrap4-tab-using-js-cookie%2f&amp;title=%5bRails%5djs-cookie.js%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6bootstrap4%e3%81%ae%e3%82%bf%e3%83%96%e3%81%ae%e6%83%85%e5%a0%b1%e3%82%92%e4%bf%9d%e6%8c%81%e3%81%99%e3%82%8b" target="_blank" rel="noopener" class="share-btn linkedin">
             <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
           </a>
   
 
   
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-check_box_tag%2f&amp;description=%5bRails%5d%e6%a4%9c%e7%b4%a2%e6%83%85%e5%a0%b1%e3%82%92%e4%bf%9d%e6%8c%81%e3%81%99%e3%82%8bcheck_box_tag%e3%81%ae%e4%bd%9c%e3%82%8a%e6%96%b9" target="_blank" rel="noopener" class="share-btn pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-retain-the-information-of-bootstrap4-tab-using-js-cookie%2f&amp;description=%5bRails%5djs-cookie.js%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6bootstrap4%e3%81%ae%e3%82%bf%e3%83%96%e3%81%ae%e6%83%85%e5%a0%b1%e3%82%92%e4%bf%9d%e6%8c%81%e3%81%99%e3%82%8b" target="_blank" rel="noopener" class="share-btn pinterest">
           <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
         </a>
   
 
   
-        <a href="mailto:?subject=Check out this post by Kenji%20Adachi&amp;body=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-check_box_tag%2f" target="_blank" class="share-btn email" data-proofer-ignore>
+        <a href="mailto:?subject=Check out this post by Kenji%20Adachi&amp;body=https%3a%2f%2fcpx.business%2fblog%2fhow-to-retain-the-information-of-bootstrap4-tab-using-js-cookie%2f" target="_blank" class="share-btn email" data-proofer-ignore>
           <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
         </a>
   
@@ -177,10 +177,10 @@
   <header>
   <div class="title">
     
-        <h2><a href="https://cpx.business/blog/how-to-create-check_box_tag/">[Rails]検索情報を保持するcheck_box_tagの作り方</a></h2>
+        <h2><a href="https://cpx.business/blog/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie/">[Rails]js-cookie.jsを使ってbootstrap4のタブの情報を保持する</a></h2>
     
     
-        <p>ransackで実装している検索で、チェックボックスに検索条件を保持させました</p>
+        <p>ページ更新でタブが初期値に戻ってしまうのをCookieを用いてなんとかします</p>
     
 </div>
   <div class="meta">
@@ -189,7 +189,7 @@
     </time>
     <span class="author">Kenji Adachi</span>
     
-      <p>1 分で読めます</p>
+      <p>2 分で読めます</p>
     
   </div>
 </header>
@@ -202,37 +202,37 @@
 
   
     
-    <a href="//twitter.com/share?text=%5bRails%5d%e6%a4%9c%e7%b4%a2%e6%83%85%e5%a0%b1%e3%82%92%e4%bf%9d%e6%8c%81%e3%81%99%e3%82%8bcheck_box_tag%e3%81%ae%e4%bd%9c%e3%82%8a%e6%96%b9&amp;url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-check_box_tag%2f" target="_blank" rel="noopener" class="share-btn twitter">
+    <a href="//twitter.com/share?text=%5bRails%5djs-cookie.js%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6bootstrap4%e3%81%ae%e3%82%bf%e3%83%96%e3%81%ae%e6%83%85%e5%a0%b1%e3%82%92%e4%bf%9d%e6%8c%81%e3%81%99%e3%82%8b&amp;url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-retain-the-information-of-bootstrap4-tab-using-js-cookie%2f" target="_blank" rel="noopener" class="share-btn twitter">
         <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
       </a>
   
 
   
-      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-check_box_tag%2f" target="_blank" rel="noopener" class="share-btn facebook">
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcpx.business%2fblog%2fhow-to-retain-the-information-of-bootstrap4-tab-using-js-cookie%2f" target="_blank" rel="noopener" class="share-btn facebook">
         <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
         </a>
   
 
   
-    <a href="//www.reddit.com/submit?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-check_box_tag%2f&amp;title=%5bRails%5d%e6%a4%9c%e7%b4%a2%e6%83%85%e5%a0%b1%e3%82%92%e4%bf%9d%e6%8c%81%e3%81%99%e3%82%8bcheck_box_tag%e3%81%ae%e4%bd%9c%e3%82%8a%e6%96%b9" target="_blank" rel="noopener" class="share-btn reddit">
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-retain-the-information-of-bootstrap4-tab-using-js-cookie%2f&amp;title=%5bRails%5djs-cookie.js%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6bootstrap4%e3%81%ae%e3%82%bf%e3%83%96%e3%81%ae%e6%83%85%e5%a0%b1%e3%82%92%e4%bf%9d%e6%8c%81%e3%81%99%e3%82%8b" target="_blank" rel="noopener" class="share-btn reddit">
           <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
         </a>
   
 
   
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-check_box_tag%2f&amp;title=%5bRails%5d%e6%a4%9c%e7%b4%a2%e6%83%85%e5%a0%b1%e3%82%92%e4%bf%9d%e6%8c%81%e3%81%99%e3%82%8bcheck_box_tag%e3%81%ae%e4%bd%9c%e3%82%8a%e6%96%b9" target="_blank" rel="noopener" class="share-btn linkedin">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-retain-the-information-of-bootstrap4-tab-using-js-cookie%2f&amp;title=%5bRails%5djs-cookie.js%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6bootstrap4%e3%81%ae%e3%82%bf%e3%83%96%e3%81%ae%e6%83%85%e5%a0%b1%e3%82%92%e4%bf%9d%e6%8c%81%e3%81%99%e3%82%8b" target="_blank" rel="noopener" class="share-btn linkedin">
             <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
           </a>
   
 
   
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-check_box_tag%2f&amp;description=%5bRails%5d%e6%a4%9c%e7%b4%a2%e6%83%85%e5%a0%b1%e3%82%92%e4%bf%9d%e6%8c%81%e3%81%99%e3%82%8bcheck_box_tag%e3%81%ae%e4%bd%9c%e3%82%8a%e6%96%b9" target="_blank" rel="noopener" class="share-btn pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-retain-the-information-of-bootstrap4-tab-using-js-cookie%2f&amp;description=%5bRails%5djs-cookie.js%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6bootstrap4%e3%81%ae%e3%82%bf%e3%83%96%e3%81%ae%e6%83%85%e5%a0%b1%e3%82%92%e4%bf%9d%e6%8c%81%e3%81%99%e3%82%8b" target="_blank" rel="noopener" class="share-btn pinterest">
           <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
         </a>
   
 
   
-        <a href="mailto:?subject=Check out this post by Kenji%20Adachi&amp;body=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-check_box_tag%2f" target="_blank" class="share-btn email" data-proofer-ignore>
+        <a href="mailto:?subject=Check out this post by Kenji%20Adachi&amp;body=https%3a%2f%2fcpx.business%2fblog%2fhow-to-retain-the-information-of-bootstrap4-tab-using-js-cookie%2f" target="_blank" class="share-btn email" data-proofer-ignore>
           <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
         </a>
   
@@ -240,9 +240,9 @@
 
   </section>
   
-  <a href="https://cpx.business/blog/how-to-create-check_box_tag/" class="image featured">
+  <a href="https://cpx.business/blog/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie/" class="image featured">
     
-      <img src="https://cpx.business/img/header/how-to-create-check_box_tag.png" alt="">
+      <img src="https://cpx.business/img/header/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie.png" alt="">
     
   </a>
 
@@ -252,17 +252,10 @@
       <h2>目次</h2>
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">困りごと</a></li>
-    <li><a href="#heading1">前提条件</a>
-      <ul>
-        <li><a href="#enum">enumで値を扱っている</a></li>
-        <li><a href="#enumhelp">enum_helpで日本語化している</a></li>
-        <li><a href="#ransack">ransackで検索を実装している</a></li>
-      </ul>
-    </li>
-    <li><a href="#heading2">解決策</a></li>
-    <li><a href="#heading3">解説</a></li>
-    <li><a href="#heading4">こちらもぜひご一緒に！</a></li>
+    <li><a href="#heading">現状</a></li>
+    <li><a href="#heading1">解決策</a></li>
+    <li><a href="#heading2">参考にさせていただいたサイト</a></li>
+    <li><a href="#heading3">こちらもぜひご一緒に！</a></li>
   </ul>
 </nav>
       <hr>
@@ -280,70 +273,85 @@
 </section>
 <hr>
 
-    <h2 id="heading">困りごと</h2>
-<p>ransackの検索後の画面を見たときに検索条件がcheck_boxに保持されていないので、検索条件がわからない！</p>
-<p>(URLを見ればわかるけど、ユーザーにそこまでのリテラシーがあるとも思えない…)</p>
+    <p>タブ内にフォームがある時、postするたびに更新でタブが初期値に戻ってしまうのをなんとかしたいと思っていろいろ調べた結果、Cookieに保持するのがいいとわかりました。</p>
+<p>そこで、こちらの<a href="https://github.com/js-cookie/js-cookie">js-cookie.js</a>を使ってみました。</p>
 <hr>
-<h2 id="heading1">前提条件</h2>
-<h3 id="enum">enumで値を扱っている</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># models/post.rb</span>
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Post</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ApplicationRecord</span>
-  enum <span style="color:#e6db74">tag</span>: { <span style="color:#e6db74">report</span>: <span style="color:#ae81ff">0</span><span style="color:#f92672"></span>, <span style="color:#e6db74">interview</span>: <span style="color:#ae81ff">1</span><span style="color:#f92672"></span>, <span style="color:#e6db74">info</span>: <span style="color:#ae81ff">2</span><span style="color:#f92672"></span>}
-  <span style="color:#75715e"># 以下略</span>
-<span style="color:#66d9ef">end</span>
-</code></pre></div><hr>
-<h3 id="enumhelp"><code>enum_help</code>で日本語化している</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># Gemfile</span>
-gem <span style="color:#e6db74">&#39;enum_help&#39;</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#75715e"># config/locales/ja.yml</span>
-ja:
-  enums:
-    post:
-      tag:
-        report: 開催レポート
-        interview: インタビュー
-        info: お知らせ
-</code></pre></div><hr>
-<h3 id="ransack"><code>ransack</code>で検索を実装している</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># controllers/posts_controller.rb</span>
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PostsController</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ApplicationController</span>
-  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">index</span>
-    @search <span style="color:#f92672">=</span> <span style="color:#66d9ef">Post</span><span style="color:#f92672">.</span>ransack(params<span style="color:#f92672">[</span><span style="color:#e6db74">:q</span><span style="color:#f92672">]</span>)
-    @result <span style="color:#f92672">=</span> @search<span style="color:#f92672">.</span>result
-  <span style="color:#66d9ef">end</span>
-  <span style="color:#75715e"># 以下略</span>
-<span style="color:#66d9ef">end</span>
-</code></pre></div><pre><code class="language-html.haml" data-lang="html.haml">/ views/posts/index.html.haml
-= search_form_for @search do |f|
-  /　以下略
-  = f.submit &quot;検索&quot;
-</code></pre><hr>
-<h2 id="heading2">解決策</h2>
-<p>こんな感じで実装してみました。</p>
-<pre><code class="language-html.haml" data-lang="html.haml">/ views/posts/index.html.haml
-= search_form_for @search do |f|
-  - Post.tags_i18n.each do |tag|
-    = check_box_tag('q[tag_eq_any][]', Post.tags[tag.first], params[:q].present?&amp;&amp;params[:q][&quot;tag_eq_any&quot;].present?&amp;&amp;params[:q][&quot;tag_eq_any&quot;].include?(&quot;#{Post.tags[tag.first]}&quot;)
-    = tag.last
-  = f.submit &quot;検索&quot;
-</code></pre><hr>
-<h2 id="heading3">解説</h2>
-<p><code>Post.tags_i18n</code>では、このようなhashが返ってきます。</p>
-<p><code>{&quot;report&quot;=&gt;&quot;開催レポート&quot;, &quot;interview&quot;=&gt;&quot;インタビュー&quot;, &quot;info&quot;=&gt;&quot;お知らせ&quot;}</code></p>
-<p>なので、<code>Post.tags_i18n.first</code>は</p>
-<p><code>[&quot;report&quot;, &quot;開催レポート&quot;]</code>という配列になります。</p>
-<p>また、<code>Post.tags</code>は、このようなhashになるので、</p>
-<p><code>{&quot;report&quot;=&gt;0, &quot;interview&quot;=&gt;1, &quot;info&quot;=&gt;2}</code></p>
-<p><code>Post.tags[Post.tags_i18n.first.first]</code>は、0になります。</p>
-<p>誰かの役に立っていればいいなあ。</p>
+<h2 id="heading">現状</h2>
+<pre><code class="language-html.haml" data-lang="html.haml"># views/user/show.html.haml
+
+.container.mt-5
+  = user.name
+  さん
+  .row
+    .col-12.py-2
+      %nav#user-tab.nav.nav-tabs.nav-fill{:role =&gt; &quot;tablist&quot;}
+        %a#user-tab-info.nav-item.nav-link.active{&quot;aria-controls&quot; =&gt; &quot;#user-info&quot;, &quot;data-toggle&quot; =&gt; &quot;tab&quot;, &quot;aria-selected&quot; =&gt; &quot;true&quot;, :href =&gt; &quot;#user-info&quot;, :role =&gt; &quot;tab&quot;} User情報
+        %a#user-tab-posts.nav-item.nav-link{&quot;aria-controls&quot; =&gt; &quot;#user-posts&quot;, &quot;data-toggle&quot; =&gt; &quot;tab&quot;, &quot;aria-selected&quot; =&gt; &quot;false&quot;, :href =&gt; &quot;#user-posts&quot;, :role =&gt; &quot;tab&quot;} 投稿
+
+  #user-tabContent.tab-content
+    #user-info.tab-pane.fade.show.active{&quot;aria-labelledby&quot; =&gt; &quot;user-tab-info&quot;, :role =&gt; &quot;tabpanel&quot;}
+      = render partial: 'users/info', locals:{user: user} # 大事じゃないので割愛
+
+    #user-posts.tab-pane.fade{&quot;aria-labelledby&quot; =&gt; &quot;user-tab-posts&quot;, :role =&gt; &quot;tabpanel&quot;}
+      = render partial: 'users/post', collection: player.posts, as: :post # 大事じゃないので割愛
+
+</code></pre><p>こんな感じのbootstrap4のタブを、更新してもタブは開いていたもののままで残しておきたい！</p>
 <hr>
-<h2 id="heading4">こちらもぜひご一緒に！</h2>
+<h2 id="heading1">解決策</h2>
+<p><a href="https://github.com/js-cookie/js-cookie/blob/latest/src/js.cookie.js">こちら</a>をコピーして、app/assets/javascripts/packages内に保存します。</p>
+<p>viewを編集します。</p>
+<pre><code class="language-html.haml" data-lang="html.haml"># views/user/show.html.haml
+
+.container.mt-5
+  = user.name
+  さん
+  .row
+    .col-12.py-2
+      %nav#user-tab.nav.nav-tabs.nav-fill{:role =&gt; &quot;tablist&quot;}
+        %a#user-tab-info.nav-item.nav-link.active{&quot;aria-controls&quot; =&gt; &quot;#user-info&quot;, &quot;data-toggle&quot; =&gt; &quot;tab&quot;, &quot;aria-selected&quot; =&gt; &quot;true&quot;, :href =&gt; &quot;#user-info&quot;, :role =&gt; &quot;tab&quot;} User情報
+        %a#user-tab-posts.nav-item.nav-link{&quot;aria-controls&quot; =&gt; &quot;#user-posts&quot;, &quot;data-toggle&quot; =&gt; &quot;tab&quot;, &quot;aria-selected&quot; =&gt; &quot;false&quot;, :href =&gt; &quot;#user-posts&quot;, :role =&gt; &quot;tab&quot;} 投稿
+
+  #user-tabContent.tab-content
+    #user-info.tab-pane.fade.show.active{&quot;aria-labelledby&quot; =&gt; &quot;user-tab-info&quot;, :role =&gt; &quot;tabpanel&quot;}
+      = render partial: 'users/info', locals:{user: user} # 大事じゃないので割愛
+
+    #user-posts.tab-pane.fade{&quot;aria-labelledby&quot; =&gt; &quot;user-tab-posts&quot;, :role =&gt; &quot;tabpanel&quot;}
+      = render partial: 'users/post', collection: player.posts, as: :post # 大事じゃないので割愛
+
+-# 以下を追記
+
+:coffee
+  $(&quot;#user-tab a&quot;).on 'click', -&gt; # #user-tab内の&lt;a&gt;タグがクリックされたら
+    active =  $(this).attr(&quot;id&quot;); # クリックされたやつのidを取得
+    Cookies.set &quot;#{user.id}Tab&quot;, active, expires: 1 # #{user.id}Tabという名前でidを1日保持
+    return
+
+  # 以下読み込み時の話
+  last = Cookies.get(&quot;#{user.id}Tab&quot;) # #{user.id}Tabの値(&lt;a&gt;タグのid)を取ってくる
+  if last != null # #{user.id}Tabの値(&lt;a&gt;タグのid)が存在するなら
+    $('#' + last).tab('show') # そのタブに'show'classをつける
+  return
+
+</code></pre><p>これで状態を保持できるはずです。</p>
+<p>思ったより簡単でびっくりしました。</p>
+<p>.tab(&lsquo;show&rsquo;)に関しては、bootstrap4側で準備してくれているイベントです。</p>
+<p>これの一つ微妙なところが、haml内にcoffeescriptを書いてるところですね。</p>
+<p>読み込み場所を指定して、別ファイルで作るのが本当はいいのでしょうが、それはそのうちなんとかしようと思います。</p>
+<hr>
+<h2 id="heading2">参考にさせていただいたサイト</h2>
+<ul>
+<li><a href="https://github.com/js-cookie/js-cookie">js-cookie - GitHub</a></li>
+<li><a href="https://qiita.com/takanorip/items/4e23b803bb1393176636">JavaScriptでcookie処理（読み・書き・削除） - Qiita</a></li>
+<li><a href="http://cccabinet.jpn.org/bootstrap4/components/navs#using-data-attributes">Bootstrap4移行ガイド</a></li>
+</ul>
+<hr>
+<h2 id="heading3">こちらもぜひご一緒に！</h2>
 <ul>
 <li><a href="../../blog/how-to-create-radio-button-using-enum/">[Rails]enumの値を日本語化してラジオボタンに突っ込む</a></li>
-<li><a href="../../blog/how-to-create-wizard-form-in-rails/">[Rails]1つのformを複数画面に分割して表示するwizard formを実装する</a></li>
-<li><a href="../../blog/how-to-use-ransack-in-many-models/">[Rails]ransackで1画面で複数モデルの検索を実装する</a></li>
+<li><a href="../../blog/how-to-create-check_box_tag/">[Rails]検索情報を保持するcheck_box_tagの作り方</a></li>
+<li><a href="../../blog/how-to-install-simple-sidebar/">[Rails]横から出てくるナビバー、simple-sidebarを導入する</a></li>
+<li><a href="../../blog/how-to-use-parsely-in-rails/">[Rails]動的なvalidationをParsleyと、Bootstrap4を使っておしゃれに実装する</a></li>
 </ul>
-
   </div>
   <footer>
     <ul class="stats">
@@ -370,10 +378,10 @@ ja:
             <li><a class="article-category-link" href="https://cpx.business/tags/rails">Rails</a></li>
           
             
-            <li><a class="article-category-link" href="https://cpx.business/tags/ransack">ransack</a></li>
+            <li><a class="article-category-link" href="https://cpx.business/tags/javascript">javascript</a></li>
           
             
-            <li><a class="article-category-link" href="https://cpx.business/tags/check_box_tag">check_box_tag</a></li>
+            <li><a class="article-category-link" href="https://cpx.business/tags/bootstrap4">BootStrap4</a></li>
           
         </ul>
       </li>
@@ -412,10 +420,10 @@ ja:
 
 <div class="pagination">
   
-    <a href="https://cpx.business/blog/how-to-install-simple-sidebar/" class="button"><div class="previous"><div>[Rails]横から出てくるナビバー、simple-sidebarを導入する</div></div></a>
+    <a href="https://cpx.business/blog/how-to-use-ransack-in-many-models/" class="button"><div class="previous"><div>[Rails]ransackで1画面で複数モデルの検索を実装する</div></div></a>
   
   
-    <a href="https://cpx.business/blog/how-to-use-parsely-in-rails/" class="button"><div class="next"><div>[Rails]動的なvalidationをParsleyと、Bootstrap4を使っておしゃれに実装する</div></div></a>
+    <a href="https://cpx.business/blog/how-to-create-radio-button-using-enum/" class="button"><div class="next"><div>[Rails]enumの値を日本語化してラジオボタンに突っ込む</div></div></a>
   
 </div>
 
