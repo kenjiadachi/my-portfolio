@@ -4,11 +4,10 @@ title = "[Hugo]faviconを設定する方法"
 date = "2020-01-06"
 description = "Hugoをつかっているこのページにfaviconを設定してみました"
 tags = ["Hugo", "favicon"]
-categories = ["dev"]
+categories = ["Hugo"]
 images  = ["img/header/how-to-set-favicon.png"]
 type = "post"
 draft =  false
-toc = true
 +++
 
 Hugoで作成したこちらのページに、faviconを設定してみました。

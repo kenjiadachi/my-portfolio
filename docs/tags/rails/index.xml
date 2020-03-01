@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rails on CPX</title>
+    <link>https://cpx.business/tags/rails/</link>
+    <description>Recent content in Rails on CPX</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Mon, 06 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://cpx.business/tags/rails/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Rails]enumの値を日本語化してラジオボタンに突っ込む</title>
+      <link>https://cpx.business/blog/how-to-create-radio-button-using-enum/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-create-radio-button-using-enum/</guid>
+      <description>前提条件 こんなモデルがあったとして
+# models/user.rb class User &amp;lt; ApplicationRecord enum area: {east: 0, west: 1} # (以下略) end enum_helpというgemを入れたとして
+# Gemfile gem &amp;#39;enum_help&amp;#39; enumの値に対応した日本語をja.ymlに入れたとして
+# ja.yml ja: enums: user: area: east: 関東 west: 関西 そこから、どうやってlabelに日本語、valueに英語が入ったのラジオボタンを作るかという話です。
+ 結論 こんな感じでできました！嬉しい！
+# users/_form.haml = form_for(@user) do |f| = f.collection_radio_buttons :area, User.areas_i18n, :first, :last, include_hidden: false do |b| - content_tag(:div, class: &amp;quot;wrapper-class&amp;quot;) do - b.radio_button(class: &amp;quot;button-class&amp;quot;) + b.label(class: &amp;quot;label-class&amp;quot;) = f.submit collection_radio_buttonsというメソッドがあるんですね。 ただ、f.collection_radio_buttonsとは少し違うようです。 詳しくはここに書いてました。 日本語でなんとなくイメージを掴みたいならこの記事が読みやすかったです。</description>
+    </item>
+    
+    <item>
+      <title>[Rails]検索情報を保持するcheck_box_tagの作り方</title>
+      <link>https://cpx.business/blog/how-to-create-check_box_tag/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-create-check_box_tag/</guid>
+      <description>困りごと ransackの検索後の画面を見たときに検索条件がcheck_boxに保持されていないので、検索条件がわからない！
+(URLを見ればわかるけど、ユーザーにそこまでのリテラシーがあるとも思えない…)
+ 前提条件 enumで値を扱っている # models/post.rb class Post &amp;lt; ApplicationRecord enum tag: { report: 0, interview: 1, info: 2} # 以下略 end  enum_helpで日本語化している # Gemfile gem &amp;#39;enum_help&amp;#39; # config/locales/ja.yml ja: enums: post: tag: report: 開催レポート interview: インタビュー info: お知らせ  ransackで検索を実装している # controllers/posts_controller.rb class PostsController &amp;lt; ApplicationController def index @search = Post.ransack(params[:q]) @result = @search.result end # 以下略 end / views/posts/index.html.haml = search_form_for @search do |f| /　以下略 = f.</description>
+    </item>
+    
+  </channel>
+</rss>

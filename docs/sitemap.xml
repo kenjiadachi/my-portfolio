@@ -13,6 +13,16 @@
   </url>
   
   <url>
+    <loc>https://cpx.business/blog/how-to-create-radio-button-using-enum/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/blog/how-to-create-check_box_tag/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cpx.business/blog/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
@@ -23,17 +33,22 @@
   </url>
   
   <url>
+    <loc>https://cpx.business/tags/check_box_tag/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cpx.business/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cpx.business/categories/dev/</loc>
+    <loc>https://cpx.business/tags/docker/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cpx.business/tags/docker/</loc>
+    <loc>https://cpx.business/tags/enum/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -53,7 +68,27 @@
   </url>
   
   <url>
+    <loc>https://cpx.business/categories/hugo/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cpx.business/tags/portfolio/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/categories/rails/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/tags/rails/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/tags/ransack/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
   

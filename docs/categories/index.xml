@@ -12,11 +12,20 @@
     
     
     <item>
-      <title>dev</title>
-      <link>https://cpx.business/categories/dev/</link>
+      <title>Hugo</title>
+      <link>https://cpx.business/categories/hugo/</link>
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://cpx.business/categories/dev/</guid>
+      <guid>https://cpx.business/categories/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rails</title>
+      <link>https://cpx.business/categories/rails/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/categories/rails/</guid>
       <description></description>
     </item>
     

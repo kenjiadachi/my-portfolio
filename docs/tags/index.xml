@@ -12,11 +12,29 @@
     
     
     <item>
+      <title>check_box_tag</title>
+      <link>https://cpx.business/tags/check_box_tag/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/tags/check_box_tag/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Docker</title>
       <link>https://cpx.business/tags/docker/</link>
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://cpx.business/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>enum</title>
+      <link>https://cpx.business/tags/enum/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/tags/enum/</guid>
       <description></description>
     </item>
     
@@ -53,6 +71,24 @@
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://cpx.business/tags/portfolio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rails</title>
+      <link>https://cpx.business/tags/rails/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/tags/rails/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ransack</title>
+      <link>https://cpx.business/tags/ransack/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/tags/ransack/</guid>
       <description></description>
     </item>
     

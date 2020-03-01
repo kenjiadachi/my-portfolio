@@ -4,3 +4,10 @@
   is an official part of the theme (ex. Pull Requests) should be included in main.css
   and follow the formatting and style given.
 */
+.post>footer .stats li {
+  max-width: 100%;
+}
+
+.post>footer .stats li.categories {
+  margin-right: 10px;
+}

@@ -4,11 +4,10 @@ title = "[Hugo]Docker上で管理できるポートフォリオを作ってみ�
 date = "2020-01-06"
 description = "Hugoをつかってこのページを作ってみたので、作り方をまとめてみました。"
 tags = ["Hugo", "portfolio", "Docker", "GitHub Pages"]
-categories = ["dev"]
+categories = ["Hugo"]
 images  = ["img/header/how-to-create-this-page.png"]
 type = "post"
 draft =  false
-toc = true
 +++
 
 Hugoをつかってこのページを作ってみたので、作り方をまとめてみました。
