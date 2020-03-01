@@ -1,10 +1,16 @@
----
-title: "[Rails]1つのformを複数画面に分割して表示するwizard formを実装する"
-cover: "/images/test.jpg"
-categories: ["dev"]
-tags: ["Wizard Form", "Rails", "ActiveModel", "LiveDeli"]
-draft: true
----
++++
+author = "Kenji Adachi"
+title = "[Rails]1つのformを複数画面に分割して表示するwizard formを実装する"
+date = "2020-01-06"
+description = "Formをスッキリと見せて入力してもらいやすくするため、Wizard Formの形式に変更してみました"
+tags = ["Rails", "Wizard Form", "ActiveModel"]
+categories = ["Rails"]
+images  = ["img/header/how-to-create-wizard-form-in-rails.png"]
+type = "post"
+draft =  false
++++
+
+
 どんなwebサービスでさえ、Formでの離脱率は可能な限り下げたいですよね。
 
 ただ、サービスの性質上どうしてもFormの項目が多くなってしまうこともあります。
@@ -13,9 +19,12 @@ draft: true
 
 <!--more-->
 
-※Wizard Formについては、それ自体に賛否両論あること、もちろんサービスの性質やターゲットによって使うべきかどうかの判断が必要なことについては今回の記事では書きません。また別の記事にでも書こうかな…
+**※Wizard Formについては、それ自体に賛否両論あること、もちろんサービスの性質やターゲットによって使うべきかどうかの判断が必要なことについては今回の記事では書きません。**
+また別の記事にでも書こうかな…
 
-# 実装方法の選択
+------
+
+## 実装方法の選択
 
 Railsでは、[wicked](https://github.com/schneems/wicked)というgemがWizard Form用に存在します。
 
@@ -34,7 +43,9 @@ Form関連はある程度厳密さが求められるので、jQueryでブラウ�
 - jQueryでURLは変えずに画面の見た目だけ変わるようなFormを作る
   - [フォームをぐっと使いやすくする！ウィザード型jQueryプラグイン6選【2017年版】](https://www.webprofessional.jp/jquery-form-wizard-plugins/)に色々載ってます
 
-# さて、実装。
+------
+
+## さて、実装。
 
 基本的には、こちらの記事を参考にしました。
 [Developing a wizard or multi-steps forms in Rails – Nicolas Blanco – Medium](https://medium.com/@nicolasblanco/developing-a-wizard-or-multi-steps-forms-in-rails-d2f3b7c692ce)
@@ -167,3 +178,19 @@ end
 ```
 
 今日はこのあたりで。
+
+-------
+
+## 参考にさせていただいたサイト
+
+- [フォームをぐっと使いやすくする！ウィザード型jQueryプラグイン6選【2017年版】](https://www.webprofessional.jp/jquery-form-wizard-plugins/)
+- [Developing a wizard or multi-steps forms in Rails – Nicolas Blanco – Medium](https://medium.com/@nicolasblanco/developing-a-wizard-or-multi-steps-forms-in-rails-d2f3b7c692ce)
+- [ActiveModel::Attributes が最高すぎるんだよな。 - Qiita](https://qiita.com/alpaca_taichou/items/bebace92f06af3f32898)
+- [Rails で複数モデルに関連したパラメータを検証する方法 - ボクココ](https://www.bokukoko.info/entry/2016/04/29/Rails_%E3%81%A7%E8%A4%87%E6%95%B0%E3%83%A2%E3%83%87%E3%83%AB%E3%81%AB%E9%96%A2%E9%80%A3%E3%81%97%E3%81%9F%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E3%82%92%E6%A4%9C%E8%A8%BC%E3%81%99%E3%82%8B%E6%96%B9)
+
+-------
+
+## こちらもぜひご一緒に！
+
+- [[Rails]enumの値を日本語化してラジオボタンに突っ込む](../../blog/how-to-create-radio-button-using-enum/)
+- [[Rails]検索情報を保持するcheck_box_tagの作り方](../../blog/how-to-create-check_box_tag/)

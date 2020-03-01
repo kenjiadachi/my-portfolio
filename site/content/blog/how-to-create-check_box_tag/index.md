@@ -112,3 +112,4 @@ end
 ## こちらもぜひご一緒に！
 
 - [[Rails]enumの値を日本語化してラジオボタンに突っ込む](../../blog/how-to-create-radio-button-using-enum/)
+- [[Rails]1つのformを複数画面に分割して表示するwizard formを実装する](../../blog/how-to-create-wizard-form-in-rails/)

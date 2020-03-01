@@ -5,7 +5,7 @@ title = "CPX"
 theme = "hugo-future-imperfect-slim"
 # パスの指定。これをしないとcssがうまく反映されません。
 canonifyurls = true
-paginate = 6
+paginate = 12
 
 preserveTaxonomyNames = true
 

@@ -1,10 +1,14 @@
----
-title: "[Rails]controllerで作るflashメッセージの中にlink_toを入れる方法"
-cover: "/images/test.jpg"
-categories: ["dev"]
-tags: ["Rails", "flash", "controller", "link_to"]
-draft: true
----
++++
+author = "Kenji Adachi"
+title = "[Rails]controllerで作るflashメッセージの中にlink_toを入れる方法"
+date = "2020-01-06"
+description = "Railsで、flashにLinkを入れる方法を調べました。"
+tags = ["Rails", "flash", "controller", "link_to"]
+categories = ["Rails"]
+images  = ["img/header/how-to-put-link_to-in-flash-message-created-by-controller.png"]
+type = "post"
+draft =  false
++++
 
 Railsで、flashにLinkを入れたい時に調べるのに苦労したのでまとめておきます。
 
@@ -12,7 +16,9 @@ Railsで、flashにLinkを入れたい時に調べるのに苦労したのでま
 
 ## 結論
 
-```ruby:controllers/application_controller.rb
+```ruby
+# controllers/application_controller.rb
+
 if アラートを出したい条件
   text = "#{view_context.link_to 'こちら', hoge_path}をクリックしてください".html_safe
   flash[:hoge_alert] = text
@@ -21,11 +27,15 @@ else
 end
 ```
 
+-------
+
 ## ポイント
 
 - viewのヘルパーメソッドをcontroller内で使うときは `view_context` を使いましょう
 - flashの消える条件をつけておきましょう。そうじゃないと画面更新時に `html_safe` がかかってない状態で表示されることがあります。
     - それに伴い、flashの名前には独自のものをつけておくことをお勧めします。他のアラートまで消えるのは嫌なので。
+
+-------
 
 ## ダメな例(僕がダメだった例)
 
@@ -33,13 +43,23 @@ end
 
 [link_to() in Rails flash](https://stackoverflow.com/questions/1598150/link-to-in-rails-flash)とか。
 
-```ruby:controllers/application_controller.rb
+```ruby
+# controllers/application_controller.rb
+
 flash[:error] = render_to_string(:partial => "shared/login_failed_message")
 ```
 
+```html.erb
+<%- shared/_login_failed_message.html.erb %>
 
-```erb:shared/_login_failed_message.html.erb
 <%= "Login failed.  If you have forgotten your password, you can #{link_to('reset it', reset_path)}" %>
 ```
 
 ただ、これだと他の`render`と重複した時に不思議な挙動になったので、やめておいたほうがいいかもです。
+
+-------
+
+## 参考にさせていただいたサイト
+
+- [コントローラーからヘルパーメソッドを呼ぶ - Qiita](https://qiita.com/rin_mu/items/18353723c6a9d78d8473)
+- [link_to() in Rails flash](https://stackoverflow.com/questions/1598150/link-to-in-rails-flash)とか。

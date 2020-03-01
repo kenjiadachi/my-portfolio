@@ -75,9 +75,11 @@ viewを編集します。
 ```
 
 これで状態を保持できるはずです。
+
 思ったより簡単でびっくりしました。
 
 .tab('show')に関しては、bootstrap4側で準備してくれているイベントです。
+
 http://cccabinet.jpn.org/bootstrap4/components/navs#using-data-attributes
 
 これの一つ微妙なところが、haml内にcoffeescriptを書いてるところですね。

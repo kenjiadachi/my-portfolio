@@ -13,7 +13,22 @@
   </url>
   
   <url>
+    <loc>https://cpx.business/blog/how-to-create-wizard-form-in-rails/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/blog/how-to-put-link_to-in-flash-message-created-by-controller/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cpx.business/blog/how-to-create-radio-button-using-enum/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/blog/how-to-each_with_index-in-render-partial-collection/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -23,7 +38,22 @@
   </url>
   
   <url>
+    <loc>https://cpx.business/blog/how-to-install-simple-sidebar/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/tags/activemodel/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cpx.business/blog/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/tags/bootstrap4/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -34,6 +64,11 @@
   
   <url>
     <loc>https://cpx.business/tags/check_box_tag/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/tags/controller/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -58,7 +93,17 @@
   </url>
   
   <url>
+    <loc>https://cpx.business/tags/flash/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cpx.business/tags/github-pages/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/categories/hugo/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -68,7 +113,22 @@
   </url>
   
   <url>
-    <loc>https://cpx.business/categories/hugo/</loc>
+    <loc>https://cpx.business/tags/javascript/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/tags/jquery/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/tags/link_to/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/tags/partial/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -94,6 +154,11 @@
   
   <url>
     <loc>https://cpx.business/tags/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/tags/wizard-form/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
   

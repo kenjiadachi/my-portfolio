@@ -36,6 +36,26 @@
     </item>
     
     <item>
+      <title>[Rails]1つのformを複数画面に分割して表示するwizard formを実装する</title>
+      <link>https://cpx.business/blog/how-to-create-wizard-form-in-rails/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-create-wizard-form-in-rails/</guid>
+      <description>&lt;p&gt;どんなwebサービスでさえ、Formでの離脱率は可能な限り下げたいですよね。&lt;/p&gt;
+&lt;p&gt;ただ、サービスの性質上どうしてもFormの項目が多くなってしまうこともあります。&lt;/p&gt;
+&lt;p&gt;そんなサービスでも、Formの離脱率を下げるため、今回Formをスッキリと見せて入力してもらいやすくするため、Wizard Formの形式に変更してみました。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Rails]controllerで作るflashメッセージの中にlink_toを入れる方法</title>
+      <link>https://cpx.business/blog/how-to-put-link_to-in-flash-message-created-by-controller/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-put-link_to-in-flash-message-created-by-controller/</guid>
+      <description>&lt;p&gt;Railsで、flashにLinkを入れたい時に調べるのに苦労したのでまとめておきます。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>[Rails]enumの値を日本語化してラジオボタンに突っ込む</title>
       <link>https://cpx.business/blog/how-to-create-radio-button-using-enum/</link>
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
@@ -50,6 +70,23 @@
     </item>
     
     <item>
+      <title>[Rails]render partial collectionでeach_with_indexができる話</title>
+      <link>https://cpx.business/blog/how-to-each_with_index-in-render-partial-collection/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-each_with_index-in-render-partial-collection/</guid>
+      <description>困りごと 調べ始めるきっかけはこの記事でした。
+パーシャルをrenderする際のパフォーマンスに関する注意点
+とりあえず、each内でrender partial: &#39;posts/post&#39;, locals: { post: post }みたいにそれぞれにlocalsで変数渡すぐらいならrender partial: &#39;posts/post&#39;, collection: @postsみたいにcollectionにしちゃおう！その方が高速だよ！という話でした。
+この記事を読んで早速自分の書いたコードを直していたのですが、どうするんだろう…ってなったのがこの部分。
+/ view.html.haml - post.comments.each_with_index do |comment, idx| = render partial: &#39;posts/partials/comment&#39;, locals: {comment: comment, idx: idx} このように、partial内でindexも使いたい場合はどうするのかなーと思い調べてみました。
+ 解決策 / view.html.haml = render partial: &#39;posts/partials/comment&#39;, collection: post.comments, as: :comment / posts/partials/_comment.html.haml - if comment_counter == 0 -# 一つ目の挙動 - else -# それ以外の挙動 このように、asで指定したcommentに_counterをつけると、indexの役割を果たしてくれそう。
+Render partial with collection has &amp;ldquo;hidden&amp;rdquo; indexのコメントにありました。
+省略できる形の場所にあるpartialについてのindex指定方法は日本語の記事が見つかったのですが、省略できない場所のpartialについての記事がなかったので、書いてみました。
+ 参考にさせていただいたサイト  パーシャルをrenderする際のパフォーマンスに関する注意点 Render partial with collection has &amp;ldquo;hidden&amp;rdquo; index  </description>
+    </item>
+    
+    <item>
       <title>[Rails]検索情報を保持するcheck_box_tagの作り方</title>
       <link>https://cpx.business/blog/how-to-create-check_box_tag/</link>
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
@@ -58,6 +95,26 @@
       <description>困りごと ransackの検索後の画面を見たときに検索条件がcheck_boxに保持されていないので、検索条件がわからない！
 (URLを見ればわかるけど、ユーザーにそこまでのリテラシーがあるとも思えない…)
  前提条件 enumで値を扱っている # models/post.rb class Post &amp;lt; ApplicationRecord enum tag: { report: 0, interview: 1, info: 2} # 以下略 end  enum_helpで日本語化している # Gemfile gem &amp;#39;enum_help&amp;#39; # config/locales/ja.yml ja: enums: post: tag: report: 開催レポート interview: インタビュー info: お知らせ  ransackで検索を実装している # controllers/posts_controller.rb class PostsController &amp;lt; ApplicationController def index @search = Post.ransack(params[:q]) @result = @search.result end # 以下略 end / views/posts/index.html.haml = search_form_for @search do |f| /　以下略 = f.</description>
+    </item>
+    
+    <item>
+      <title>[Rails]横から出てくるナビバー、simple-sidebarを導入する</title>
+      <link>https://cpx.business/blog/how-to-install-simple-sidebar/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-install-simple-sidebar/</guid>
+      <description>ナビバー以外にログインユーザーのみに表示するリンク一覧が欲しかったので、いろいろ探しているとこんなものを見つけ、早速導入してみました。
+https://github.com/dcdeiv/simple-sidebar
+デモ
+ 導入環境  Rails 5.0.7 jQuery turbolinks   導入方法 https://github.com/dcdeiv/simple-sidebar/releases
+ここから、zipファイルかtar.gzファイルをダウンロードします。
+展開して、distフォルダの中からどちらか好きな方をapp/assets/javascripts/の中に入れます。
+(自分はRuby On Rails AssetPipelineで読み込まれるJSの順番指定についてにあるようにして読込む順番を操作しています。こちらのようにする場合、これはapp/assets/javascripts/packagesに入れてます。)
+下記ファイルを同じくapp/assets/javascripts/の中に作成します。
+(上記のように読込む順番を操作している場合、これをあとで読み込むようにしておきます。自分はapp/assets/javascripts/appsの中に入れてます。)
+# simple-sidebar.js.coffee  $(document).on &amp;#39;turbolinks:load&amp;#39;, -&amp;gt; # 2018/08/15追記部分開始  $(&amp;#39;html&amp;#39;).css(&amp;#39;overflow&amp;#39;, &amp;#39;auto&amp;#39;) # 2018/08/15追記部分終了  $(&amp;#39;#sidebar&amp;#39;).simpleSidebar opener: &amp;#39;#button&amp;#39; wrapper: &amp;#39;#wrapper&amp;#39; sidebar: align: &amp;#39;left&amp;#39; width: 200; closingLinks: &amp;#39;.close-sidebar&amp;#39; あとはviewをこんな感じに変えるだけ。
+(bootstrap4、devise、font-awesomeを使用してます。)
+/ application.html.haml %body.font_change#wrapper - if user_signed_in? %nav.bg-dark.py-5#sidebar %ul.navbar-nav.mx-4 %li.nav-item.text-light.pt-3 = link_to user_path(current_user), class: &#39;nav-link text-light&#39; do = icon(&#39;far&#39;, &#39;user fa-fw&#39;)} マイページ %li.</description>
     </item>
     
     <item>

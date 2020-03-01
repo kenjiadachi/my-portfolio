@@ -12,11 +12,38 @@
     
     
     <item>
+      <title>ActiveModel</title>
+      <link>https://cpx.business/tags/activemodel/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/tags/activemodel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bootstrap4</title>
+      <link>https://cpx.business/tags/bootstrap4/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/tags/bootstrap4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>check_box_tag</title>
       <link>https://cpx.business/tags/check_box_tag/</link>
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://cpx.business/tags/check_box_tag/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>controller</title>
+      <link>https://cpx.business/tags/controller/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/tags/controller/</guid>
       <description></description>
     </item>
     
@@ -48,6 +75,15 @@
     </item>
     
     <item>
+      <title>flash</title>
+      <link>https://cpx.business/tags/flash/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/tags/flash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>GitHub Pages</title>
       <link>https://cpx.business/tags/github-pages/</link>
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
@@ -62,6 +98,42 @@
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://cpx.business/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://cpx.business/tags/javascript/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jQuery</title>
+      <link>https://cpx.business/tags/jquery/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/tags/jquery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>link_to</title>
+      <link>https://cpx.business/tags/link_to/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/tags/link_to/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>partial</title>
+      <link>https://cpx.business/tags/partial/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/tags/partial/</guid>
       <description></description>
     </item>
     
@@ -89,6 +161,15 @@
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://cpx.business/tags/ransack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wizard Form</title>
+      <link>https://cpx.business/tags/wizard-form/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/tags/wizard-form/</guid>
       <description></description>
     </item>
     

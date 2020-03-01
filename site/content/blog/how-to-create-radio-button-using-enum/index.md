@@ -76,3 +76,4 @@ ja:
 ## こちらもぜひご一緒に！
 
 - [[Rails]検索情報を保持するcheck_box_tagの作り方](../../blog/how-to-create-check_box_tag/)
+- [[Rails]1つのformを複数画面に分割して表示するwizard formを実装する](../../blog/how-to-create-wizard-form-in-rails/)

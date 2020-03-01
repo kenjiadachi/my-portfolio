@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+  
+  
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TKRT9JJ');</script>
+  
+
+
+  <meta charset="utf-8">
+<title>[Rails]横から出てくるナビバー、simple-sidebarを導入する - CPX</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://cpx.business/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cpx.business/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cpx.business/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://cpx.business/favicon/site.webmanifest">
+  
+    <link rel="mask-icon" href="https://cpx.business/favicon/safari-pinned-tab.svg" color="#ffffff">
+    <link rel="shortcut icon" href="https://cpx.business/favicon/favicon.ico">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.60.1" /><meta itemprop="name" content="[Rails]横から出てくるナビバー、simple-sidebarを導入する">
+<meta itemprop="description" content="ナビバー以外にログインユーザーのみに表示するリンク一覧が欲しかったので、simple-sidebarを導入しました">
+<meta itemprop="datePublished" content="2020-01-06T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-01-06T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="100">
+<meta itemprop="image" content="https://cpx.business/img/header/how-to-install-simple-sidebar.png">
+
+
+
+<meta itemprop="keywords" content="Rails,javascript,jQuery,Bootstrap4," /><meta property="og:title" content="[Rails]横から出てくるナビバー、simple-sidebarを導入する" />
+<meta property="og:description" content="ナビバー以外にログインユーザーのみに表示するリンク一覧が欲しかったので、simple-sidebarを導入しました" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cpx.business/blog/how-to-install-simple-sidebar/" />
+<meta property="og:image" content="https://cpx.business/img/header/how-to-install-simple-sidebar.png" />
+<meta property="article:published_time" content="2020-01-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-06T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://cpx.business/img/header/how-to-install-simple-sidebar.png"/>
+
+<meta name="twitter:title" content="[Rails]横から出てくるナビバー、simple-sidebarを導入する"/>
+<meta name="twitter:description" content="ナビバー以外にログインユーザーのみに表示するリンク一覧が欲しかったので、simple-sidebarを導入しました"/>
+<meta name="twitter:site" content="@dach1_ken"/>
+<link rel="stylesheet" href="https://cpx.business/css/bundle.min.122bf077d53f56b1f764db5a8c387dd81587f604dbf07bbf3f86a62b06e00ca9.css" integrity="sha256-Eivwd9U/VrH3ZNtajDh92BWH9gTb8Hu/P4amKwbgDKk=">
+        <link rel="stylesheet" href="https://cpx.business/css/add-on.css">
+</head>
+
+  <body>
+    
+
+  
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKRT9JJ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+
+
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="https://cpx.business/">
+        
+          CPX
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu">
+      
+        
+          
+          
+            <a href="https://cpx.business/" class="link"><i class='fa fa-home'></i> Home</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://cpx.business/about/" class="link"><i class='far fa-id-card'></i> About</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://cpx.business/blog/" class="link"><i class='far fa-newspaper'></i> Blog</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://cpx.business/categories/" class="link"><i class='fas fa-sitemap'></i> Categories</a>
+          
+        
+      
+      <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      
+    </menu>
+    
+    <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    
+    <a href="#site-nav" class="nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  
+  
+    <menu id="share-menu" class="flyout-menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=%5bRails%5d%e6%a8%aa%e3%81%8b%e3%82%89%e5%87%ba%e3%81%a6%e3%81%8f%e3%82%8b%e3%83%8a%e3%83%93%e3%83%90%e3%83%bc%e3%80%81simple-sidebar%e3%82%92%e5%b0%8e%e5%85%a5%e3%81%99%e3%82%8b&amp;url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-install-simple-sidebar%2f" target="_blank" rel="noopener" class="share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcpx.business%2fblog%2fhow-to-install-simple-sidebar%2f" target="_blank" rel="noopener" class="share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-install-simple-sidebar%2f&amp;title=%5bRails%5d%e6%a8%aa%e3%81%8b%e3%82%89%e5%87%ba%e3%81%a6%e3%81%8f%e3%82%8b%e3%83%8a%e3%83%93%e3%83%90%e3%83%bc%e3%80%81simple-sidebar%e3%82%92%e5%b0%8e%e5%85%a5%e3%81%99%e3%82%8b" target="_blank" rel="noopener" class="share-btn reddit">
+          <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-install-simple-sidebar%2f&amp;title=%5bRails%5d%e6%a8%aa%e3%81%8b%e3%82%89%e5%87%ba%e3%81%a6%e3%81%8f%e3%82%8b%e3%83%8a%e3%83%93%e3%83%90%e3%83%bc%e3%80%81simple-sidebar%e3%82%92%e5%b0%8e%e5%85%a5%e3%81%99%e3%82%8b" target="_blank" rel="noopener" class="share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-install-simple-sidebar%2f&amp;description=%5bRails%5d%e6%a8%aa%e3%81%8b%e3%82%89%e5%87%ba%e3%81%a6%e3%81%8f%e3%82%8b%e3%83%8a%e3%83%93%e3%83%90%e3%83%bc%e3%80%81simple-sidebar%e3%82%92%e5%b0%8e%e5%85%a5%e3%81%99%e3%82%8b" target="_blank" rel="noopener" class="share-btn pinterest">
+          <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check out this post by Kenji%20Adachi&amp;body=https%3a%2f%2fcpx.business%2fblog%2fhow-to-install-simple-sidebar%2f" target="_blank" class="share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro">
+  <a href="https://cpx.business/"><img src="https://cpx.business/img/main/logo.png" class="" width="120" alt="logo" /></a>
+  
+  <main>
+    <p>ロキソニンとカフェインからこれらの記事は錬成されています</p>
+  </main>
+  
+</section>
+
+      <main id="site-main">
+        <article class="post">
+  <header>
+  <div class="title">
+    
+        <h2><a href="https://cpx.business/blog/how-to-install-simple-sidebar/">[Rails]横から出てくるナビバー、simple-sidebarを導入する</a></h2>
+    
+    
+        <p>ナビバー以外にログインユーザーのみに表示するリンク一覧が欲しかったので、simple-sidebarを導入しました</p>
+    
+</div>
+  <div class="meta">
+    <time class="published" datetime="2020-01-06 00:00:00 &#43;0000 UTC">
+      2020-01-06
+    </time>
+    <span class="author">Kenji Adachi</span>
+    
+      <p>1 分で読めます</p>
+    
+  </div>
+</header>
+
+  <section id="socnet-share">
+    
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=%5bRails%5d%e6%a8%aa%e3%81%8b%e3%82%89%e5%87%ba%e3%81%a6%e3%81%8f%e3%82%8b%e3%83%8a%e3%83%93%e3%83%90%e3%83%bc%e3%80%81simple-sidebar%e3%82%92%e5%b0%8e%e5%85%a5%e3%81%99%e3%82%8b&amp;url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-install-simple-sidebar%2f" target="_blank" rel="noopener" class="share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcpx.business%2fblog%2fhow-to-install-simple-sidebar%2f" target="_blank" rel="noopener" class="share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-install-simple-sidebar%2f&amp;title=%5bRails%5d%e6%a8%aa%e3%81%8b%e3%82%89%e5%87%ba%e3%81%a6%e3%81%8f%e3%82%8b%e3%83%8a%e3%83%93%e3%83%90%e3%83%bc%e3%80%81simple-sidebar%e3%82%92%e5%b0%8e%e5%85%a5%e3%81%99%e3%82%8b" target="_blank" rel="noopener" class="share-btn reddit">
+          <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-install-simple-sidebar%2f&amp;title=%5bRails%5d%e6%a8%aa%e3%81%8b%e3%82%89%e5%87%ba%e3%81%a6%e3%81%8f%e3%82%8b%e3%83%8a%e3%83%93%e3%83%90%e3%83%bc%e3%80%81simple-sidebar%e3%82%92%e5%b0%8e%e5%85%a5%e3%81%99%e3%82%8b" target="_blank" rel="noopener" class="share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-install-simple-sidebar%2f&amp;description=%5bRails%5d%e6%a8%aa%e3%81%8b%e3%82%89%e5%87%ba%e3%81%a6%e3%81%8f%e3%82%8b%e3%83%8a%e3%83%93%e3%83%90%e3%83%bc%e3%80%81simple-sidebar%e3%82%92%e5%b0%8e%e5%85%a5%e3%81%99%e3%82%8b" target="_blank" rel="noopener" class="share-btn pinterest">
+          <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check out this post by Kenji%20Adachi&amp;body=https%3a%2f%2fcpx.business%2fblog%2fhow-to-install-simple-sidebar%2f" target="_blank" class="share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+  </section>
+  
+  <a href="https://cpx.business/blog/how-to-install-simple-sidebar/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-install-simple-sidebar.png" alt="">
+    
+  </a>
+
+
+  <div class="content">
+    <div id="toc">
+      <h2>目次</h2>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#heading">導入環境</a></li>
+    <li><a href="#heading1">導入方法</a></li>
+    <li><a href="#heading2">雑感</a></li>
+    <li><a href="#20180815">2018/08/15追記</a></li>
+    <li><a href="#heading3">参考にさせていただいたサイト</a></li>
+  </ul>
+</nav>
+      <hr>
+    </div>
+    <section>
+  <h2> この記事はこんな人が書いています</h2>
+  <img src="http://localhost:1313/img/main/icon.jpg" class="circle" width="80" alt="icon">
+  <b>だちけん</b>
+  <p>
+    株式会社ムジカルを設立し、システム開発、webマーケティングを担当。<br>
+    まったくゼロの状態からシステム開発を始めたことで、幅広い知識を学習しながら進めていくプロセスに慣れました。
+    個人で受託開発なども受けながらなんとか食い扶持をつないでいます。
+    詳しくは<a href="https://cpx.business/about">about</a>を読んでみてください。
+  </p>
+</section>
+<hr>
+
+    <p>ナビバー以外にログインユーザーのみに表示するリンク一覧が欲しかったので、いろいろ探しているとこんなものを見つけ、早速導入してみました。</p>
+<p><a href="https://github.com/dcdeiv/simple-sidebar">https://github.com/dcdeiv/simple-sidebar</a></p>
+<p><a href="http://dcdeiv.github.io/simple-sidebar/left/">デモ</a></p>
+<hr>
+<h2 id="heading">導入環境</h2>
+<ul>
+<li>Rails 5.0.7</li>
+<li>jQuery</li>
+<li>turbolinks</li>
+</ul>
+<hr>
+<h2 id="heading1">導入方法</h2>
+<p><a href="https://github.com/dcdeiv/simple-sidebar/releases">https://github.com/dcdeiv/simple-sidebar/releases</a></p>
+<p>ここから、zipファイルかtar.gzファイルをダウンロードします。</p>
+<p>展開して、distフォルダの中からどちらか好きな方をapp/assets/javascripts/の中に入れます。</p>
+<p>(自分は<a href="http://coa.hateblo.jp/entry/2012/08/03/093928">Ruby On Rails AssetPipelineで読み込まれるJSの順番指定について</a>にあるようにして読込む順番を操作しています。こちらのようにする場合、これはapp/assets/javascripts/packagesに入れてます。)</p>
+<p>下記ファイルを同じくapp/assets/javascripts/の中に作成します。</p>
+<p>(上記のように読込む順番を操作している場合、これをあとで読み込むようにしておきます。自分はapp/assets/javascripts/appsの中に入れてます。)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-coffee" data-lang="coffee"><span style="color:#75715e"># simple-sidebar.js.coffee
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">$</span>(document).<span style="color:#a6e22e">on</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">turbolinks:load</span><span style="color:#e6db74">&#39;</span>, <span style="color:#a6e22e">-&gt;</span>
+  <span style="color:#75715e"># 2018/08/15追記部分開始
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">html</span><span style="color:#e6db74">&#39;</span>).<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">overflow</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">auto</span><span style="color:#e6db74">&#39;</span>)
+  <span style="color:#75715e"># 2018/08/15追記部分終了
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">#</span><span style="color:#e6db74">sidebar</span><span style="color:#e6db74">&#39;</span>).<span style="color:#a6e22e">simpleSidebar</span>
+    opener: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">#</span><span style="color:#e6db74">button</span><span style="color:#e6db74">&#39;</span>
+    wrapper: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">#</span><span style="color:#e6db74">wrapper</span><span style="color:#e6db74">&#39;</span>
+    sidebar:
+      align: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">left</span><span style="color:#e6db74">&#39;</span>
+      width: <span style="color:#ae81ff">200</span>;
+      closingLinks: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">.close-sidebar</span><span style="color:#e6db74">&#39;</span>
+</code></pre></div><p>あとはviewをこんな感じに変えるだけ。</p>
+<p>(bootstrap4、devise、font-awesomeを使用してます。)</p>
+<pre><code class="language-html.haml" data-lang="html.haml">/ application.html.haml
+
+%body.font_change#wrapper
+  - if user_signed_in?
+    %nav.bg-dark.py-5#sidebar
+      %ul.navbar-nav.mx-4
+        %li.nav-item.text-light.pt-3
+          = link_to user_path(current_user), class: 'nav-link text-light' do
+            = icon('far', 'user fa-fw')}
+            マイページ
+        %li.nav-item.text-light.pt-3
+          = link_to destroy_user_session_path, method: :delete, class: 'nav-link text-light' do
+            = icon('fas', 'sign-out-alt fa-fw')
+            ログアウト
+  = yield
+
+</code></pre><hr>
+<h2 id="heading2">雑感</h2>
+<p>すごく簡単に、邪魔にならないサイドバーができるのでオススメです。</p>
+<p>ただ、戻るボタンを押した時とかの挙動が不安定？な気も…</p>
+<p>原因がわかり次第こちらに追記します。</p>
+<hr>
+<h2 id="20180815">2018/08/15追記</h2>
+<blockquote>
+<p>ただ、戻るボタンを押した時とかの挙動が不安定？な気も…</p>
+</blockquote>
+<p>こちら、simple-sidebarを開いた状態でページを遷移すると、遷移先のページで画面がスクロールできないという症状が発生していることに気づきました。</p>
+<p>原因は、<!-- raw HTML omitted -->タグにstyle= overflow: hiddenが付いていることでした。</p>
+<p>なんでこれがつくのかはわかりませんが、取り急ぎ上記の追記部分にて対応しました。</p>
+<hr>
+<h2 id="heading3">参考にさせていただいたサイト</h2>
+<ul>
+<li><a href="http://coa.hateblo.jp/entry/2012/08/03/093928">Ruby On Rails AssetPipelineで読み込まれるJSの順番指定について</a></li>
+<li><a href="https://github.com/dcdeiv/simple-sidebar">simple-sidebar - GitHub</a></li>
+</ul>
+
+  </div>
+  <footer>
+    <ul class="stats">
+  
+    
+    
+      <li class="categories">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="https://cpx.business/categories/rails">Rails</a></li>
+          
+        </ul>
+      </li>
+    
+  
+  
+    
+    
+      <li class="tags">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="https://cpx.business/tags/rails">Rails</a></li>
+          
+            
+            <li><a class="article-category-link" href="https://cpx.business/tags/javascript">javascript</a></li>
+          
+            
+            <li><a class="article-category-link" href="https://cpx.business/tags/jquery">jQuery</a></li>
+          
+            
+            <li><a class="article-category-link" href="https://cpx.business/tags/bootstrap4">Bootstrap4</a></li>
+          
+        </ul>
+      </li>
+    
+  
+</ul>
+
+  </footer>
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "dachiken" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+
+
+<div class="pagination">
+  
+  
+    <a href="https://cpx.business/blog/how-to-create-check_box_tag/" class="button"><div class="next"><div>[Rails]検索情報を保持するcheck_box_tagの作り方</div></div></a>
+  
+</div>
+
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最近の投稿</h1>
+      </header>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-create-this-page/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-create-this-page.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-create-this-page/">[Hugo]Docker上で管理できるポートフォリオを作ってみたよ</a></h1>
+          <time class="published" datetime="">2020-01-06</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-set-favicon/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-set-favicon.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-set-favicon/">[Hugo]faviconを設定する方法</a></h1>
+          <time class="published" datetime="">2020-01-06</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-create-wizard-form-in-rails/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-create-wizard-form-in-rails.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-create-wizard-form-in-rails/">[Rails]1つのformを複数画面に分割して表示するwizard formを実装する</a></h1>
+          <time class="published" datetime="">2020-01-06</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-put-link_to-in-flash-message-created-by-controller/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-put-link_to-in-flash-message-created-by-controller.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-put-link_to-in-flash-message-created-by-controller/">[Rails]controllerで作るflashメッセージの中にlink_toを入れる方法</a></h1>
+          <time class="published" datetime="">2020-01-06</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-create-radio-button-using-enum/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-create-radio-button-using-enum.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-create-radio-button-using-enum/">[Rails]enumの値を日本語化してラジオボタンに突っ込む</a></h1>
+          <time class="published" datetime="">2020-01-06</time>
+        </header>
+      </article>
+      
+      
+        <a href="https://cpx.business/blog/" class="button">続きを見る</a>
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="https://cpx.business/categories">カテゴリー</a></h1>
+        </header>
+        <ul>
+          
+            
+          
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/rails/">rails<span class="count">6</span></a>
+            
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/hugo/">hugo<span class="count">2</span></a>
+            
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/kenjiadachi" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//facebook.com/DACH1KEN" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+<li><a href="//instagram.com/dach1ken" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
+
+<li><a href="//twitter.com/dach1_ken" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+  
+  <p class="copyright">
+    
+      &copy; 2020
+      
+        CPX
+      
+    . <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.60.1' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="https://cpx.business/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="https://cpx.business/js/bundle.min.e0c399b948d3cf5c3a5e3badb94023d0b064a19ac39fd8cd79fb9f57fa4d1091.js" integrity="sha256-4MOZuUjTz1w6XjutuUAj0LBkoZrDn9jNefufV/pNEJE="></script>
+    <script src="https://cpx.business/js/add-on.js"></script>
+    </div>
+  </body>
+</html>
