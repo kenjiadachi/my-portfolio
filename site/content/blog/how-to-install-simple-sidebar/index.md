@@ -1,7 +1,7 @@
 +++
 author = "Kenji Adachi"
 title = "[Rails]横から出てくるナビバー、simple-sidebarを導入する"
-date = "2020-01-06"
+date = "2018-08-06"
 description = "ナビバー以外にログインユーザーのみに表示するリンク一覧が欲しかったので、simple-sidebarを導入しました"
 tags = ["Rails", "javascript", "jQuery", "Bootstrap4"]
 categories = ["Rails"]
@@ -10,7 +10,6 @@ type = "post"
 draft =  false
 +++
 
-
 ナビバー以外にログインユーザーのみに表示するリンク一覧が欲しかったので、いろいろ探しているとこんなものを見つけ、早速導入してみました。
 
 https://github.com/dcdeiv/simple-sidebar
@@ -18,6 +17,14 @@ https://github.com/dcdeiv/simple-sidebar
 [デモ](http://dcdeiv.github.io/simple-sidebar/left/)
 
 ------
+
+**※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。**
+
+元記事は[こちら](https://qiita.com/dach1_ken/items/90bc9d813fde881a605a)
+
+※現在はこちらのページのURLのみ記載されています。
+
+--------
 
 ## 導入環境
 

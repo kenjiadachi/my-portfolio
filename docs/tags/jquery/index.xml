@@ -6,7 +6,7 @@
     <description>Recent content in jQuery on CPX</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 06 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cpx.business/tags/jquery/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,12 +14,15 @@
     <item>
       <title>[Rails]横から出てくるナビバー、simple-sidebarを導入する</title>
       <link>https://cpx.business/blog/how-to-install-simple-sidebar/</link>
-      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 06 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://cpx.business/blog/how-to-install-simple-sidebar/</guid>
       <description>ナビバー以外にログインユーザーのみに表示するリンク一覧が欲しかったので、いろいろ探しているとこんなものを見つけ、早速導入してみました。
 https://github.com/dcdeiv/simple-sidebar
 デモ
+ ※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。
+元記事はこちら
+※現在はこちらのページのURLのみ記載されています。
  導入環境  Rails 5.0.7 jQuery turbolinks   導入方法 https://github.com/dcdeiv/simple-sidebar/releases
 ここから、zipファイルかtar.gzファイルをダウンロードします。
 展開して、distフォルダの中からどちらか好きな方をapp/assets/javascripts/の中に入れます。

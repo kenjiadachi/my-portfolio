@@ -1,7 +1,7 @@
 +++
 author = "Kenji Adachi"
 title = "[Rails]render partial collectionでeach_with_indexができる話"
-date = "2020-01-06"
+date = "2018-08-02"
 description = "partial内でindexも使いたい場合はどうするのかなーと思い調べてみました"
 tags = ["Rails", "partial"]
 categories = ["Rails"]
@@ -10,8 +10,17 @@ type = "post"
 draft =  false
 +++
 
+partial内でindexも使いたい場合はどうするのかなーと思い調べてみました。
 
+--------
 
+**※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。**
+
+元記事は[こちら](https://qiita.com/dach1_ken/items/1963543b05ce1f9f088e)
+
+※現在はこちらのページのURLのみ記載されています。
+
+--------
 
 ## 困りごと
 

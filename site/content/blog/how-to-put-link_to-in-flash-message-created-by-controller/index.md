@@ -1,7 +1,7 @@
 +++
 author = "Kenji Adachi"
 title = "[Rails]controllerで作るflashメッセージの中にlink_toを入れる方法"
-date = "2020-01-06"
+date = "2018-09-28"
 description = "Railsで、flashにLinkを入れる方法を調べました。"
 tags = ["Rails", "flash", "controller", "link_to"]
 categories = ["Rails"]
@@ -12,7 +12,15 @@ draft =  false
 
 Railsで、flashにLinkを入れたい時に調べるのに苦労したのでまとめておきます。
 
-<!--more-->
+--------
+
+**※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。**
+
+元記事は[こちら](https://qiita.com/dach1_ken/items/5845c45a951b14482364)
+
+※現在はこちらのページのURLのみ記載されています。
+
+--------
 
 ## 結論
 

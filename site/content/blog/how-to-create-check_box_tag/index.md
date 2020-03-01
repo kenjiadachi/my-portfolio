@@ -1,7 +1,7 @@
 +++
 author = "Kenji Adachi"
 title = "[Rails]検索情報を保持するcheck_box_tagの作り方"
-date = "2020-01-06"
+date = "2018-08-06"
 description = "ransackで実装している検索で、チェックボックスに検索条件を保持させました"
 tags = ["Rails", "ransack", "check_box_tag"]
 categories = ["Rails"]
@@ -9,6 +9,18 @@ images  = ["img/header/how-to-create-check_box_tag.png"]
 type = "post"
 draft =  false
 +++
+
+ransackで実装している検索で、チェックボックスに検索条件を保持させました。
+
+--------
+
+**※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。**
+
+元記事は[こちら](https://qiita.com/dach1_ken/items/a7747bf730590d4c8618)
+
+※現在はこちらのページのURLのみ記載されています。
+
+--------
 
 ## 困りごと
 

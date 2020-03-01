@@ -1,7 +1,7 @@
 +++
 author = "Kenji Adachi"
 title = "[Rails]enumの値を日本語化してラジオボタンに突っ込む"
-date = "2020-01-06"
+date = "2018-07-16"
 description = "enumの値ごとにラジオボタンを作るのがめんどくさいなと思っていろいろ調べた時の備忘録です"
 tags = ["Rails", "enum"]
 categories = ["Rails"]
@@ -9,6 +9,18 @@ images  = ["img/header/how-to-create-radio-button-using-enum.png"]
 type = "post"
 draft =  false
 +++
+
+enumの値ごとにラジオボタンを作るのがめんどくさいなと思っていろいろ調べた時の備忘録です。
+
+------
+
+**※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。**
+
+元記事は[こちら](https://qiita.com/dach1_ken/items/4443333fb9fd722bd28a)
+
+※現在はこちらのページのURLのみ記載されています。
+
+--------
 
 ## 前提条件
 

@@ -38,97 +38,92 @@
     <item>
       <title>[Rails]1つのformを複数画面に分割して表示するwizard formを実装する</title>
       <link>https://cpx.business/blog/how-to-create-wizard-form-in-rails/</link>
-      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://cpx.business/blog/how-to-create-wizard-form-in-rails/</guid>
-      <description>&lt;p&gt;どんなwebサービスでさえ、Formでの離脱率は可能な限り下げたいですよね。&lt;/p&gt;
-&lt;p&gt;ただ、サービスの性質上どうしてもFormの項目が多くなってしまうこともあります。&lt;/p&gt;
-&lt;p&gt;そんなサービスでも、Formの離脱率を下げるため、今回Formをスッキリと見せて入力してもらいやすくするため、Wizard Formの形式に変更してみました。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>[Rails]controllerで作るflashメッセージの中にlink_toを入れる方法</title>
-      <link>https://cpx.business/blog/how-to-put-link_to-in-flash-message-created-by-controller/</link>
-      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://cpx.business/blog/how-to-put-link_to-in-flash-message-created-by-controller/</guid>
-      <description>&lt;p&gt;Railsで、flashにLinkを入れたい時に調べるのに苦労したのでまとめておきます。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>[Rails]enumの値を日本語化してラジオボタンに突っ込む</title>
-      <link>https://cpx.business/blog/how-to-create-radio-button-using-enum/</link>
-      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://cpx.business/blog/how-to-create-radio-button-using-enum/</guid>
-      <description>前提条件 こんなモデルがあったとして
-# models/user.rb class User &amp;lt; ApplicationRecord enum area: {east: 0, west: 1} # (以下略) end enum_helpというgemを入れたとして
-# Gemfile gem &amp;#39;enum_help&amp;#39; enumの値に対応した日本語をja.ymlに入れたとして
-# ja.yml ja: enums: user: area: east: 関東 west: 関西 そこから、どうやってlabelに日本語、valueに英語が入ったのラジオボタンを作るかという話です。
- 結論 こんな感じでできました！嬉しい！
-# users/_form.haml = form_for(@user) do |f| = f.collection_radio_buttons :area, User.areas_i18n, :first, :last, include_hidden: false do |b| - content_tag(:div, class: &amp;quot;wrapper-class&amp;quot;) do - b.radio_button(class: &amp;quot;button-class&amp;quot;) + b.label(class: &amp;quot;label-class&amp;quot;) = f.submit collection_radio_buttonsというメソッドがあるんですね。 ただ、f.collection_radio_buttonsとは少し違うようです。 詳しくはここに書いてました。 日本語でなんとなくイメージを掴みたいならこの記事が読みやすかったです。</description>
-    </item>
-    
-    <item>
-      <title>[Rails]js-cookie.jsを使ってbootstrap4のタブの情報を保持する</title>
-      <link>https://cpx.business/blog/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie/</link>
-      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://cpx.business/blog/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie/</guid>
-      <description>&lt;p&gt;タブ内にフォームがある時、postするたびに更新でタブが初期値に戻ってしまうのをなんとかしたいと思っていろいろ調べた結果、Cookieに保持するのがいいとわかりました。&lt;/p&gt;
-&lt;p&gt;そこで、こちらの&lt;a href=&#34;https://github.com/js-cookie/js-cookie&#34;&gt;js-cookie.js&lt;/a&gt;を使ってみました。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>[Rails]ransackで1画面で複数モデルの検索を実装する</title>
-      <link>https://cpx.business/blog/how-to-use-ransack-in-many-models/</link>
-      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://cpx.business/blog/how-to-use-ransack-in-many-models/</guid>
-      <description>日本語で書かれている記事が見つからなかったので。
- 困りごと 複数のモデルに対して1画面で別々に検索したい時に、以下のようにしてしまうとどちらも同じパラメータで検索してしまうため、検索後片方が検索結果から消えてしまう…ということが起こりました。
-その時のコードはこんな感じ
-# index.haml .row .col-6 = search_form_for @model1_search do |f| = f.search_field :column1_cont = f.submit &amp;quot;検索&amp;quot; - @model1s.each do |model1| model1.name .col-6 = search_form_for @model2_search do |f| = f.search_field :column2_cont = f.submit &amp;quot;検索&amp;quot; - @model2s.each do |model2| model2.name # controller.rb def index @model1_search = Model1.ransack(params[:q]) @model1s = @model1_search.result @model2_search = Model2.ransack(params[:q]) @model2s = @model2_search.result end  解決策 ransackのWikiにちゃんとやり方が載ってました。
-こんな感じでパラメータを:q以外にも設定してあげればいいみたいですね。
-# index.haml .row .col-6 = search_form_for @model1_search do |f| = f.</description>
-    </item>
-    
-    <item>
-      <title>[Rails]render partial collectionでeach_with_indexができる話</title>
-      <link>https://cpx.business/blog/how-to-each_with_index-in-render-partial-collection/</link>
-      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://cpx.business/blog/how-to-each_with_index-in-render-partial-collection/</guid>
-      <description>困りごと 調べ始めるきっかけはこの記事でした。
-パーシャルをrenderする際のパフォーマンスに関する注意点
-とりあえず、each内でrender partial: &#39;posts/post&#39;, locals: { post: post }みたいにそれぞれにlocalsで変数渡すぐらいならrender partial: &#39;posts/post&#39;, collection: @postsみたいにcollectionにしちゃおう！その方が高速だよ！という話でした。
-この記事を読んで早速自分の書いたコードを直していたのですが、どうするんだろう…ってなったのがこの部分。
-/ view.html.haml - post.comments.each_with_index do |comment, idx| = render partial: &#39;posts/partials/comment&#39;, locals: {comment: comment, idx: idx} このように、partial内でindexも使いたい場合はどうするのかなーと思い調べてみました。
- 解決策 / view.html.haml = render partial: &#39;posts/partials/comment&#39;, collection: post.comments, as: :comment / posts/partials/_comment.html.haml - if comment_counter == 0 -# 一つ目の挙動 - else -# それ以外の挙動 このように、asで指定したcommentに_counterをつけると、indexの役割を果たしてくれそう。
-Render partial with collection has &amp;ldquo;hidden&amp;rdquo; indexのコメントにありました。
-省略できる形の場所にあるpartialについてのindex指定方法は日本語の記事が見つかったのですが、省略できない場所のpartialについての記事がなかったので、書いてみました。
- 参考にさせていただいたサイト  パーシャルをrenderする際のパフォーマンスに関する注意点 Render partial with collection has &amp;ldquo;hidden&amp;rdquo; index  </description>
+      <description>どんなwebサービスでさえ、Formでの離脱率は可能な限り下げたいですよね。
+ただ、サービスの性質上どうしてもFormの項目が多くなってしまうこともあります。
+そんなサービスでも、Formの離脱率を下げるため、今回Formをスッキリと見せて入力してもらいやすくするため、Wizard Formの形式に変更してみました。
+ ※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。
+元記事はこちら
+※現在はこちらのページのURLのみ記載されています。
+ ※Wizard Formについては、それ自体に賛否両論あること、もちろんサービスの性質やターゲットによって使うべきかどうかの判断が必要なことについては今回の記事では書きません。 また別の記事にでも書こうかな…
+ 実装方法の選択 Railsでは、wickedというgemがWizard Form用に存在します。
+ただ、毎回updateを回して情報を更新するための仕組みなので、今回の要件では、こんな問題が出てくるよう感じました。
+ Form入力を途中でやめた場合も情報が保存されてしまう ある程度厳密なDB作成を初期の方に行ったので、初期値を色々触る必要があって今更めんどくさい  名前、メールアドレスは必須　とかとか    というわけで、下記2つの方法が残されていましたが、結論として「ActiveModelゴリゴリしてみる」で実装することにしました。
+Form関連はある程度厳密さが求められるので、jQueryでブラウザ依存にすることに若干の不安があったのが、その理由です。
+ ActiveModelゴリゴリしてみる jQueryでURLは変えずに画面の見た目だけ変わるようなFormを作る  フォームをぐっと使いやすくする！ウィザード型jQueryプラグイン6選【2017年版】に色々載ってます     さて、実装。 基本的には、こちらの記事を参考にしました。 Developing a wizard or multi-steps forms in Rails – Nicolas Blanco – Medium
+読んでみると、ActiveModelとsessionとでなんやかんやしてなんやかんやしそうですね。
+デモはこちら(ダウンロードしてlocalで実行するのが良さそうです。なぜかHerokuは動かなかった…) GitHub - nicolasblanco/wizard_app
+基本的には、この通りにやったらできました。
+ただ、LiveDeliの場合、ネストした値のValidationとかの関係から、すでにActiveModelを作成していたので、そこで少し戦いました。
+参考： Rails で複数モデルに関連したパラメータを検証する方法 - ボクココ
+Railsのversionが5.01なので、ActiveModelではAttributesが使えない…
+参考： ActiveModel::Attributes が最高すぎるんだよな。 - Qiita</description>
     </item>
     
     <item>
       <title>[Rails]動的なvalidationをParsleyと、Bootstrap4を使っておしゃれに実装する</title>
       <link>https://cpx.business/blog/how-to-use-parsely-in-rails/</link>
-      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://cpx.business/blog/how-to-use-parsely-in-rails/</guid>
-      <description>&lt;p&gt;Form離脱の原因として、validation関連は間違いなくあげられると思います。&lt;/p&gt;
-&lt;p&gt;送信してから、「ここおかしいから直して！」とか言われても「は？(威圧)」ってなりますよね。私もそうです。&lt;/p&gt;
-&lt;p&gt;なので、フォーム入力時にvalidationを行うように変更しました。&lt;/p&gt;
-&lt;hr&gt;</description>
+      <description>Form離脱の原因として、validation関連は間違いなくあげられると思います。
+送信してから、「ここおかしいから直して！」とか言われても「は？(威圧)」ってなりますよね。私もそうです。
+なので、フォーム入力時にvalidationを行うように変更しました。
+ ※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。
+元記事はこちら
+※現在はこちらのページのURLのみ記載されています。
+ Parsleyの導入 調べてみると、動的なvalidationをするためのjQueryプラグインっていっぱいあるのですが、今回は割と新しい情報が多いParsleyを使うことにしました。
+ポイントとしては、日本語化したい場合は後で読み込むように調整することです。
+僕の場合は、javascripts内にPackageとAppsという2つのFolderを切ってます。
+こうすると、他のjQueryのPackageもまとめて後から調整用のAppsを読み込めるので便利です。
+# app/assets/javascripts/application.js.coffee  #= 上は省略 #= require_directory ./packages ここにparsely.min.jsを入れます #= require_directory ./apps ここに調整用を入れます あと、jsをprecompileする設定もしておいてくださいね。
+# config/initializers/assets.rb Rails.application.config.assets.precompile += %w(*.js) viewの設定は、公式ページを見ればだいたいできるので省略します。
+ Bootstrap4の設定 さあ、ParsleyをBootstrap4に当てはめましょう。
+// app/assets/stylesheets/parsely.scss  input { &amp;amp;.parsley-success { @extend .is-valid; } &amp;amp;.parsley-error { @extend .is-invalid; } } select { &amp;amp;.parsley-success { @extend .is-valid; } &amp;amp;.parsley-error { @extend .is-invalid; } } textarea { &amp;amp;.parsley-success { @extend .</description>
+    </item>
+    
+    <item>
+      <title>[Rails]controllerで作るflashメッセージの中にlink_toを入れる方法</title>
+      <link>https://cpx.business/blog/how-to-put-link_to-in-flash-message-created-by-controller/</link>
+      <pubDate>Fri, 28 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-put-link_to-in-flash-message-created-by-controller/</guid>
+      <description>Railsで、flashにLinkを入れたい時に調べるのに苦労したのでまとめておきます。
+ ※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。
+元記事はこちら
+※現在はこちらのページのURLのみ記載されています。
+ 結論 # controllers/application_controller.rb if アラートを出したい条件 text = &amp;#34;#{view_context.link_to &amp;#39;こちら&amp;#39;, hoge_path}をクリックしてください&amp;#34;.html_safe flash[:hoge_alert] = text else flash[:hoge_alert] = nil end  ポイント  viewのヘルパーメソッドをcontroller内で使うときは view_context を使いましょう flashの消える条件をつけておきましょう。そうじゃないと画面更新時に html_safe がかかってない状態で表示されることがあります。  それに伴い、flashの名前には独自のものをつけておくことをお勧めします。他のアラートまで消えるのは嫌なので。     ダメな例(僕がダメだった例) 調べてると、よくこんな解決策が出てきます。
+link_to() in Rails flashとか。
+# controllers/application_controller.rb flash[:error] = render_to_string(:partial =&amp;gt; &amp;#34;shared/login_failed_message&amp;#34;) &amp;lt;%- shared/_login_failed_message.html.erb %&amp;gt; &amp;lt;%= &amp;quot;Login failed. If you have forgotten your password, you can #{link_to(&#39;reset it&#39;, reset_path)}&amp;quot; %&amp;gt; ただ、これだと他のrenderと重複した時に不思議な挙動になったので、やめておいたほうがいいかもです。</description>
+    </item>
+    
+    <item>
+      <title>[Rails]js-cookie.jsを使ってbootstrap4のタブの情報を保持する</title>
+      <link>https://cpx.business/blog/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie/</link>
+      <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie/</guid>
+      <description>タブ内にフォームがある時、postするたびに更新でタブが初期値に戻ってしまうのをなんとかしたいと思っていろいろ調べた結果、Cookieに保持するのがいいとわかりました。
+そこで、こちらのjs-cookie.jsを使ってみました。
+ ※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。
+元記事はこちら
+※現在はこちらのページのURLのみ記載されています。
+ 現状 # views/user/show.html.haml .container.mt-5 = user.name さん .row .col-12.py-2 %nav#user-tab.nav.nav-tabs.nav-fill{:role =&amp;gt; &amp;quot;tablist&amp;quot;} %a#user-tab-info.nav-item.nav-link.active{&amp;quot;aria-controls&amp;quot; =&amp;gt; &amp;quot;#user-info&amp;quot;, &amp;quot;data-toggle&amp;quot; =&amp;gt; &amp;quot;tab&amp;quot;, &amp;quot;aria-selected&amp;quot; =&amp;gt; &amp;quot;true&amp;quot;, :href =&amp;gt; &amp;quot;#user-info&amp;quot;, :role =&amp;gt; &amp;quot;tab&amp;quot;} User情報 %a#user-tab-posts.nav-item.nav-link{&amp;quot;aria-controls&amp;quot; =&amp;gt; &amp;quot;#user-posts&amp;quot;, &amp;quot;data-toggle&amp;quot; =&amp;gt; &amp;quot;tab&amp;quot;, &amp;quot;aria-selected&amp;quot; =&amp;gt; &amp;quot;false&amp;quot;, :href =&amp;gt; &amp;quot;#user-posts&amp;quot;, :role =&amp;gt; &amp;quot;tab&amp;quot;} 投稿 #user-tabContent.tab-content #user-info.tab-pane.fade.show.active{&amp;quot;aria-labelledby&amp;quot; =&amp;gt; &amp;quot;user-tab-info&amp;quot;, :role =&amp;gt; &amp;quot;tabpanel&amp;quot;} = render partial: &#39;users/info&#39;, locals:{user: user} # 大事じゃないので割愛 #user-posts.tab-pane.fade{&amp;quot;aria-labelledby&amp;quot; =&amp;gt; &amp;quot;user-tab-posts&amp;quot;, :role =&amp;gt; &amp;quot;tabpanel&amp;quot;} = render partial: &#39;users/post&#39;, collection: player.</description>
     </item>
     
     <item>
       <title>[Rails]検索情報を保持するcheck_box_tagの作り方</title>
       <link>https://cpx.business/blog/how-to-create-check_box_tag/</link>
-      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 06 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://cpx.business/blog/how-to-create-check_box_tag/</guid>
-      <description>困りごと ransackの検索後の画面を見たときに検索条件がcheck_boxに保持されていないので、検索条件がわからない！
+      <description>ransackで実装している検索で、チェックボックスに検索条件を保持させました。
+ ※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。
+元記事はこちら
+※現在はこちらのページのURLのみ記載されています。
+ 困りごと ransackの検索後の画面を見たときに検索条件がcheck_boxに保持されていないので、検索条件がわからない！
 (URLを見ればわかるけど、ユーザーにそこまでのリテラシーがあるとも思えない…)
  前提条件 enumで値を扱っている # models/post.rb class Post &amp;lt; ApplicationRecord enum tag: { report: 0, interview: 1, info: 2} # 以下略 end  enum_helpで日本語化している # Gemfile gem &amp;#39;enum_help&amp;#39; # config/locales/ja.yml ja: enums: post: tag: report: 開催レポート interview: インタビュー info: お知らせ  ransackで検索を実装している # controllers/posts_controller.rb class PostsController &amp;lt; ApplicationController def index @search = Post.ransack(params[:q]) @result = @search.result end # 以下略 end / views/posts/index.html.haml = search_form_for @search do |f| /　以下略 = f.</description>
     </item>
@@ -136,12 +131,15 @@ Render partial with collection has &amp;ldquo;hidden&amp;rdquo; indexのコメ�
     <item>
       <title>[Rails]横から出てくるナビバー、simple-sidebarを導入する</title>
       <link>https://cpx.business/blog/how-to-install-simple-sidebar/</link>
-      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 06 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://cpx.business/blog/how-to-install-simple-sidebar/</guid>
       <description>ナビバー以外にログインユーザーのみに表示するリンク一覧が欲しかったので、いろいろ探しているとこんなものを見つけ、早速導入してみました。
 https://github.com/dcdeiv/simple-sidebar
 デモ
+ ※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。
+元記事はこちら
+※現在はこちらのページのURLのみ記載されています。
  導入環境  Rails 5.0.7 jQuery turbolinks   導入方法 https://github.com/dcdeiv/simple-sidebar/releases
 ここから、zipファイルかtar.gzファイルをダウンロードします。
 展開して、distフォルダの中からどちらか好きな方をapp/assets/javascripts/の中に入れます。
@@ -151,6 +149,60 @@ https://github.com/dcdeiv/simple-sidebar
 # simple-sidebar.js.coffee  $(document).on &amp;#39;turbolinks:load&amp;#39;, -&amp;gt; # 2018/08/15追記部分開始  $(&amp;#39;html&amp;#39;).css(&amp;#39;overflow&amp;#39;, &amp;#39;auto&amp;#39;) # 2018/08/15追記部分終了  $(&amp;#39;#sidebar&amp;#39;).simpleSidebar opener: &amp;#39;#button&amp;#39; wrapper: &amp;#39;#wrapper&amp;#39; sidebar: align: &amp;#39;left&amp;#39; width: 200; closingLinks: &amp;#39;.close-sidebar&amp;#39; あとはviewをこんな感じに変えるだけ。
 (bootstrap4、devise、font-awesomeを使用してます。)
 / application.html.haml %body.font_change#wrapper - if user_signed_in? %nav.bg-dark.py-5#sidebar %ul.navbar-nav.mx-4 %li.nav-item.text-light.pt-3 = link_to user_path(current_user), class: &#39;nav-link text-light&#39; do = icon(&#39;far&#39;, &#39;user fa-fw&#39;)} マイページ %li.</description>
+    </item>
+    
+    <item>
+      <title>[Rails]render partial collectionでeach_with_indexができる話</title>
+      <link>https://cpx.business/blog/how-to-each_with_index-in-render-partial-collection/</link>
+      <pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-each_with_index-in-render-partial-collection/</guid>
+      <description>partial内でindexも使いたい場合はどうするのかなーと思い調べてみました。
+ ※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。
+元記事はこちら
+※現在はこちらのページのURLのみ記載されています。
+ 困りごと 調べ始めるきっかけはこの記事でした。
+パーシャルをrenderする際のパフォーマンスに関する注意点
+とりあえず、each内でrender partial: &#39;posts/post&#39;, locals: { post: post }みたいにそれぞれにlocalsで変数渡すぐらいならrender partial: &#39;posts/post&#39;, collection: @postsみたいにcollectionにしちゃおう！その方が高速だよ！という話でした。
+この記事を読んで早速自分の書いたコードを直していたのですが、どうするんだろう…ってなったのがこの部分。
+/ view.html.haml - post.comments.each_with_index do |comment, idx| = render partial: &#39;posts/partials/comment&#39;, locals: {comment: comment, idx: idx} このように、partial内でindexも使いたい場合はどうするのかなーと思い調べてみました。
+ 解決策 / view.html.haml = render partial: &#39;posts/partials/comment&#39;, collection: post.comments, as: :comment / posts/partials/_comment.html.haml - if comment_counter == 0 -# 一つ目の挙動 - else -# それ以外の挙動 このように、asで指定したcommentに_counterをつけると、indexの役割を果たしてくれそう。
+Render partial with collection has &amp;ldquo;hidden&amp;rdquo; indexのコメントにありました。</description>
+    </item>
+    
+    <item>
+      <title>[Rails]enumの値を日本語化してラジオボタンに突っ込む</title>
+      <link>https://cpx.business/blog/how-to-create-radio-button-using-enum/</link>
+      <pubDate>Mon, 16 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-create-radio-button-using-enum/</guid>
+      <description>enumの値ごとにラジオボタンを作るのがめんどくさいなと思っていろいろ調べた時の備忘録です。
+ ※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。
+元記事はこちら
+※現在はこちらのページのURLのみ記載されています。
+ 前提条件 こんなモデルがあったとして
+# models/user.rb class User &amp;lt; ApplicationRecord enum area: {east: 0, west: 1} # (以下略) end enum_helpというgemを入れたとして
+# Gemfile gem &amp;#39;enum_help&amp;#39; enumの値に対応した日本語をja.ymlに入れたとして
+# ja.yml ja: enums: user: area: east: 関東 west: 関西 そこから、どうやってlabelに日本語、valueに英語が入ったのラジオボタンを作るかという話です。
+ 結論 こんな感じでできました！嬉しい！
+# users/_form.haml = form_for(@user) do |f| = f.collection_radio_buttons :area, User.areas_i18n, :first, :last, include_hidden: false do |b| - content_tag(:div, class: &amp;quot;wrapper-class&amp;quot;) do - b.radio_button(class: &amp;quot;button-class&amp;quot;) + b.label(class: &amp;quot;label-class&amp;quot;) = f.</description>
+    </item>
+    
+    <item>
+      <title>[Rails]ransackで1画面で複数モデルの検索を実装する</title>
+      <link>https://cpx.business/blog/how-to-use-ransack-in-many-models/</link>
+      <pubDate>Mon, 25 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-use-ransack-in-many-models/</guid>
+      <description>日本語で書かれている記事が見つからなかったので。
+ ※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。
+元記事はこちら
+※現在はこちらのページのURLのみ記載されています。
+ 困りごと 複数のモデルに対して1画面で別々に検索したい時に、以下のようにしてしまうとどちらも同じパラメータで検索してしまうため、検索後片方が検索結果から消えてしまう…ということが起こりました。
+その時のコードはこんな感じ
+# index.haml .row .col-6 = search_form_for @model1_search do |f| = f.search_field :column1_cont = f.submit &amp;quot;検索&amp;quot; - @model1s.each do |model1| model1.name .col-6 = search_form_for @model2_search do |f| = f.search_field :column2_cont = f.submit &amp;quot;検索&amp;quot; - @model2s.each do |model2| model2.name # controller.rb def index @model1_search = Model1.ransack(params[:q]) @model1s = @model1_search.result @model2_search = Model2.ransack(params[:q]) @model2s = @model2_search.result end  解決策 ransackのWikiにちゃんとやり方が載ってました。
+こんな感じでパラメータを:q以外にも設定してあげればいいみたいですね。
+# index.haml .row .</description>
     </item>
     
     <item>

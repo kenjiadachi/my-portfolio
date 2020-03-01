@@ -30,9 +30,9 @@
 
 <meta name="generator" content="Hugo 0.60.1" /><meta itemprop="name" content="[Rails]controllerで作るflashメッセージの中にlink_toを入れる方法">
 <meta itemprop="description" content="Railsで、flashにLinkを入れる方法を調べました。">
-<meta itemprop="datePublished" content="2020-01-06T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-01-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="67">
+<meta itemprop="datePublished" content="2018-09-28T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-09-28T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="70">
 <meta itemprop="image" content="https://cpx.business/img/header/how-to-put-link_to-in-flash-message-created-by-controller.png">
 
 
@@ -42,8 +42,8 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cpx.business/blog/how-to-put-link_to-in-flash-message-created-by-controller/" />
 <meta property="og:image" content="https://cpx.business/img/header/how-to-put-link_to-in-flash-message-created-by-controller.png" />
-<meta property="article:published_time" content="2020-01-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-01-06T00:00:00+00:00" />
+<meta property="article:published_time" content="2018-09-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-09-28T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cpx.business/img/header/how-to-put-link_to-in-flash-message-created-by-controller.png"/>
 
@@ -184,8 +184,8 @@
     
 </div>
   <div class="meta">
-    <time class="published" datetime="2020-01-06 00:00:00 &#43;0000 UTC">
-      2020-01-06
+    <time class="published" datetime="2018-09-28 00:00:00 &#43;0000 UTC">
+      2018-09-28
     </time>
     <span class="author">Kenji Adachi</span>
     
@@ -274,6 +274,11 @@
 <hr>
 
     <p>Railsで、flashにLinkを入れたい時に調べるのに苦労したのでまとめておきます。</p>
+<hr>
+<p><strong>※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。</strong></p>
+<p>元記事は<a href="https://qiita.com/dach1_ken/items/5845c45a951b14482364">こちら</a></p>
+<p>※現在はこちらのページのURLのみ記載されています。</p>
+<hr>
 <h2 id="heading">結論</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># controllers/application_controller.rb</span>
 
@@ -310,6 +315,7 @@ flash<span style="color:#f92672">[</span><span style="color:#e6db74">:error</spa
 <li><a href="https://qiita.com/rin_mu/items/18353723c6a9d78d8473">コントローラーからヘルパーメソッドを呼ぶ - Qiita</a></li>
 <li><a href="https://stackoverflow.com/questions/1598150/link-to-in-rails-flash">link_to() in Rails flash</a>とか。</li>
 </ul>
+
   </div>
   <footer>
     <ul class="stats">
@@ -381,10 +387,10 @@ flash<span style="color:#f92672">[</span><span style="color:#e6db74">:error</spa
 
 <div class="pagination">
   
-    <a href="https://cpx.business/blog/how-to-create-radio-button-using-enum/" class="button"><div class="previous"><div>[Rails]enumの値を日本語化してラジオボタンに突っ込む</div></div></a>
+    <a href="https://cpx.business/blog/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie/" class="button"><div class="previous"><div>[Rails]js-cookie.jsを使ってbootstrap4のタブの情報を保持する</div></div></a>
   
   
-    <a href="https://cpx.business/blog/how-to-create-wizard-form-in-rails/" class="button"><div class="next"><div>[Rails]1つのformを複数画面に分割して表示するwizard formを実装する</div></div></a>
+    <a href="https://cpx.business/blog/how-to-use-parsely-in-rails/" class="button"><div class="next"><div>[Rails]動的なvalidationをParsleyと、Bootstrap4を使っておしゃれに実装する</div></div></a>
   
 </div>
 
@@ -444,7 +450,24 @@ flash<span style="color:#f92672">[</span><span style="color:#e6db74">:error</spa
         </section>
         <header>
           <h1><a href="https://cpx.business/blog/how-to-create-wizard-form-in-rails/">[Rails]1つのformを複数画面に分割して表示するwizard formを実装する</a></h1>
-          <time class="published" datetime="">2020-01-06</time>
+          <time class="published" datetime="">2018-11-10</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-use-parsely-in-rails/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-use-parsely-in-rails" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-use-parsely-in-rails/">[Rails]動的なvalidationをParsleyと、Bootstrap4を使っておしゃれに実装する</a></h1>
+          <time class="published" datetime="">2018-11-10</time>
         </header>
       </article>
       
@@ -461,24 +484,7 @@ flash<span style="color:#f92672">[</span><span style="color:#e6db74">:error</spa
         </section>
         <header>
           <h1><a href="https://cpx.business/blog/how-to-put-link_to-in-flash-message-created-by-controller/">[Rails]controllerで作るflashメッセージの中にlink_toを入れる方法</a></h1>
-          <time class="published" datetime="">2020-01-06</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-        <section>
-          
-  <a href="https://cpx.business/blog/how-to-create-radio-button-using-enum/" class="image featured">
-    
-      <img src="https://cpx.business/img/header/how-to-create-radio-button-using-enum.png" alt="">
-    
-  </a>
-
-
-        </section>
-        <header>
-          <h1><a href="https://cpx.business/blog/how-to-create-radio-button-using-enum/">[Rails]enumの値を日本語化してラジオボタンに突っ込む</a></h1>
-          <time class="published" datetime="">2020-01-06</time>
+          <time class="published" datetime="">2018-09-28</time>
         </header>
       </article>
       

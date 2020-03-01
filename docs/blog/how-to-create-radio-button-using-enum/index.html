@@ -30,9 +30,9 @@
 
 <meta name="generator" content="Hugo 0.60.1" /><meta itemprop="name" content="[Rails]enumの値を日本語化してラジオボタンに突っ込む">
 <meta itemprop="description" content="enumの値ごとにラジオボタンを作るのがめんどくさいなと思っていろいろ調べた時の備忘録です">
-<meta itemprop="datePublished" content="2020-01-06T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-01-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="86">
+<meta itemprop="datePublished" content="2018-07-16T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-07-16T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="90">
 <meta itemprop="image" content="https://cpx.business/img/header/how-to-create-radio-button-using-enum.png">
 
 
@@ -42,8 +42,8 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cpx.business/blog/how-to-create-radio-button-using-enum/" />
 <meta property="og:image" content="https://cpx.business/img/header/how-to-create-radio-button-using-enum.png" />
-<meta property="article:published_time" content="2020-01-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-01-06T00:00:00+00:00" />
+<meta property="article:published_time" content="2018-07-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-07-16T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cpx.business/img/header/how-to-create-radio-button-using-enum.png"/>
 
@@ -184,8 +184,8 @@
     
 </div>
   <div class="meta">
-    <time class="published" datetime="2020-01-06 00:00:00 &#43;0000 UTC">
-      2020-01-06
+    <time class="published" datetime="2018-07-16 00:00:00 &#43;0000 UTC">
+      2018-07-16
     </time>
     <span class="author">Kenji Adachi</span>
     
@@ -273,7 +273,13 @@
 </section>
 <hr>
 
-    <h2 id="heading">前提条件</h2>
+    <p>enumの値ごとにラジオボタンを作るのがめんどくさいなと思っていろいろ調べた時の備忘録です。</p>
+<hr>
+<p><strong>※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。</strong></p>
+<p>元記事は<a href="https://qiita.com/dach1_ken/items/4443333fb9fd722bd28a">こちら</a></p>
+<p>※現在はこちらのページのURLのみ記載されています。</p>
+<hr>
+<h2 id="heading">前提条件</h2>
 <p>こんなモデルがあったとして</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># models/user.rb</span>
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ApplicationRecord</span>
@@ -384,10 +390,10 @@ ja:
 
 <div class="pagination">
   
-    <a href="https://cpx.business/blog/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie/" class="button"><div class="previous"><div>[Rails]js-cookie.jsを使ってbootstrap4のタブの情報を保持する</div></div></a>
+    <a href="https://cpx.business/blog/how-to-use-ransack-in-many-models/" class="button"><div class="previous"><div>[Rails]ransackで1画面で複数モデルの検索を実装する</div></div></a>
   
   
-    <a href="https://cpx.business/blog/how-to-put-link_to-in-flash-message-created-by-controller/" class="button"><div class="next"><div>[Rails]controllerで作るflashメッセージの中にlink_toを入れる方法</div></div></a>
+    <a href="https://cpx.business/blog/how-to-each_with_index-in-render-partial-collection/" class="button"><div class="next"><div>[Rails]render partial collectionでeach_with_indexができる話</div></div></a>
   
 </div>
 
@@ -447,7 +453,24 @@ ja:
         </section>
         <header>
           <h1><a href="https://cpx.business/blog/how-to-create-wizard-form-in-rails/">[Rails]1つのformを複数画面に分割して表示するwizard formを実装する</a></h1>
-          <time class="published" datetime="">2020-01-06</time>
+          <time class="published" datetime="">2018-11-10</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-use-parsely-in-rails/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-use-parsely-in-rails" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-use-parsely-in-rails/">[Rails]動的なvalidationをParsleyと、Bootstrap4を使っておしゃれに実装する</a></h1>
+          <time class="published" datetime="">2018-11-10</time>
         </header>
       </article>
       
@@ -464,24 +487,7 @@ ja:
         </section>
         <header>
           <h1><a href="https://cpx.business/blog/how-to-put-link_to-in-flash-message-created-by-controller/">[Rails]controllerで作るflashメッセージの中にlink_toを入れる方法</a></h1>
-          <time class="published" datetime="">2020-01-06</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-        <section>
-          
-  <a href="https://cpx.business/blog/how-to-create-radio-button-using-enum/" class="image featured">
-    
-      <img src="https://cpx.business/img/header/how-to-create-radio-button-using-enum.png" alt="">
-    
-  </a>
-
-
-        </section>
-        <header>
-          <h1><a href="https://cpx.business/blog/how-to-create-radio-button-using-enum/">[Rails]enumの値を日本語化してラジオボタンに突っ込む</a></h1>
-          <time class="published" datetime="">2020-01-06</time>
+          <time class="published" datetime="">2018-09-28</time>
         </header>
       </article>
       

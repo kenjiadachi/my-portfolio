@@ -1,7 +1,7 @@
 +++
 author = "Kenji Adachi"
 title = "[Rails]動的なvalidationをParsleyと、Bootstrap4を使っておしゃれに実装する"
-date = "2020-01-06"
+date = "2018-11-10"
 description = "Form離脱の原因となる、validationでのイライラをましにします"
 tags = ["Rails", "Parsley", "BootStrap4"]
 categories = ["Rails"]
@@ -18,7 +18,13 @@ Form離脱の原因として、validation関連は間違いなくあげられる
 
 ---------
 
-<!--more-->
+**※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。**
+
+元記事は[こちら](https://qiita.com/dach1_ken/items/7d77f2b7c0d75ec9b53c)
+
+※現在はこちらのページのURLのみ記載されています。
+
+--------
 
 ## Parsleyの導入
 

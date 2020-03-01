@@ -6,42 +6,59 @@
     <description>Recent content in Bootstrap4 on CPX</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 06 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 10 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cpx.business/tags/bootstrap4/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>[Rails]js-cookie.jsを使ってbootstrap4のタブの情報を保持する</title>
-      <link>https://cpx.business/blog/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie/</link>
-      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      <title>[Rails]動的なvalidationをParsleyと、Bootstrap4を使っておしゃれに実装する</title>
+      <link>https://cpx.business/blog/how-to-use-parsely-in-rails/</link>
+      <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cpx.business/blog/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie/</guid>
-      <description>&lt;p&gt;タブ内にフォームがある時、postするたびに更新でタブが初期値に戻ってしまうのをなんとかしたいと思っていろいろ調べた結果、Cookieに保持するのがいいとわかりました。&lt;/p&gt;
-&lt;p&gt;そこで、こちらの&lt;a href=&#34;https://github.com/js-cookie/js-cookie&#34;&gt;js-cookie.js&lt;/a&gt;を使ってみました。&lt;/p&gt;</description>
+      <guid>https://cpx.business/blog/how-to-use-parsely-in-rails/</guid>
+      <description>Form離脱の原因として、validation関連は間違いなくあげられると思います。
+送信してから、「ここおかしいから直して！」とか言われても「は？(威圧)」ってなりますよね。私もそうです。
+なので、フォーム入力時にvalidationを行うように変更しました。
+ ※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。
+元記事はこちら
+※現在はこちらのページのURLのみ記載されています。
+ Parsleyの導入 調べてみると、動的なvalidationをするためのjQueryプラグインっていっぱいあるのですが、今回は割と新しい情報が多いParsleyを使うことにしました。
+ポイントとしては、日本語化したい場合は後で読み込むように調整することです。
+僕の場合は、javascripts内にPackageとAppsという2つのFolderを切ってます。
+こうすると、他のjQueryのPackageもまとめて後から調整用のAppsを読み込めるので便利です。
+# app/assets/javascripts/application.js.coffee  #= 上は省略 #= require_directory ./packages ここにparsely.min.jsを入れます #= require_directory ./apps ここに調整用を入れます あと、jsをprecompileする設定もしておいてくださいね。
+# config/initializers/assets.rb Rails.application.config.assets.precompile += %w(*.js) viewの設定は、公式ページを見ればだいたいできるので省略します。
+ Bootstrap4の設定 さあ、ParsleyをBootstrap4に当てはめましょう。
+// app/assets/stylesheets/parsely.scss  input { &amp;amp;.parsley-success { @extend .is-valid; } &amp;amp;.parsley-error { @extend .is-invalid; } } select { &amp;amp;.parsley-success { @extend .is-valid; } &amp;amp;.parsley-error { @extend .is-invalid; } } textarea { &amp;amp;.parsley-success { @extend .</description>
     </item>
     
     <item>
-      <title>[Rails]動的なvalidationをParsleyと、Bootstrap4を使っておしゃれに実装する</title>
-      <link>https://cpx.business/blog/how-to-use-parsely-in-rails/</link>
-      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      <title>[Rails]js-cookie.jsを使ってbootstrap4のタブの情報を保持する</title>
+      <link>https://cpx.business/blog/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie/</link>
+      <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cpx.business/blog/how-to-use-parsely-in-rails/</guid>
-      <description>&lt;p&gt;Form離脱の原因として、validation関連は間違いなくあげられると思います。&lt;/p&gt;
-&lt;p&gt;送信してから、「ここおかしいから直して！」とか言われても「は？(威圧)」ってなりますよね。私もそうです。&lt;/p&gt;
-&lt;p&gt;なので、フォーム入力時にvalidationを行うように変更しました。&lt;/p&gt;
-&lt;hr&gt;</description>
+      <guid>https://cpx.business/blog/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie/</guid>
+      <description>タブ内にフォームがある時、postするたびに更新でタブが初期値に戻ってしまうのをなんとかしたいと思っていろいろ調べた結果、Cookieに保持するのがいいとわかりました。
+そこで、こちらのjs-cookie.jsを使ってみました。
+ ※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。
+元記事はこちら
+※現在はこちらのページのURLのみ記載されています。
+ 現状 # views/user/show.html.haml .container.mt-5 = user.name さん .row .col-12.py-2 %nav#user-tab.nav.nav-tabs.nav-fill{:role =&amp;gt; &amp;quot;tablist&amp;quot;} %a#user-tab-info.nav-item.nav-link.active{&amp;quot;aria-controls&amp;quot; =&amp;gt; &amp;quot;#user-info&amp;quot;, &amp;quot;data-toggle&amp;quot; =&amp;gt; &amp;quot;tab&amp;quot;, &amp;quot;aria-selected&amp;quot; =&amp;gt; &amp;quot;true&amp;quot;, :href =&amp;gt; &amp;quot;#user-info&amp;quot;, :role =&amp;gt; &amp;quot;tab&amp;quot;} User情報 %a#user-tab-posts.nav-item.nav-link{&amp;quot;aria-controls&amp;quot; =&amp;gt; &amp;quot;#user-posts&amp;quot;, &amp;quot;data-toggle&amp;quot; =&amp;gt; &amp;quot;tab&amp;quot;, &amp;quot;aria-selected&amp;quot; =&amp;gt; &amp;quot;false&amp;quot;, :href =&amp;gt; &amp;quot;#user-posts&amp;quot;, :role =&amp;gt; &amp;quot;tab&amp;quot;} 投稿 #user-tabContent.tab-content #user-info.tab-pane.fade.show.active{&amp;quot;aria-labelledby&amp;quot; =&amp;gt; &amp;quot;user-tab-info&amp;quot;, :role =&amp;gt; &amp;quot;tabpanel&amp;quot;} = render partial: &#39;users/info&#39;, locals:{user: user} # 大事じゃないので割愛 #user-posts.tab-pane.fade{&amp;quot;aria-labelledby&amp;quot; =&amp;gt; &amp;quot;user-tab-posts&amp;quot;, :role =&amp;gt; &amp;quot;tabpanel&amp;quot;} = render partial: &#39;users/post&#39;, collection: player.</description>
     </item>
     
     <item>
       <title>[Rails]横から出てくるナビバー、simple-sidebarを導入する</title>
       <link>https://cpx.business/blog/how-to-install-simple-sidebar/</link>
-      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 06 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://cpx.business/blog/how-to-install-simple-sidebar/</guid>
       <description>ナビバー以外にログインユーザーのみに表示するリンク一覧が欲しかったので、いろいろ探しているとこんなものを見つけ、早速導入してみました。
 https://github.com/dcdeiv/simple-sidebar
 デモ
+ ※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。
+元記事はこちら
+※現在はこちらのページのURLのみ記載されています。
  導入環境  Rails 5.0.7 jQuery turbolinks   導入方法 https://github.com/dcdeiv/simple-sidebar/releases
 ここから、zipファイルかtar.gzファイルをダウンロードします。
 展開して、distフォルダの中からどちらか好きな方をapp/assets/javascripts/の中に入れます。

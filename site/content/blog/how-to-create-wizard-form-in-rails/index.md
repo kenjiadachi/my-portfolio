@@ -1,7 +1,7 @@
 +++
 author = "Kenji Adachi"
 title = "[Rails]1つのformを複数画面に分割して表示するwizard formを実装する"
-date = "2020-01-06"
+date = "2018-11-10"
 description = "Formをスッキリと見せて入力してもらいやすくするため、Wizard Formの形式に変更してみました"
 tags = ["Rails", "Wizard Form", "ActiveModel"]
 categories = ["Rails"]
@@ -17,7 +17,15 @@ draft =  false
 
 そんなサービスでも、Formの離脱率を下げるため、今回Formをスッキリと見せて入力してもらいやすくするため、Wizard Formの形式に変更してみました。
 
-<!--more-->
+------
+
+**※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。**
+
+元記事は[こちら](https://qiita.com/dach1_ken/items/9a1ef6f237300f96d734)
+
+※現在はこちらのページのURLのみ記載されています。
+
+--------
 
 **※Wizard Formについては、それ自体に賛否両論あること、もちろんサービスの性質やターゲットによって使うべきかどうかの判断が必要なことについては今回の記事では書きません。**
 また別の記事にでも書こうかな…

@@ -1,7 +1,7 @@
 +++
 author = "Kenji Adachi"
 title = "[Rails]ransackで1画面で複数モデルの検索を実装する"
-date = "2020-01-06"
+date = "2018-06-25"
 description = "日本語で書かれている記事が見つからなかったので"
 tags = ["Rails", "Ransack"]
 categories = ["Rails"]
@@ -11,6 +11,14 @@ draft =  false
 +++
 
 日本語で書かれている記事が見つからなかったので。
+
+--------
+
+**※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。**
+
+元記事は[こちら](https://qiita.com/dach1_ken/items/35484bb7115ff301c9f9)
+
+※現在はこちらのページのURLのみ記載されています。
 
 -----
 

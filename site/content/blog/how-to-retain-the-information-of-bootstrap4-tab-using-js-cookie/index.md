@@ -1,7 +1,7 @@
 +++
 author = "Kenji Adachi"
 title = "[Rails]js-cookie.jsを使ってbootstrap4のタブの情報を保持する"
-date = "2020-01-06"
+date = "2018-08-13"
 description = "ページ更新でタブが初期値に戻ってしまうのをCookieを用いてなんとかします"
 tags = ["Rails", "javascript", "BootStrap4"]
 categories = ["Rails"]
@@ -14,7 +14,13 @@ draft =  false
 
 そこで、こちらの[js-cookie.js](https://github.com/js-cookie/js-cookie)を使ってみました。
 
-<!--more-->
+--------
+
+**※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。**
+
+元記事は[こちら](https://qiita.com/dach1_ken/items/f8c67a1e08fac5b46cb3)
+
+※現在はこちらのページのURLのみ記載されています。
 
 ---------
 
