@@ -1,7 +1,7 @@
 +++
 author = "Kenji Adachi"
 title = "[Hugo]faviconを設定する方法"
-date = "2020-01-06"
+date = "2020-02-28"
 description = "Hugoをつかっているこのページにfaviconを設定してみました"
 tags = ["Hugo", "favicon"]
 categories = ["Hugo"]

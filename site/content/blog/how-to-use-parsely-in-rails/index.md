@@ -5,7 +5,7 @@ date = "2018-11-10"
 description = "Form離脱の原因となる、validationでのイライラをましにします"
 tags = ["Rails", "Parsley", "BootStrap4"]
 categories = ["Rails"]
-images  = ["img/header/how-to-use-parsely-in-rails"]
+images  = ["img/header/how-to-use-parsely-in-rails.png"]
 type = "post"
 draft =  false
 +++
@@ -125,3 +125,4 @@ textarea {
 
 - [[Rails]横から出てくるナビバー、simple-sidebarを導入する](../../blog/how-to-install-simple-sidebar/)
 - [[Rails]js-cookie.jsを使ってbootstrap4のタブの情報を保持する](../../blog/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie/)
+- [[Rails]ブログ機能を実装して、Herokuにuploadするまで](../../blog/how-to-create-blog-in-rails/)

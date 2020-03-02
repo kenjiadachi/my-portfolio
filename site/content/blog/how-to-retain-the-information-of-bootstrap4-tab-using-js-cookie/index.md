@@ -114,7 +114,6 @@ viewを編集します。
 
 ## こちらもぜひご一緒に！
 
-- [[Rails]enumの値を日本語化してラジオボタンに突っ込む](../../blog/how-to-create-radio-button-using-enum/)
-- [[Rails]検索情報を保持するcheck_box_tagの作り方](../../blog/how-to-create-check_box_tag/)
 - [[Rails]横から出てくるナビバー、simple-sidebarを導入する](../../blog/how-to-install-simple-sidebar/)
 - [[Rails]動的なvalidationをParsleyと、Bootstrap4を使っておしゃれに実装する](../../blog/how-to-use-parsely-in-rails/)
+- [[Rails]ブログ機能を実装して、Herokuにuploadするまで](../../blog/how-to-create-blog-in-rails/)
