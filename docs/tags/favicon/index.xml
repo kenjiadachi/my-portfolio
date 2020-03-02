@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>favicon on CPX</title>
+    <link>https://cpx.business/tags/favicon/</link>
+    <description>Recent content in favicon on CPX</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Fri, 28 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://cpx.business/tags/favicon/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Hugo]faviconを設定する方法</title>
+      <link>https://cpx.business/blog/how-to-set-favicon/</link>
+      <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-set-favicon/</guid>
+      <description>&lt;p&gt;Hugoで作成したこちらのページに、faviconを設定してみました。&lt;/p&gt;
+&lt;p&gt;この記事では、Hugoで作られたページにfaviconを設定する方法を紹介します。&lt;/p&gt;
+&lt;hr&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

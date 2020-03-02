@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BootStrap3 on CPX</title>
+    <link>https://cpx.business/tags/bootstrap3/</link>
+    <description>Recent content in BootStrap3 on CPX</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Tue, 17 Jan 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://cpx.business/tags/bootstrap3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Rails]Bootstrapでレスポンシブな『吹き出し』を作る方法</title>
+      <link>https://cpx.business/blog/make-responsive-speech-bubbles-with-bootstrap/</link>
+      <pubDate>Tue, 17 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/make-responsive-speech-bubbles-with-bootstrap/</guid>
+      <description>2018/03/25追記：
+こちら、Bootstrap3の話です。
+Bootstrap4では、.row-centerなど実装されたようなので、もっと簡単に作成できますね。
+詳しくはBootstrap4移行ガイドをみてください。
+ ※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。
+元記事はこちら
+※現在はこちらのページのURLのみ記載されています。
+ Bootstrapを導入しているRailsアプリでできるだけ簡単に人が話しているような吹き出しを作る方法を模索したのでまとめてみました。
+ はじめに完成系を このように、人が話しているような吹き出しを作る方法を紹介します。
+画面を小さくしても、ちゃんとレスポンシブに変化してくれます。
+ソースコードはこんな感じになっています。
+&amp;lt;!-- sample.html.erb --&amp;gt; &amp;lt;div class=&amp;quot;row row-center&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;col-lg-2 col-md-3 col-sm-4 col-xs-5&amp;quot;&amp;gt; &amp;lt;%= image_tag &amp;quot;/images/woman.png&amp;quot;, alt: &amp;quot;東京藝術大学 Mさん&amp;quot;, class:&amp;quot;img-responsive img-circle reviews&amp;quot; %&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;col-lg-10 col-md-9 col-sm-8 col-xs-7&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;popover right show&amp;quot;style=&amp;quot;position:relative; top=-90px; left=100px; max-width:100%; display:inline;&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;arrow&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;h3 class=&amp;quot;popover-title&amp;quot;&amp;gt;東京藝術大学 Mさん&amp;lt;/h3&amp;gt; &amp;lt;div class=&amp;quot;popover-content&amp;quot;&amp;gt; &amp;lt;p&amp;gt;兵庫県神戸市出身。4歳よりピアノ、12歳よりフルートを始める。&amp;lt;br&amp;gt;東京藝術大学　音楽学部器楽科フルート専攻在学中。&amp;lt;br&amp;gt;第67回全日本学生音楽コンクール大阪大会入選。第9回神戸新人音楽賞コンクール優秀賞受賞。&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; // sample.scss  // 吹き出し用の設定 .popover.show{ margin-bottom: 10px; } // 横の画像用の設定 img.</description>
+    </item>
+    
+  </channel>
+</rss>

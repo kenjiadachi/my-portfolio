@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Parsley on CPX</title>
+    <link>https://cpx.business/tags/parsley/</link>
+    <description>Recent content in Parsley on CPX</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sat, 10 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://cpx.business/tags/parsley/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Rails]動的なvalidationをParsleyと、Bootstrap4を使っておしゃれに実装する</title>
+      <link>https://cpx.business/blog/how-to-use-parsely-in-rails/</link>
+      <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-use-parsely-in-rails/</guid>
+      <description>Form離脱の原因として、validation関連は間違いなくあげられると思います。
+送信してから、「ここおかしいから直して！」とか言われても「は？(威圧)」ってなりますよね。私もそうです。
+なので、フォーム入力時にvalidationを行うように変更しました。
+ ※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。
+元記事はこちら
+※現在はこちらのページのURLのみ記載されています。
+ Parsleyの導入 調べてみると、動的なvalidationをするためのjQueryプラグインっていっぱいあるのですが、今回は割と新しい情報が多いParsleyを使うことにしました。
+ポイントとしては、日本語化したい場合は後で読み込むように調整することです。
+僕の場合は、javascripts内にPackageとAppsという2つのFolderを切ってます。
+こうすると、他のjQueryのPackageもまとめて後から調整用のAppsを読み込めるので便利です。
+# app/assets/javascripts/application.js.coffee  #= 上は省略 #= require_directory ./packages ここにparsely.min.jsを入れます #= require_directory ./apps ここに調整用を入れます あと、jsをprecompileする設定もしておいてくださいね。
+# config/initializers/assets.rb Rails.application.config.assets.precompile += %w(*.js) viewの設定は、公式ページを見ればだいたいできるので省略します。
+ Bootstrap4の設定 さあ、ParsleyをBootstrap4に当てはめましょう。
+// app/assets/stylesheets/parsely.scss  input { &amp;amp;.parsley-success { @extend .is-valid; } &amp;amp;.parsley-error { @extend .is-invalid; } } select { &amp;amp;.parsley-success { @extend .is-valid; } &amp;amp;.parsley-error { @extend .is-invalid; } } textarea { &amp;amp;.parsley-success { @extend .</description>
+    </item>
+    
+  </channel>
+</rss>
