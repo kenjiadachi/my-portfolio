@@ -239,6 +239,32 @@ bootstrapを使っている前提で話を進めます。
     </item>
     
     <item>
+      <title>[Rails]ブログ機能を実装して、Herokuにuploadするまで</title>
+      <link>https://cpx.business/blog/how-to-create-blog-in-rails/</link>
+      <pubDate>Sat, 24 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-create-blog-in-rails/</guid>
+      <description>SEO対策にブログをwebサービスと同じドメイン内で運用したいと思い、いろいろ調べて実装してみたので、その様子を公開します。
+実装したかったのは、以下の機能。
+ 文章をuploadできること 簡単に文字サイズ等も調整できること 文中に画像も挿入できること   ※こちらの記事は、Qiitaにて公開していたものを2020/03/02にこちらに移行しています。
+元記事はこちら
+※現在はこちらのページのURLのみ記載されています。
+ それこそ、Qiitaの記事投稿画面がイメージでした。
+「Rails ブログ」とかで調べてもなかなか出てこないですよね。誰がrailsのことを書いているブログを検索するんだとイライラしました。
+いろいろ調べるうちに、「エディタ」なるものを実装するのにイメージが近いことがわかってきました。
+その中でも、今回は「Squire」を導入してみることに。
+採用理由としては、使用しているのがRails5.0なので、gemとかあまり使いたくないな…(どうせうまくいかないんだろうな)というのと、こちらの記事(ruby on railsに最強のwysiwygエディタ、Squireを導入する)がいい感じにわかりやすかったことです。
+ DBを作成する これはもうやっちゃってください。
+ポイントとしては、textデータを入れ込みたい時にt.textにしておいたほうが無難っぽいことぐらいですかね。
+詳しくはこちら(Railsのmodelで長い文字列を扱う時はstringではなくtextを使おう)をみてみてください。
+もう大丈夫らしいですけどね。
+私は今回「お知らせ」みたいなものを作るイメージだったので、noticeというDBを作りました。
+# migrate/20180312121837_create_notices.rb def change create_table :notices do |t| t.string :title t.integer :tag #enumを使うので t.text :text #ここがt.stringじゃないほうが無難みたい。 t.timestamps end end  モデルを作成する 次にモデルを作成します。
+ここは何の特徴もなく、ただただ作成してもらえれば結構です。
+# models/notice.rb class Notice &amp;lt; ApplicationRecord enum tag: { report: 1, event: 2, interview: 3, info: 4} ALLOWED_PARAMS = [:id, :title, :tag, :text] validates :title, presence: true validates :tag, presence: true validates :text, presence: true end tagにはenumを使ってます。 enumとselect_boxの組み合わせはこちら(【Rails】enum カラム用 select Form Helper を実装)がめちゃ便利です。</description>
+    </item>
+    
+    <item>
       <title>[Rails]paramsにform以外の値を入れたい！と思ってるあなたへ</title>
       <link>https://cpx.business/blog/how-to-put-a-value-other-than-form-in-params/</link>
       <pubDate>Sun, 04 Feb 2018 00:00:00 +0000</pubDate>

@@ -7,7 +7,7 @@ tags = ["Rails", "JavaScript", "Squire", "Heroku"]
 categories = ["Rails"]
 images  = ["img/header/how-to-create-blog-in-rails.png"]
 type = "post"
-draft =  true
+draft =  false
 +++
 
 SEO対策にブログをwebサービスと同じドメイン内で運用したいと思い、いろいろ調べて実装してみたので、その様子を公開します。
