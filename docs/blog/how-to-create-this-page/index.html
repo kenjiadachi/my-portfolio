@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+  
+  
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TKRT9JJ');</script>
+  
+
+
+  <meta charset="utf-8">
+<title>[Hugo]Docker上で管理できるポートフォリオを作ってみたよ - CPX</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://cpx.business/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cpx.business/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cpx.business/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://cpx.business/favicon/site.webmanifest">
+  
+    <link rel="mask-icon" href="https://cpx.business/favicon/safari-pinned-tab.svg" color="#ffffff">
+    <link rel="shortcut icon" href="https://cpx.business/favicon/favicon.ico">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.60.1" /><meta itemprop="name" content="[Hugo]Docker上で管理できるポートフォリオを作ってみたよ">
+<meta itemprop="description" content="Hugoをつかってこのページを作ってみたので、作り方をまとめてみました。">
+<meta itemprop="datePublished" content="2020-01-06T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-01-06T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="541">
+<meta itemprop="image" content="https://cpx.business/img/header/how-to-create-this-page.png">
+
+
+
+<meta itemprop="keywords" content="Hugo,portfolio,Docker,GitHub Pages," /><meta property="og:title" content="[Hugo]Docker上で管理できるポートフォリオを作ってみたよ" />
+<meta property="og:description" content="Hugoをつかってこのページを作ってみたので、作り方をまとめてみました。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cpx.business/blog/how-to-create-this-page/" />
+<meta property="og:image" content="https://cpx.business/img/header/how-to-create-this-page.png" />
+<meta property="article:published_time" content="2020-01-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-06T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://cpx.business/img/header/how-to-create-this-page.png"/>
+
+<meta name="twitter:title" content="[Hugo]Docker上で管理できるポートフォリオを作ってみたよ"/>
+<meta name="twitter:description" content="Hugoをつかってこのページを作ってみたので、作り方をまとめてみました。"/>
+<meta name="twitter:site" content="@dach1_ken"/>
+<link rel="stylesheet" href="https://cpx.business/css/bundle.min.122bf077d53f56b1f764db5a8c387dd81587f604dbf07bbf3f86a62b06e00ca9.css" integrity="sha256-Eivwd9U/VrH3ZNtajDh92BWH9gTb8Hu/P4amKwbgDKk=">
+        <link rel="stylesheet" href="https://cpx.business/css/add-on.css">
+</head>
+
+  <body>
+    
+
+  
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKRT9JJ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+
+
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="https://cpx.business/">
+        
+          CPX
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu">
+      
+        
+          
+          
+            <a href="https://cpx.business/" class="link"><i class='fa fa-home'></i> Home</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://cpx.business/about/" class="link"><i class='far fa-id-card'></i> About</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://cpx.business/blog/" class="link"><i class='far fa-newspaper'></i> Blog</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://cpx.business/categories/" class="link"><i class='fas fa-sitemap'></i> Categories</a>
+          
+        
+      
+      <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      
+    </menu>
+    
+    <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    
+    <a href="#site-nav" class="nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  
+  
+    <menu id="share-menu" class="flyout-menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=%5bHugo%5dDocker%e4%b8%8a%e3%81%a7%e7%ae%a1%e7%90%86%e3%81%a7%e3%81%8d%e3%82%8b%e3%83%9d%e3%83%bc%e3%83%88%e3%83%95%e3%82%a9%e3%83%aa%e3%82%aa%e3%82%92%e4%bd%9c%e3%81%a3%e3%81%a6%e3%81%bf%e3%81%9f%e3%82%88&amp;url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-this-page%2f" target="_blank" rel="noopener" class="share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-this-page%2f" target="_blank" rel="noopener" class="share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-this-page%2f&amp;title=%5bHugo%5dDocker%e4%b8%8a%e3%81%a7%e7%ae%a1%e7%90%86%e3%81%a7%e3%81%8d%e3%82%8b%e3%83%9d%e3%83%bc%e3%83%88%e3%83%95%e3%82%a9%e3%83%aa%e3%82%aa%e3%82%92%e4%bd%9c%e3%81%a3%e3%81%a6%e3%81%bf%e3%81%9f%e3%82%88" target="_blank" rel="noopener" class="share-btn reddit">
+          <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-this-page%2f&amp;title=%5bHugo%5dDocker%e4%b8%8a%e3%81%a7%e7%ae%a1%e7%90%86%e3%81%a7%e3%81%8d%e3%82%8b%e3%83%9d%e3%83%bc%e3%83%88%e3%83%95%e3%82%a9%e3%83%aa%e3%82%aa%e3%82%92%e4%bd%9c%e3%81%a3%e3%81%a6%e3%81%bf%e3%81%9f%e3%82%88" target="_blank" rel="noopener" class="share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-this-page%2f&amp;description=%5bHugo%5dDocker%e4%b8%8a%e3%81%a7%e7%ae%a1%e7%90%86%e3%81%a7%e3%81%8d%e3%82%8b%e3%83%9d%e3%83%bc%e3%83%88%e3%83%95%e3%82%a9%e3%83%aa%e3%82%aa%e3%82%92%e4%bd%9c%e3%81%a3%e3%81%a6%e3%81%bf%e3%81%9f%e3%82%88" target="_blank" rel="noopener" class="share-btn pinterest">
+          <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check out this post by Kenji%20Adachi&amp;body=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-this-page%2f" target="_blank" class="share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro">
+  <a href="https://cpx.business/"><img src="https://cpx.business/img/main/logo.png" class="" width="120" alt="logo" /></a>
+  
+  <main>
+    <p>ロキソニンとカフェインからこれらの記事は錬成されています</p>
+  </main>
+  
+</section>
+
+      <main id="site-main">
+        <article class="post">
+  <header>
+  <div class="title">
+    
+        <h2><a href="https://cpx.business/blog/how-to-create-this-page/">[Hugo]Docker上で管理できるポートフォリオを作ってみたよ</a></h2>
+    
+    
+        <p>Hugoをつかってこのページを作ってみたので、作り方をまとめてみました。</p>
+    
+</div>
+  <div class="meta">
+    <time class="published" datetime="2020-01-06 00:00:00 &#43;0000 UTC">
+      2020-01-06
+    </time>
+    <span class="author">Kenji Adachi</span>
+    
+      <p>3 分で読めます</p>
+    
+  </div>
+</header>
+
+  <section id="socnet-share">
+    
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=%5bHugo%5dDocker%e4%b8%8a%e3%81%a7%e7%ae%a1%e7%90%86%e3%81%a7%e3%81%8d%e3%82%8b%e3%83%9d%e3%83%bc%e3%83%88%e3%83%95%e3%82%a9%e3%83%aa%e3%82%aa%e3%82%92%e4%bd%9c%e3%81%a3%e3%81%a6%e3%81%bf%e3%81%9f%e3%82%88&amp;url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-this-page%2f" target="_blank" rel="noopener" class="share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-this-page%2f" target="_blank" rel="noopener" class="share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-this-page%2f&amp;title=%5bHugo%5dDocker%e4%b8%8a%e3%81%a7%e7%ae%a1%e7%90%86%e3%81%a7%e3%81%8d%e3%82%8b%e3%83%9d%e3%83%bc%e3%83%88%e3%83%95%e3%82%a9%e3%83%aa%e3%82%aa%e3%82%92%e4%bd%9c%e3%81%a3%e3%81%a6%e3%81%bf%e3%81%9f%e3%82%88" target="_blank" rel="noopener" class="share-btn reddit">
+          <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-this-page%2f&amp;title=%5bHugo%5dDocker%e4%b8%8a%e3%81%a7%e7%ae%a1%e7%90%86%e3%81%a7%e3%81%8d%e3%82%8b%e3%83%9d%e3%83%bc%e3%83%88%e3%83%95%e3%82%a9%e3%83%aa%e3%82%aa%e3%82%92%e4%bd%9c%e3%81%a3%e3%81%a6%e3%81%bf%e3%81%9f%e3%82%88" target="_blank" rel="noopener" class="share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-this-page%2f&amp;description=%5bHugo%5dDocker%e4%b8%8a%e3%81%a7%e7%ae%a1%e7%90%86%e3%81%a7%e3%81%8d%e3%82%8b%e3%83%9d%e3%83%bc%e3%83%88%e3%83%95%e3%82%a9%e3%83%aa%e3%82%aa%e3%82%92%e4%bd%9c%e3%81%a3%e3%81%a6%e3%81%bf%e3%81%9f%e3%82%88" target="_blank" rel="noopener" class="share-btn pinterest">
+          <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check out this post by Kenji%20Adachi&amp;body=https%3a%2f%2fcpx.business%2fblog%2fhow-to-create-this-page%2f" target="_blank" class="share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+  </section>
+  
+  <a href="https://cpx.business/blog/how-to-create-this-page/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-create-this-page.png" alt="">
+    
+  </a>
+
+
+  <div class="content">
+    <div id="toc">
+      <h2>目次</h2>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#heading">ことばの紹介</a>
+      <ul>
+        <li><a href="#hugo">Hugoとは？</a></li>
+        <li><a href="#docker">Dockerとは？</a></li>
+        <li><a href="#github-pages">GitHub Pagesとは？</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading1">つくっていきましょう</a>
+      <ul>
+        <li><a href="#docker1">Dockerの環境準備</a></li>
+        <li><a href="#hugo1">Hugoの設定</a></li>
+        <li><a href="#github-pages1">GitHub Pagesで公開</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading2">参考にした記事</a></li>
+    <li><a href="#heading3">こちらもぜひご一緒に！</a></li>
+  </ul>
+</nav>
+      <hr>
+    </div>
+    <section>
+  <h2> この記事はこんな人が書いています</h2>
+  <img src="https://cpx.business/img/main/icon.jpg" class="circle" width="80" alt="icon">
+  <b>だちけん</b>
+  <p>
+    株式会社ムジカルを設立し、webアプリケーションの開発、webマーケティングを担当しています。<br>
+    webアプリケーションでは、Vue.js、Ruby on Railsを用いての開発が得意です。
+    まったくゼロの状態から、要件定義を含めてシステム開発にとりかかったことで、幅広い知識を学習しながらよしなに進めるスキルを身につけました。
+    個人で受託開発なども受けながらなんとか食い扶持をつないでいます。
+    詳しくは<a href="https://cpx.business/about">about</a>を読んでみてください。
+  </p>
+</section>
+<hr>
+
+    <p>Hugoをつかってこのページを作ってみたので、作り方をまとめてみました。</p>
+<p>ローカルでは、Dockerを用いて仮想環境上で動かしています。</p>
+<p>また、ホスティングサービスはGitHub Pagesを用いています。</p>
+<p>この記事では、HugoをDocker上で動かし、それをGitHub Pagesで公開するまでをご紹介します。</p>
+<hr>
+<h2 id="heading">ことばの紹介</h2>
+<p>まずは知らない方もいるかと思うので、ことばの紹介から。</p>
+<p>わかってるよ！って人は飛ばしてください。</p>
+<hr>
+<h3 id="hugo">Hugoとは？</h3>
+<p><a href="https://gohugo.io/">Hugoの公式ページ</a>によると、</p>
+<blockquote>
+<p>Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.</p>
+</blockquote>
+<p>Google翻訳にぶちこむと</p>
+<blockquote>
+<p>Hugoは、最も人気なオープンソースの静的サイトジェネレーターの1つです。その驚くべき速度と柔軟性により、HugoはWebサイトの構築を再び楽しくします。</p>
+</blockquote>
+<p>とのことです。</p>
+<p>これまで、BlogなどはWordPressが主流でしたが、わざわざすべての機能を管理画面からしなくてもよくない？という流れから、このような静的サイトジェネレーターが流行り出しているのかなあという個人的な見解です。</p>
+<p>WordPress、ちょっと触っただけでも結構めんどくさいですもんね…</p>
+<p>その点、このような静的サイトジェネレーターだとファイルの移動とかするだけで簡単に思った通りになる、というのがいいところかなあと思います。</p>
+<p>Hugo以外にも</p>
+<ul>
+<li><a href="https://jekyllrb.com/">Jekyll</a></li>
+<li><a href="https://hexo.io/">Hexo</a></li>
+<li><a href="https://www.gatsbyjs.org/">Gatsby</a></li>
+</ul>
+<p>などが有名ですね。</p>
+<hr>
+<h3 id="docker">Dockerとは？</h3>
+<p>これも<a href="https://www.docker.com/why-docker">Dockerの公式ページ</a>によると、</p>
+<blockquote>
+<p>The only independent container platform that enables organizations to seamlessly build, share and run any application, anywhere—from hybrid cloud to the edge.</p>
+</blockquote>
+<p>はたまたGoogle翻訳にぶちこむと</p>
+<blockquote>
+<p>組織がハイブリッドクラウドからエッジまで、あらゆるアプリケーションをシームレスに構築、共有、実行できるようにする唯一の独立したコンテナプラットフォーム。</p>
+</blockquote>
+<p>誰とでも簡単に開発環境を共有できるプラットフォーム、といった感じですかね。</p>
+<p>僕個人としては、けっこう一人で開発などすることが多いのであまりそのような面では恩恵を受けられていないのですが、ローカルのPCの環境をできるだけ汚したくないので、新しいPCに変えてからはDockerを個人でも使用するようにしています。</p>
+<p><code>rbenv</code>とか<code>pyenv</code>とかあるにはあるけどめんどくさいですもんね。</p>
+<p>こっちのバージョンでは入ってるけど、こっちでは入ってなかったっけ？とか。</p>
+<p>そーゆーのもふくめて、簡単に作って壊してできるのがDockerのよさかなあと個人でやっている身からは思います。</p>
+<hr>
+<h3 id="github-pages">GitHub Pagesとは？</h3>
+<p>最後はGitHub Pagesですね。</p>
+<p>もちろんこれも<a href="https://help.github.com/en/github/working-with-github-pages/about-github-pages">公式ページ</a>からとってきました。</p>
+<blockquote>
+<p>GitHub Pages is a static site hosting service that takes HTML, CSS, and JavaScript files straight from a repository on GitHub, optionally runs the files through a build process, and publishes a website.</p>
+</blockquote>
+<p>Google翻訳にぶちこんで</p>
+<blockquote>
+<p>GitHub Pagesは、GitHubのリポジトリから直接HTML、CSS、およびJavaScriptファイルを取得し、オプションでビルドプロセスを介してファイルを実行し、Webサイトを公開する静的サイトホスティングサービスです。</p>
+</blockquote>
+<p>ということです。Hugoでgenerateした静的サイトをこちらで公開できるんですね。</p>
+<p>他にも有名なものとしては</p>
+<ul>
+<li><a href="https://www.netlify.com/">Netlify</a></li>
+<li><a href="https://firebase.google.com/products/hosting/">Firebase Hosting</a></li>
+</ul>
+<p>などがありますね。</p>
+<p><a href="https://heroku.com/">Heroku</a>も使おうと思えば使えるんじゃないでしょうか。</p>
+<p>わざわざHerokuを使う意味がよくわかりませんが…</p>
+<hr>
+<h2 id="heading1">つくっていきましょう</h2>
+<p>さあ、いよいよつくっていきましょう。</p>
+<hr>
+<h3 id="docker1">Dockerの環境準備</h3>
+<p>はじめに、Dockerの環境を準備します。</p>
+<p>あたらしいディレクトリを作成して、その中に以下の2ファイルをいれてください。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Dockerfile</span>
+
+FROM node:8
+
+<span style="color:#75715e"># Download and install hugo</span>
+ENV HUGO_VERSION 0.60.1
+ENV HUGO_BINARY hugo_extended_<span style="color:#e6db74">${</span>HUGO_VERSION<span style="color:#e6db74">}</span>_Linux-64bit.deb
+
+RUN curl -sL -o /tmp/hugo.deb <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    https://github.com/spf13/hugo/releases/download/v<span style="color:#e6db74">${</span>HUGO_VERSION<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>HUGO_BINARY<span style="color:#e6db74">}</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    dpkg -i /tmp/hugo.deb <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    rm /tmp/hugo.deb <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    mkdir /usr/share/blog
+
+WORKDIR /usr/share/blog
+
+RUN  npm -g config set user root <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>     npm install -g firebase-tools
+
+<span style="color:#75715e"># Expose default hugo port</span>
+EXPOSE <span style="color:#ae81ff">1313</span>
+
+<span style="color:#75715e"># Automatically build site</span>
+ONBUILD ADD site/ /usr/share/blog
+ONBUILD RUN hugo -d /usr/share/nginx/html/
+
+<span style="color:#75715e"># By default, serve site</span>
+ENV HUGO_BASE_URL http://localhost:1313
+CMD hugo server -b <span style="color:#e6db74">${</span>HUGO_BASE_URL<span style="color:#e6db74">}</span> --bind<span style="color:#f92672">=</span>0.0.0.0
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#75715e"># docker-compose.yml</span>
+
+version: <span style="color:#e6db74">&#39;3&#39;</span>
+services:
+  web:
+    build: .
+    image: my/hugo
+    volumes:
+      - ./site:/usr/share/blog
+    ports:
+      - <span style="color:#e6db74">&#34;1313:1313&#34;</span>
+    stdin_open: <span style="color:#66d9ef">true</span>
+    tty: <span style="color:#66d9ef">true</span>
+</code></pre></div><p>後述しますが、使いたいHugoのthemeがHugoのversionが0.60以上じゃないと使えなかったので、参考にしたサイトから少し修正してあります。</p>
+<hr>
+<h3 id="hugo1">Hugoの設定</h3>
+<p>次にHugoの設定です。</p>
+<p>Dockerfileをおいたディレクトリにターミナルで移動したのち、下記コマンドを入力します。</p>
+<p><code>docker-compose run -w /usr/share web hugo new site blog</code></p>
+<p>すると、こんな返事があったあと、直下に<code>site</code>というディレクトリができているはずです。</p>
+<pre><code>Creating network &quot;************_default&quot; with the default driver
+Congratulations! Your new Hugo site is created in /usr/share/blog.
+
+Just a few more steps and you're ready to go:
+
+1. Download a theme into the same-named folder.
+   Choose a theme from https://themes.gohugo.io/ or
+   create your own with the &quot;hugo new theme &lt;THEMENAME&gt;&quot; command.
+2. Perhaps you want to add some content. You can add single files
+   with &quot;hugo new &lt;SECTIONNAME&gt;/&lt;FILENAME&gt;.&lt;FORMAT&gt;&quot;.
+3. Start the built-in live server via &quot;hugo server&quot;.
+
+Visit https://gohugo.io/ for quickstart guide and full documentation.
+</code></pre><p>とりあえず記事を書きはじめたい場合は、</p>
+<p><code>docker-compose run web hugo new post/sample-page.md</code></p>
+<p>などで記事を作成し、書きはじめてください。</p>
+<p>ここあたりで<code>git init</code>など、gitが使える準備をしておくのがいいかもですね。</p>
+<p>さて、ここでテーマの設定をしましょう。</p>
+<p>今回は<code>hugo-theme-dream</code>というテーマを適用しています。</p>
+<p><a href="https://themes.gohugo.io/hugo-theme-dream/">Hugoのテーマページ</a></p>
+<p>ターミナルで、以下のように入力してください。
+場所は<code>Dockerfile</code>のあるディレクトリ直下での入力を想定しています。</p>
+<p><code>git submodule add https://github.com/g1eny0ung/hugo-theme-dream.git site/themes/hugo-theme-dream</code></p>
+<p>この後に、<code>site</code>直下の<code>config.toml</code>を以下のように書き換えましょう。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">baseurl</span> = <span style="color:#e6db74">&#34;https://*****.github.io/*****/&#34;</span> <span style="color:#75715e"># 後ほどGitHub Pagesの設定ができたらこちらを修正します。</span>
+<span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;ja&#34;</span>
+<span style="color:#a6e22e">defaultContentLanguage</span> = <span style="color:#e6db74">&#34;ja&#34;</span>
+<span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Title&#34;</span>
+<span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;hugo-theme-dream&#34;</span>
+
+<span style="color:#75715e"># パスの指定。これをしないとcssがうまく反映されません。</span>
+<span style="color:#a6e22e">canonifyurls</span> = <span style="color:#66d9ef">true</span>
+
+<span style="color:#75715e"># copyright = &#34;&#34;</span>
+
+<span style="color:#75715e"># googleAnalyticsのIDをここに入力</span>
+<span style="color:#a6e22e">googleAnalytics</span> = <span style="color:#e6db74">&#34;*************&#34;</span>
+
+<span style="color:#75715e"># disqusのShortnameをここに入力(コメントできるようにしたい場合)</span>
+<span style="color:#a6e22e">disqusShortname</span> = <span style="color:#e6db74">&#34;*************&#34;</span>
+
+<span style="color:#a6e22e">enableRobotsTXT</span> = <span style="color:#66d9ef">true</span>
+
+[<span style="color:#a6e22e">params</span>]
+  <span style="color:#a6e22e">background</span> = <span style="color:#e6db74">&#34;black&#34;</span>
+  <span style="color:#75715e"># backgroundImage = &#34;/me/background.jpg&#34;</span>
+  <span style="color:#a6e22e">linkColor</span> = <span style="color:#e6db74">&#34;seagreen&#34;</span>
+
+  <span style="color:#a6e22e">author</span> = <span style="color:#e6db74">&#34;*************&#34;</span>
+  <span style="color:#75715e"># description = &#34;&#34;</span>
+
+  <span style="color:#75715e"># static以降のURLを指定します。</span>
+  <span style="color:#a6e22e">avatar</span> = <span style="color:#e6db74">&#34;/images/avatar.png&#34;</span>
+
+  <span style="color:#a6e22e">motto</span> = <span style="color:#e6db74">&#34;****************&#34;</span>
+
+  <span style="color:#75715e"># この辺は入れたい人はどうぞ</span>
+  <span style="color:#75715e"># email = &#34;&#34;</span>
+  <span style="color:#75715e"># github = &#34;&#34;</span>
+  <span style="color:#75715e"># linkedin = &#34;&#34;</span>
+  <span style="color:#75715e"># codepen = &#34;&#34;</span>
+  <span style="color:#75715e"># stackoverflow = &#34;&#34;</span>
+
+  <span style="color:#a6e22e">siteStartYear</span> = <span style="color:#ae81ff">2020</span>
+
+  <span style="color:#75715e"># favicon = &#34;/favicon.ico&#34;</span>
+
+  <span style="color:#75715e"># dark mode</span>
+  <span style="color:#a6e22e">darkLinkColor</span> = <span style="color:#e6db74">&#34;darkseagreen&#34;</span>
+  <span style="color:#a6e22e">darkNav</span> = <span style="color:#66d9ef">true</span>
+  <span style="color:#a6e22e">dark404Button</span> = <span style="color:#66d9ef">true</span>
+
+</code></pre></div><hr>
+<h4 id="20200229">2020/02/29追記</h4>
+<p>お気づきの方もいらっしゃるかもしれませんが、こちらのページのテーマを変えました。</p>
+<p><code>hugo-theme-dream</code> → <code>hugo-future-imperfect-slim</code> に変更しています。</p>
+<p>テーマごとに<code>config.toml</code>の設定も結構変わってくるので、<code>themes/[テーマ名]/exampleSite/config.toml</code>をコピペして、作りなおすのが早いかと思います。</p>
+<hr>
+<p>現状どんな感じか見たい場合は、</p>
+<p><code>docker-compose up</code></p>
+<p>でサーバーを立ち上げ、<code>http://localhost:1313</code>を見てみてください。</p>
+<p>すると、ローカル上ではうまく動いているはずです！</p>
+<hr>
+<h3 id="github-pages1">GitHub Pagesで公開</h3>
+<p>さて、いよいよGitHub Pagesで公開しましょう。</p>
+<p>今回、GitHubにpushするまではできる前提とさせてください。</p>
+<p>多分この辺りはたくさん紹介してくれているページがあるかと思いますので…</p>
+<p>さて、GitHubにpushすると、こんな感じになっているはずです。</p>
+<p>違いとしては、<code>update.sh</code>はまだないはずなので、こちらを追加しておいてください。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># update.sh</span>
+
+<span style="color:#75715e">#!/bin/bash</span>
+
+<span style="color:#75715e"># 既存のdocsフォルダの削除</span>
+rm -rf docs
+
+<span style="color:#75715e"># docsファイルの作成</span>
+docker-compose exec web hugo
+
+<span style="color:#75715e"># docsファイルの移動</span>
+mv site/public docs
+
+<span style="color:#75715e"># Commit comment</span>
+ct<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date +<span style="color:#e6db74">&#39;%Y:%m:%d-%H:%M:%S&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+
+<span style="color:#75715e"># Management</span>
+git add .
+git commit -m $ct
+git push
+</code></pre></div><p><img src="./img/1.png" alt="githubの設定1"></p>
+<p>ここまでいけばもうすぐです。</p>
+<p>Dockerfileをおいたディレクトリで、以下のコマンドを入力してください。</p>
+<p><code>sh update.sh</code></p>
+<p>すると、自動で静的ページを作成し、それを直下の<code>docs</code>に移動、GitHubにpushまでしてくれるはずです。</p>
+<p>GitHubのページを更新してみると、以下のようになっていませんか？(docsができているはず)</p>
+<p><img src="./img/2.png" alt="githubの設定2"></p>
+<p>こうなっていれば、Settingsに移動し、部分を選択されているものに変えてください。</p>
+<p><img src="./img/3.png" alt="githubの設定3"></p>
+<p>すると、緑色の部分にあるURLで静的ページとして公開されているはずです。</p>
+<p>(最初はとくに反映まで時間がかかります。気長に待ちましょう。)</p>
+<p>これでポートフォリオサイトの完成です！</p>
+<p>修正して公開したい場合は、再度<code>sh update.sh</code>と打ち込めば自動で反映されるはずです。</p>
+<hr>
+<h2 id="heading2">参考にした記事</h2>
+<ul>
+<li><a href="https://qiita.com/you1978/items/204c2cf75f86043dfe68">[Docker知識不要]Docker上でのHugo環境の作り方</a></li>
+<li><a href="https://qiita.com/bake0937/items/e0914efbd9434be474a4">HugoでWebサイトを立ち上げる+テーマを適用してみる</a></li>
+<li><a href="http://blog.syati.info/post/create_hugo_2/">Hugo Part 2 - Hugo で github にブログを立ち上げる</a></li>
+<li><a href="https://g1eny0ung.site/hugo-theme-dream/#/">hugo-theme-dreamのドキュメント</a></li>
+</ul>
+<hr>
+<h2 id="heading3">こちらもぜひご一緒に！</h2>
+<ul>
+<li><a href="../../blog/how-to-set-favicon/">[Hugo]faviconを設定する方法</a></li>
+</ul>
+  </div>
+  <footer>
+    <ul class="stats">
+  
+    
+    
+      <li class="categories">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="https://cpx.business/categories/hugo">Hugo</a></li>
+          
+        </ul>
+      </li>
+    
+  
+  
+    
+    
+      <li class="tags">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="https://cpx.business/tags/hugo">Hugo</a></li>
+          
+            
+            <li><a class="article-category-link" href="https://cpx.business/tags/portfolio">portfolio</a></li>
+          
+            
+            <li><a class="article-category-link" href="https://cpx.business/tags/docker">Docker</a></li>
+          
+            
+            <li><a class="article-category-link" href="https://cpx.business/tags/github-pages">GitHub Pages</a></li>
+          
+        </ul>
+      </li>
+    
+  
+</ul>
+
+  </footer>
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "dachiken" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+
+
+<div class="pagination">
+  
+    <a href="https://cpx.business/blog/how-to-create-an-error-page/" class="button"><div class="previous"><div>[Rails]404/500などのエラーページって結局どうすればいいの？</div></div></a>
+  
+  
+    <a href="https://cpx.business/blog/how-to-set-favicon/" class="button"><div class="next"><div>[Hugo]faviconを設定する方法</div></div></a>
+  
+</div>
+
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最近の投稿</h1>
+      </header>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-set-favicon/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-set-favicon.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-set-favicon/">[Hugo]faviconを設定する方法</a></h1>
+          <time class="published" datetime="">2020-02-28</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-create-this-page/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-create-this-page.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-create-this-page/">[Hugo]Docker上で管理できるポートフォリオを作ってみたよ</a></h1>
+          <time class="published" datetime="">2020-01-06</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-create-an-error-page/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-create-an-error-page.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-create-an-error-page/">[Rails]404/500などのエラーページって結局どうすればいいの？</a></h1>
+          <time class="published" datetime="">2019-06-24</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-create-wizard-form-in-rails/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-create-wizard-form-in-rails.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-create-wizard-form-in-rails/">[Rails]1つのformを複数画面に分割して表示するwizard formを実装する</a></h1>
+          <time class="published" datetime="">2018-11-10</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-use-parsely-in-rails/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-use-parsely-in-rails.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-use-parsely-in-rails/">[Rails]動的なvalidationをParsleyと、Bootstrap4を使っておしゃれに実装する</a></h1>
+          <time class="published" datetime="">2018-11-10</time>
+        </header>
+      </article>
+      
+      
+        <a href="https://cpx.business/blog/" class="button">続きを見る</a>
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="https://cpx.business/categories">カテゴリー</a></h1>
+        </header>
+        <ul>
+          
+            
+          
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/rails/">rails<span class="count">14</span></a>
+            
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/hugo/">hugo<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/other/">other<span class="count">1</span></a>
+            
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/kenjiadachi" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//facebook.com/DACH1KEN" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+<li><a href="//instagram.com/dach1ken" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
+
+<li><a href="//twitter.com/dach1_ken" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+  
+  <p class="copyright">
+    
+      &copy; 2020
+      
+        CPX
+      
+    . <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.60.1' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="https://cpx.business/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="https://cpx.business/js/bundle.min.e0c399b948d3cf5c3a5e3badb94023d0b064a19ac39fd8cd79fb9f57fa4d1091.js" integrity="sha256-4MOZuUjTz1w6XjutuUAj0LBkoZrDn9jNefufV/pNEJE="></script>
+    <script src="https://cpx.business/js/add-on.js"></script>
+    </div>
+  </body>
+</html>
