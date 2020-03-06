@@ -10,7 +10,7 @@ type = "post"
 draft =  false
 +++
 
-ナビバー以外にログインユーザーのみに表示するリンク一覧が欲しかったので、いろいろ探しているとこんなものを見つけ、早速導入してみました。
+ナビバー以外にログインユーザーのみに表示するリンク一覧が欲しかったので、いろいろ探しているとこんなものを見つけ、さっそく導入してみました。
 
 https://github.com/dcdeiv/simple-sidebar
 
@@ -112,7 +112,7 @@ $(document).on 'turbolinks:load', ->
 
 -------
 
-## 参考にさせていただいたサイト
+## 参考にしたサイト
 
 - [Ruby On Rails AssetPipelineで読み込まれるJSの順番指定について](http://coa.hateblo.jp/entry/2012/08/03/093928)
 - [simple-sidebar - GitHub](https://github.com/dcdeiv/simple-sidebar)

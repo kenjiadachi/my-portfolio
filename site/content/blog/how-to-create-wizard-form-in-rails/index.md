@@ -27,7 +27,7 @@ draft =  false
 
 --------
 
-**※Wizard Formについては、それ自体に賛否両論あること、もちろんサービスの性質やターゲットによって使うべきかどうかの判断が必要なことについては今回の記事では書きません。**
+**※Wizard Formについては、それ自体に賛否両論あること、もちろんサービスの性質やターゲットによって、使うべきかどうかの判断が必要なことについては今回の記事では書きません。**
 また別の記事にでも書こうかな…
 
 ------
@@ -45,7 +45,7 @@ Railsでは、[wicked](https://github.com/schneems/wicked)というgemがWizard 
 
 というわけで、下記2つの方法が残されていましたが、結論として「ActiveModelゴリゴリしてみる」で実装することにしました。
 
-Form関連はある程度厳密さが求められるので、jQueryでブラウザ依存にすることに若干の不安があったのが、その理由です。
+Form関連はある程度厳密さが求められるので、jQueryでブラウザ依存にすることに若干の不安があったため、このような判断をしました。
 
 - ActiveModelゴリゴリしてみる
 - jQueryでURLは変えずに画面の見た目だけ変わるようなFormを作る
@@ -65,7 +65,7 @@ Form関連はある程度厳密さが求められるので、jQueryでブラウ�
 
 基本的には、この通りにやったらできました。
 
-ただ、[LiveDeli](https://www.livedeli.com/)の場合、ネストした値のValidationとかの関係から、すでにActiveModelを作成していたので、そこで少し戦いました。
+ただ[LiveDeli](https://www.livedeli.com/)の場合、ネストした値のValidationとかの関係からすでにActiveModelを作成していたので、そこで少し戦いました。
 
 参考： [Rails で複数モデルに関連したパラメータを検証する方法 - ボクココ](https://www.bokukoko.info/entry/2016/04/29/Rails_%E3%81%A7%E8%A4%87%E6%95%B0%E3%83%A2%E3%83%87%E3%83%AB%E3%81%AB%E9%96%A2%E9%80%A3%E3%81%97%E3%81%9F%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E3%82%92%E6%A4%9C%E8%A8%BC%E3%81%99%E3%82%8B%E6%96%B9)
 
@@ -74,7 +74,7 @@ Railsのversionが5.01なので、ActiveModelではAttributesが使えない…
 
 参考： [ActiveModel::Attributes が最高すぎるんだよな。 - Qiita](https://qiita.com/alpaca_taichou/items/bebace92f06af3f32898)
 
-なので、下記のように無理やり使えるようにしています。
+なので、下記のようにむりやり使えるようにしています。
 
 - Userがユーザー情報を扱うApplicationRecord
 - Projectが案件情報を扱うApplicationRecord
@@ -149,10 +149,10 @@ end
 class Contact
   include ActiveModel::Model
 
-  # この辺ちょっと無駄感すごい
+  # この辺ちょっとムダ感すごい
   ALLOWED_PARAMS = User::ALLOWED_PARAMS + Project::ALLOWED_PARAMS
 
-  # この辺ちょっと無駄感すごい
+  # この辺ちょっとムダ感すごい
   def self.attributes
     User::ALLOWED_PARAMS + Project::ALLOWED_PARAMS
   end
@@ -189,7 +189,7 @@ end
 
 -------
 
-## 参考にさせていただいたサイト
+## 参考にしたサイト
 
 - [フォームをぐっと使いやすくする！ウィザード型jQueryプラグイン6選【2017年版】](https://www.webprofessional.jp/jquery-form-wizard-plugins/)
 - [Developing a wizard or multi-steps forms in Rails – Nicolas Blanco – Medium](https://medium.com/@nicolasblanco/developing-a-wizard-or-multi-steps-forms-in-rails-d2f3b7c692ce)

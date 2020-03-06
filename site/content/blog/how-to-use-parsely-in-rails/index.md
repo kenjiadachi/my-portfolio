@@ -28,7 +28,7 @@ Form離脱の原因として、validation関連は間違いなくあげられる
 
 ## Parsleyの導入
 
-調べてみると、動的なvalidationをするためのjQueryプラグインっていっぱいあるのですが、今回は割と新しい情報が多いParsleyを使うことにしました。
+調べてみると、動的なvalidationをするためのjQueryプラグインっていっぱいあるのですが、今回はわりと新しい情報が多いParsleyを使うことにしました。
 
 
 ポイントとしては、日本語化したい場合は後で読み込むように調整することです。
@@ -114,7 +114,7 @@ textarea {
 
 -------
 
-## 参考にさせていただいたサイト
+## 参考にしたサイト
 
 - [Railsにparsleyというjavascriptのバリデータを導入 - Qiita](https://qiita.com/mekemo_dao/items/4875a45c971091401ff1)
 - [parsley公式ページ](https://parsleyjs.org/)

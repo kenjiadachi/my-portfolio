@@ -40,8 +40,8 @@ end
 ## ポイント
 
 - viewのヘルパーメソッドをcontroller内で使うときは `view_context` を使いましょう
-- flashの消える条件をつけておきましょう。そうじゃないと画面更新時に `html_safe` がかかってない状態で表示されることがあります。
-    - それに伴い、flashの名前には独自のものをつけておくことをお勧めします。他のアラートまで消えるのは嫌なので。
+- flashの消える条件をつけておきましょう。そうじゃないと画面更新時に `html_safe` がかかっていない状態で表示されることがあります。
+    - それに伴い、flashには独自の名前をつけておくことをお勧めします。他のアラートまで消えるのは嫌なので。
 
 -------
 
@@ -67,7 +67,7 @@ flash[:error] = render_to_string(:partial => "shared/login_failed_message")
 
 -------
 
-## 参考にさせていただいたサイト
+## 参考にしたサイト
 
 - [コントローラーからヘルパーメソッドを呼ぶ - Qiita](https://qiita.com/rin_mu/items/18353723c6a9d78d8473)
 - [link_to() in Rails flash](https://stackoverflow.com/questions/1598150/link-to-in-rails-flash)とか。

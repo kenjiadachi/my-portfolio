@@ -24,13 +24,13 @@ partial内でindexも使いたい場合はどうするのかなーと思い調�
 
 ## 困りごと
 
-調べ始めるきっかけはこの記事でした。
+調べはじめるきっかけはこの記事でした。
 
 [パーシャルをrenderする際のパフォーマンスに関する注意点](https://qiita.com/itmammoth/items/612efc6ad3280349b7e1)
 
 とりあえず、`each`内で`render partial: 'posts/post', locals: { post: post }`みたいにそれぞれに`locals`で変数渡すぐらいなら`render partial: 'posts/post', collection: @posts`みたいに`collection`にしちゃおう！その方が高速だよ！という話でした。
 
-この記事を読んで早速自分の書いたコードを直していたのですが、どうするんだろう…ってなったのがこの部分。
+この記事を読んでさっそく自分の書いたコードを直していたのですが、どうするんだろう…ってなったのがこの部分。
 
 ```html.haml
 / view.html.haml
@@ -60,15 +60,15 @@ partial内でindexも使いたい場合はどうするのかなーと思い調�
   -# それ以外の挙動
 ```
 
-このように、`as`で指定した`comment`に`_counter`をつけると、`index`の役割を果たしてくれそう。
+このように、`as`で指定した`comment`に`_counter`をつけると、`index`の役割をはたしてくれそう。
 
 [Render partial with collection has "hidden" index](https://coderwall.com/p/t0no0g/render-partial-with-collection-has-hidden-index)のコメントにありました。
 
-省略できる形の場所にある`partial`についての`index`指定方法は日本語の記事が見つかったのですが、省略できない場所の`partial`についての記事がなかったので、書いてみました。
+省略できる形の場所にある`partial`についての`index`指定方法は、日本語の記事が見つかったのですが、省略できない場所の`partial`についての記事がなかったので、書いてみました。
 
 -------
 
-## 参考にさせていただいたサイト
+## 参考にしたサイト
 
 - [パーシャルをrenderする際のパフォーマンスに関する注意点](https://qiita.com/itmammoth/items/612efc6ad3280349b7e1)
 - [Render partial with collection has "hidden" index](https://coderwall.com/p/t0no0g/render-partial-with-collection-has-hidden-index)

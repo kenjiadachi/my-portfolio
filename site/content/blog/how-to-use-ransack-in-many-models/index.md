@@ -24,7 +24,7 @@ draft =  false
 
 ## 困りごと
 
-複数のモデルに対して1画面で別々に検索したい時に、以下のようにしてしまうとどちらも同じパラメータで検索してしまうため、検索後片方が検索結果から消えてしまう…ということが起こりました。
+複数のモデルに対して1画面で別々に検索したい時に、以下のようにしてしまうとどちらも同じパラメータで検索してしまうため、検索後片方が検索結果から消えてしまう…なんてことが起こりました。
 
 その時のコードはこんな感じ
 
@@ -62,7 +62,7 @@ end
 
 ## 解決策
 
-[ransackのWiki](https://github.com/activerecord-hackery/ransack/wiki/Configuration)にちゃんとやり方が載ってました。
+[ransackのWiki](https://github.com/activerecord-hackery/ransack/wiki/Configuration)にきちんとやり方が載ってました。
 
 こんな感じでパラメータを`:q`以外にも設定してあげればいいみたいですね。
 
@@ -96,11 +96,11 @@ def index
 end
 ```
 
-適当すぎて`:q`の反対っぽいという理由で`:p`にしましたが、もう少しわかりやすい名前にすることをおすすめしますw
+適当すぎて`:q`の反対っぽいという理由で`:p`にしましたが、もう少しわかりやすい名前にすることをオススメしますw
 
 -------
 
-## 参考にさせていただいたサイト
+## 参考にしたサイト
 
 - [ransackのWiki](https://github.com/activerecord-hackery/ransack/wiki/Configuration)
 

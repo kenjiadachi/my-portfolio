@@ -71,13 +71,16 @@ ja:
 ```
 
 [collection_radio_buttons](https://apidock.com/rails/v4.0.2/ActionView/Helpers/FormOptionsHelper/collection_radio_buttons)というメソッドがあるんですね。
+
 ただ、f.collection_radio_buttonsとは少し違うようです。
+
 詳しくは[ここ](https://stackoverflow.com/questions/36393489/how-to-use-enum-in-collection-radio-buttons)に書いてました。
+
 日本語でなんとなくイメージを掴みたいなら[この記事](https://qiita.com/ykyk1218/items/2541a313aac0f0e5d81a#%E3%83%A9%E3%82%B8%E3%82%AA%E3%83%9C%E3%82%BF%E3%83%B3)が読みやすかったです。
 
 -------
 
-## 参考にさせていただいたサイト
+## 参考にした記事
 
 - [collection_radio_buttons - APIdock](https://apidock.com/rails/v4.0.2/ActionView/Helpers/FormOptionsHelper/collection_radio_buttons)
 - [How to use enum in collection_radio_buttons - stackoverflow](https://stackoverflow.com/questions/36393489/how-to-use-enum-in-collection-radio-buttons)

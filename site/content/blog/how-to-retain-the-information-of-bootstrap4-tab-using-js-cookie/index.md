@@ -100,11 +100,11 @@ viewを編集します。
 
 これの一つ微妙なところが、haml内にcoffeescriptを書いてるところですね。
 
-読み込み場所を指定して、別ファイルで作るのが本当はいいのでしょうが、それはそのうちなんとかしようと思います。
+読み込み場所を指定して、別ファイルで作ると本当はいいのでしょうが、それはそのうちなんとかしようと思います。
 
 -------
 
-## 参考にさせていただいたサイト
+## 参考にしたサイト
 
 - [js-cookie - GitHub](https://github.com/js-cookie/js-cookie)
 - [JavaScriptでcookie処理（読み・書き・削除） - Qiita](https://qiita.com/takanorip/items/4e23b803bb1393176636)
