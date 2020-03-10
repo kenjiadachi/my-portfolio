@@ -333,19 +333,6 @@ Bootstrap4では、.row-centerなど実装されたようなので、もっと�
     </item>
     
     <item>
-      <title>À propos de Hugo</title>
-      <link>https://cpx.business/about/_index.fr/</link>
-      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://cpx.business/about/_index.fr/</guid>
-      <description>Hugo est un moteur de site statique écrit en Go.
-Il utilise une variété de projets open source, notamment:
- [Cobra] (https://github.com/spf13/cobra) [Viper] (https://github.com/spf13/viper) [J Walter Weatherman] (https://github.com/spf13/jWalterWeatherman) [Cast] (https://github.com/spf13/cast)  En savoir plus et contribuer sur [GitHub] (https://github.com/spf13).
-Installer Quelques faits amusants sur [Hugo] (http://gohugo.io/):
- Construit en [Go] (http://golang.org/) Librement inspiré par [Jekyll] (http://jekyllrb.com/) Principalement développé par [spf13] (http://spf13.com/) dans le train lors d&#39;un trajet aller-retour pour Manhattan. Codé dans [Vim] (http://vim.</description>
-    </item>
-    
-    <item>
       <title>[Heroku]Heroku上に既存の本番環境からステージング環境を作成</title>
       <link>https://cpx.business/blog/copy-the-staging-environment-on-heroku/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

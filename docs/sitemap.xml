@@ -238,17 +238,11 @@
   </url>
   
   <url>
-    <loc>https://cpx.business/about/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cpx.business/about/_index.fr/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://cpx.business/blog/copy-the-staging-environment-on-heroku/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/about/</loc>
   </url>
   
   <url>
