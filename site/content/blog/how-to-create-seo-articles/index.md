@@ -7,7 +7,7 @@ tags = ["webマーケ", "SEO"]
 categories = ["webマーケ"]
 images  = ["img/header/how-to-create-seo-articles.png"]
 type = "post"
-draft =  true
+draft =  false
 +++
 
 webマーケに必須のwebライティング。

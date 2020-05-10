@@ -6,10 +6,33 @@
     <description>Recent content on CPX</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 28 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cpx.business/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Git]BitbucketからGitHubに移行しました</title>
+      <link>https://cpx.business/blog/how-to-move-from-bitbucket-to-github/</link>
+      <pubDate>Sun, 10 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-move-from-bitbucket-to-github/</guid>
+      <description>&lt;p&gt;2019/01にGitHubのPrivateリポジトリが無料で無制限に作れるようになりましたね。&lt;/p&gt;
+&lt;p&gt;GitHub買収したMicrosoftさまさまといったところでしょうか。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.blog/2019-01-07-new-year-new-github/&#34;&gt;元ニュース&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;それまではPrivateリポジトリはBitbucket、PublicにしてもいいものはGitHubで管理していたのですが、めんどくさかったのですべてGitHubに移行しました。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Webマーケ]SEOに効果的な記事を書く方法</title>
+      <link>https://cpx.business/blog/how-to-create-seo-articles/</link>
+      <pubDate>Sun, 10 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-create-seo-articles/</guid>
+      <description>&lt;p&gt;webマーケに必須のwebライティング。&lt;/p&gt;
+&lt;p&gt;今回は、webライティングの基本的な方法についてまとめてみました。&lt;/p&gt;
+&lt;hr&gt;</description>
+    </item>
     
     <item>
       <title>[Hugo]faviconを設定する方法</title>
