@@ -7,7 +7,7 @@ tags = ["Heroku"]
 categories = ["Other"]
 images  = ["img/header/copy-the-staging-environment-on-heroku.png"]
 type = "post"
-draft =  false
+draft = false
 +++
 
 2018/03/23追記:

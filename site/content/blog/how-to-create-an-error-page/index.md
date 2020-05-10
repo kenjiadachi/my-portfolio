@@ -7,7 +7,7 @@ tags = ["Rails", "error"]
 categories = ["Rails"]
 images  = ["img/header/how-to-create-an-error-page.png"]
 type = "post"
-draft =  false
+draft = false
 +++
 
 
