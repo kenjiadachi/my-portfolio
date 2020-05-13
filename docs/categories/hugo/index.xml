@@ -6,10 +6,22 @@
     <description>Recent content in Hugo on CPX</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 28 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cpx.business/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Hugo]Hugoを使いこなすためのオススメファイル構造</title>
+      <link>https://cpx.business/blog/file-structure-for-mastering-hugo/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/file-structure-for-mastering-hugo/</guid>
+      <description>&lt;p&gt;しばらくHugoを使う中で気づいたのが、よくファイル構造に迷わされるということ。&lt;/p&gt;
+&lt;p&gt;いろいろ方法は準備してくれているのですが、そのどれをどのタイミングで使うかにいつも迷ってしまうんですよね…&lt;/p&gt;
+&lt;p&gt;3ヶ月ほどHugoを使ってきたので、その中で落ち着いたファイル構造について今回はまとめてみました。&lt;/p&gt;
+&lt;hr&gt;</description>
+    </item>
     
     <item>
       <title>[Hugo]faviconを設定する方法</title>

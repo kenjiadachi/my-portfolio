@@ -367,3 +367,4 @@ GitHubのページを更新してみると、以下のようになっていま�
 ## こちらもぜひご一緒に！
 
 - [[Hugo]faviconを設定する方法](../../blog/how-to-set-favicon/)
+- [[Hugo]Hugoを使いこなすためのオススメファイル構造](../../blog/file-structure-for-mastering-hugo/)

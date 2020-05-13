@@ -183,3 +183,4 @@ version指定とかができるのかな？と思いますが試していませ�
 ## こちらもぜひご一緒に！
 
 - [[Hugo]Docker上で管理できるポートフォリオを作ってみたよ](../../blog/how-to-create-this-page/)
+- [[Hugo]Hugoを使いこなすためのオススメファイル構造](../../blog/file-structure-for-mastering-hugo/)
