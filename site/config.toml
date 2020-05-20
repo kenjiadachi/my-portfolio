@@ -9,7 +9,7 @@ paginate = 12
 
 preserveTaxonomyNames = true
 
-# copyright = ""
+copyright = "dachiken"
 
 disqusShortname = "dachiken"
 
@@ -28,7 +28,7 @@ enableRobotsTXT = true
   # Sets options for highlight.js
   highlightjs           = true
   highlightjsTheme      = "github"
-  highlightjsLang       = ["html", "css", "js", "toml"]
+  highlightjsLang       = ["html", "css", "js", "toml", "Dockerfile", "yaml"]
   # Sets where "View More Posts" links to
   viewMorePostsLink     = "/blog/"
   # Activate Estimated Reading Times, which appear in the post headers
@@ -40,7 +40,7 @@ enableRobotsTXT = true
 
   [params.meta]
     # Sets the meta tag description
-    description         = "貧乏な起業家兼フリーランスエンジニアがwebマーケ, 開発に関することを紹介します。"
+    description         = "起業家兼フリーランスエンジニアがwebマーケ, 開発に関することを紹介します。"
     # Sets the meta tag author
     author              = "kenji adachi"
     # If you would like to add more comprehensive favicon support passed root

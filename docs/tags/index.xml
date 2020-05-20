@@ -6,7 +6,8 @@
     <description>Recent content in Tags on CPX</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 13 May 2020 00:00:00 +0000</lastBuildDate>
+    <copyright>dachiken</copyright>
+    <lastBuildDate>Wed, 20 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cpx.business/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +15,45 @@
     <item>
       <title>Hugo</title>
       <link>https://cpx.business/tags/hugo/</link>
-      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://cpx.business/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Notion</title>
+      <link>https://cpx.business/tags/notion/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/tags/notion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SEO</title>
+      <link>https://cpx.business/tags/seo/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/tags/seo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tools</title>
+      <link>https://cpx.business/tags/tools/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/tags/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Workona</title>
+      <link>https://cpx.business/tags/workona/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/tags/workona/</guid>
       <description></description>
     </item>
     
@@ -44,15 +81,6 @@
       <pubDate>Sun, 10 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://cpx.business/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SEO</title>
-      <link>https://cpx.business/tags/seo/</link>
-      <pubDate>Sun, 10 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://cpx.business/tags/seo/</guid>
       <description></description>
     </item>
     

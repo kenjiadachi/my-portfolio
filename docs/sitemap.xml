@@ -3,37 +3,77 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://cpx.business/blog/file-structure-for-mastering-hugo/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+    <loc>https://cpx.business/blog/seo-in-hugo/</loc>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/blog/notion-how-to-use/</loc>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/blog/workona-how-to-use/</loc>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cpx.business/blog/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cpx.business/categories/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cpx.business/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cpx.business/categories/hugo/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cpx.business/tags/hugo/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/categories/hugo/</loc>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/tags/notion/</loc>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/tags/seo/</loc>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cpx.business/tags/</loc>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/categories/tools/</loc>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/tags/tools/</loc>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/tags/workona/</loc>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/blog/file-structure-for-mastering-hugo/</loc>
     <lastmod>2020-05-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -64,11 +104,6 @@
   
   <url>
     <loc>https://cpx.business/categories/other/</loc>
-    <lastmod>2020-05-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cpx.business/tags/seo/</loc>
     <lastmod>2020-05-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -123,12 +158,12 @@
   </url>
   
   <url>
-    <loc>https://cpx.business/tags/rails/</loc>
+    <loc>https://cpx.business/categories/rails/</loc>
     <lastmod>2019-06-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cpx.business/categories/rails/</loc>
+    <loc>https://cpx.business/tags/rails/</loc>
     <lastmod>2019-06-24T00:00:00+00:00</lastmod>
   </url>
   
