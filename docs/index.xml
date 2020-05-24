@@ -7,10 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>dachiken</copyright>
-    <lastBuildDate>Wed, 20 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 23 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cpx.business/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>マッチングシステム構築はじめの一歩 ざっくりシステム3パターン</title>
+      <link>https://cpx.business/blog/first-step-for-create-matching-system/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/first-step-for-create-matching-system/</guid>
+      <description>&lt;p&gt;webサービスを作ってみたい！と思った時、イメージするのはおよそ以下の3つじゃないでしょうか。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;TODOリスト&lt;/li&gt;
+&lt;li&gt;SNS&lt;/li&gt;
+&lt;li&gt;マッチングサービス&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;もちろん、突き詰めればそれぞれすごくややこしいシステムになっていきます。&lt;/p&gt;
+&lt;p&gt;最もシンプルな仕組みを考えた時に下に行く方が難しいイメージですね。&lt;/p&gt;
+&lt;p&gt;今回はこの中でマッチングシステムを作りたい！となった時に考えるべき、「どんなマッチングシステムにすべきか？」をまとめてみました。&lt;/p&gt;
+&lt;p&gt;(実はコンサルティングの仕事のついでというのは秘密)&lt;/p&gt;
+&lt;hr&gt;</description>
+    </item>
     
     <item>
       <title>[Hugo]SEOのためにやったことをまとめてみた</title>

@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+  
+  
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TKRT9JJ');</script>
+  
+
+
+  <meta charset="utf-8">
+<title>マッチングシステム構築はじめの一歩 ざっくりシステム3パターン - CPX</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://cpx.business/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cpx.business/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cpx.business/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://cpx.business/favicon/site.webmanifest">
+  
+    <link rel="mask-icon" href="https://cpx.business/favicon/safari-pinned-tab.svg" color="#ffffff">
+    <link rel="shortcut icon" href="https://cpx.business/favicon/favicon.ico">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.60.1" /><meta itemprop="name" content="マッチングシステム構築はじめの一歩 ざっくりシステム3パターン">
+<meta itemprop="description" content="なにか始めたいという人にピッタリの内容かと思います">
+<meta itemprop="datePublished" content="2020-05-23T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-05-23T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="127">
+<meta itemprop="image" content="https://cpx.business/img/header/first-step-for-create-matching-system.png">
+
+
+
+<meta itemprop="keywords" content="dev," /><meta property="og:title" content="マッチングシステム構築はじめの一歩 ざっくりシステム3パターン" />
+<meta property="og:description" content="なにか始めたいという人にピッタリの内容かと思います" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cpx.business/blog/first-step-for-create-matching-system/" />
+<meta property="og:image" content="https://cpx.business/img/header/first-step-for-create-matching-system.png" />
+<meta property="article:published_time" content="2020-05-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-23T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://cpx.business/img/header/first-step-for-create-matching-system.png"/>
+
+<meta name="twitter:title" content="マッチングシステム構築はじめの一歩 ざっくりシステム3パターン"/>
+<meta name="twitter:description" content="なにか始めたいという人にピッタリの内容かと思います"/>
+<meta name="twitter:site" content="@dach1_ken"/>
+<link rel="stylesheet" href="https://cpx.business/css/bundle.min.122bf077d53f56b1f764db5a8c387dd81587f604dbf07bbf3f86a62b06e00ca9.css" integrity="sha256-Eivwd9U/VrH3ZNtajDh92BWH9gTb8Hu/P4amKwbgDKk=">
+        <link rel="stylesheet" href="https://cpx.business/css/add-on.css">
+</head>
+
+  <body>
+    
+
+  
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKRT9JJ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+
+
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="https://cpx.business/">
+        
+          CPX
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu">
+      
+        
+          
+          
+            <a href="https://cpx.business/" class="link"><i class='fa fa-home'></i> Home</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://cpx.business/about/" class="link"><i class='far fa-id-card'></i> About</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://cpx.business/blog/" class="link"><i class='far fa-newspaper'></i> Blog</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://cpx.business/categories/" class="link"><i class='fas fa-sitemap'></i> Categories</a>
+          
+        
+      
+      <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      
+    </menu>
+    
+    <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    
+    <a href="#site-nav" class="nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  
+  
+    <menu id="share-menu" class="flyout-menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=%e3%83%9e%e3%83%83%e3%83%81%e3%83%b3%e3%82%b0%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e6%a7%8b%e7%af%89%e3%81%af%e3%81%98%e3%82%81%e3%81%ae%e4%b8%80%e6%ad%a9%20%e3%81%96%e3%81%a3%e3%81%8f%e3%82%8a%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a03%e3%83%91%e3%82%bf%e3%83%bc%e3%83%b3&amp;url=https%3a%2f%2fcpx.business%2fblog%2ffirst-step-for-create-matching-system%2f" target="_blank" rel="noopener" class="share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcpx.business%2fblog%2ffirst-step-for-create-matching-system%2f" target="_blank" rel="noopener" class="share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fcpx.business%2fblog%2ffirst-step-for-create-matching-system%2f&amp;title=%e3%83%9e%e3%83%83%e3%83%81%e3%83%b3%e3%82%b0%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e6%a7%8b%e7%af%89%e3%81%af%e3%81%98%e3%82%81%e3%81%ae%e4%b8%80%e6%ad%a9%20%e3%81%96%e3%81%a3%e3%81%8f%e3%82%8a%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a03%e3%83%91%e3%82%bf%e3%83%bc%e3%83%b3" target="_blank" rel="noopener" class="share-btn reddit">
+          <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcpx.business%2fblog%2ffirst-step-for-create-matching-system%2f&amp;title=%e3%83%9e%e3%83%83%e3%83%81%e3%83%b3%e3%82%b0%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e6%a7%8b%e7%af%89%e3%81%af%e3%81%98%e3%82%81%e3%81%ae%e4%b8%80%e6%ad%a9%20%e3%81%96%e3%81%a3%e3%81%8f%e3%82%8a%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a03%e3%83%91%e3%82%bf%e3%83%bc%e3%83%b3" target="_blank" rel="noopener" class="share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcpx.business%2fblog%2ffirst-step-for-create-matching-system%2f&amp;description=%e3%83%9e%e3%83%83%e3%83%81%e3%83%b3%e3%82%b0%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e6%a7%8b%e7%af%89%e3%81%af%e3%81%98%e3%82%81%e3%81%ae%e4%b8%80%e6%ad%a9%20%e3%81%96%e3%81%a3%e3%81%8f%e3%82%8a%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a03%e3%83%91%e3%82%bf%e3%83%bc%e3%83%b3" target="_blank" rel="noopener" class="share-btn pinterest">
+          <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check out this post by Kenji%20Adachi&amp;body=https%3a%2f%2fcpx.business%2fblog%2ffirst-step-for-create-matching-system%2f" target="_blank" class="share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro">
+  <a href="https://cpx.business/"><img src="https://cpx.business/img/main/logo.png" class="" width="120" alt="logo" /></a>
+  
+  <main>
+    <p>ロキソニンとカフェインからこれらの記事は錬成されています</p>
+  </main>
+  
+</section>
+
+      <main id="site-main">
+        <article class="post">
+  <header>
+  <div class="title">
+    
+        <h2><a href="https://cpx.business/blog/first-step-for-create-matching-system/">マッチングシステム構築はじめの一歩 ざっくりシステム3パターン</a></h2>
+    
+    
+        <p>なにか始めたいという人にピッタリの内容かと思います</p>
+    
+</div>
+  <div class="meta">
+    <time class="published" datetime="2020-05-23 00:00:00 &#43;0000 UTC">
+      2020-05-23
+    </time>
+    <span class="author">Kenji Adachi</span>
+    
+      <p>1 分で読めます</p>
+    
+  </div>
+</header>
+
+  <section id="socnet-share">
+    
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=%e3%83%9e%e3%83%83%e3%83%81%e3%83%b3%e3%82%b0%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e6%a7%8b%e7%af%89%e3%81%af%e3%81%98%e3%82%81%e3%81%ae%e4%b8%80%e6%ad%a9%20%e3%81%96%e3%81%a3%e3%81%8f%e3%82%8a%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a03%e3%83%91%e3%82%bf%e3%83%bc%e3%83%b3&amp;url=https%3a%2f%2fcpx.business%2fblog%2ffirst-step-for-create-matching-system%2f" target="_blank" rel="noopener" class="share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcpx.business%2fblog%2ffirst-step-for-create-matching-system%2f" target="_blank" rel="noopener" class="share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fcpx.business%2fblog%2ffirst-step-for-create-matching-system%2f&amp;title=%e3%83%9e%e3%83%83%e3%83%81%e3%83%b3%e3%82%b0%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e6%a7%8b%e7%af%89%e3%81%af%e3%81%98%e3%82%81%e3%81%ae%e4%b8%80%e6%ad%a9%20%e3%81%96%e3%81%a3%e3%81%8f%e3%82%8a%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a03%e3%83%91%e3%82%bf%e3%83%bc%e3%83%b3" target="_blank" rel="noopener" class="share-btn reddit">
+          <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcpx.business%2fblog%2ffirst-step-for-create-matching-system%2f&amp;title=%e3%83%9e%e3%83%83%e3%83%81%e3%83%b3%e3%82%b0%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e6%a7%8b%e7%af%89%e3%81%af%e3%81%98%e3%82%81%e3%81%ae%e4%b8%80%e6%ad%a9%20%e3%81%96%e3%81%a3%e3%81%8f%e3%82%8a%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a03%e3%83%91%e3%82%bf%e3%83%bc%e3%83%b3" target="_blank" rel="noopener" class="share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcpx.business%2fblog%2ffirst-step-for-create-matching-system%2f&amp;description=%e3%83%9e%e3%83%83%e3%83%81%e3%83%b3%e3%82%b0%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e6%a7%8b%e7%af%89%e3%81%af%e3%81%98%e3%82%81%e3%81%ae%e4%b8%80%e6%ad%a9%20%e3%81%96%e3%81%a3%e3%81%8f%e3%82%8a%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a03%e3%83%91%e3%82%bf%e3%83%bc%e3%83%b3" target="_blank" rel="noopener" class="share-btn pinterest">
+          <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check out this post by Kenji%20Adachi&amp;body=https%3a%2f%2fcpx.business%2fblog%2ffirst-step-for-create-matching-system%2f" target="_blank" class="share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+  </section>
+  
+  <a href="https://cpx.business/blog/first-step-for-create-matching-system/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/first-step-for-create-matching-system.png" alt="">
+    
+  </a>
+
+
+  <div class="content">
+    <div id="toc">
+      <h2>目次</h2>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#heading">そもそもマッチングシステムとは？</a></li>
+    <li><a href="#3">マッチングシステムの3パターン</a>
+      <ul>
+        <li><a href="#heading1">掲示板方式</a></li>
+        <li><a href="#heading2">注文方式</a></li>
+        <li><a href="#heading3">即時対応方式</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading4">まとめ</a></li>
+    <li><a href="#heading5">参考にした記事</a></li>
+  </ul>
+</nav>
+      <hr>
+    </div>
+    <section class="profile">
+  <h4> この記事はこんな人が書いています</h2>
+  <img src="https://cpx.business/img/main/icon.jpg" class="circle" width="80" alt="icon">
+  <b>だちけん</b>
+  <p>
+    株式会社ムジカルを設立し、webアプリケーションの開発、webマーケティングを担当しています。<br><br>
+    webアプリケーションでは、Vue.js、Ruby on Rails、Node.jsを用いての開発が得意です。<br><br>
+    まったくゼロの状態から、要件定義を含めてシステム開発にとりかかったことで、幅広い知識を学習しながらよしなに進めるスキルを身につけました。<br><br>
+    フリーランスとして、エンジニアリングやコンサルティングも行なっています。<br><br>
+    詳しくは<a href="https://cpx.business/about">about</a>を読んでみてください。
+  </p>
+</section>
+<hr>
+
+    <p>webサービスを作ってみたい！と思った時、イメージするのはおよそ以下の3つじゃないでしょうか。</p>
+<ul>
+<li>TODOリスト</li>
+<li>SNS</li>
+<li>マッチングサービス</li>
+</ul>
+<p>もちろん、突き詰めればそれぞれすごくややこしいシステムになっていきます。</p>
+<p>最もシンプルな仕組みを考えた時に下に行く方が難しいイメージですね。</p>
+<p>今回はこの中でマッチングシステムを作りたい！となった時に考えるべき、「どんなマッチングシステムにすべきか？」をまとめてみました。</p>
+<p>(実はコンサルティングの仕事のついでというのは秘密)</p>
+<hr>
+<h2 id="heading">そもそもマッチングシステムとは？</h2>
+<p>今回「マッチングシステム」と呼んでいるのは、以下の定義のものになります。</p>
+<p>なかなかふわっとしている言語なので、あくまで私が決めた定義であることにご注意ください。</p>
+<blockquote>
+<ol>
+<li>ユーザー2名が相互に目的を持って「知り合う」ためのシステムであること</li>
+<li>ユーザーには、「受領者」「提供者」の2つの側面があること</li>
+<li>「知り合う」ユーザーはその目的のもとに「受領者と提供者」の組み合わせであること</li>
+</ol>
+</blockquote>
+<p>つまりユーザーA、ユーザーBという2名のユーザーがいた時にその2名のどちらかが「受領者」どちらかが「提供者」として「知り合う」ためのアプリですね。</p>
+<p>もちろん、この定義にマッチしないアプリもたくさんある(デーティングアプリとかどうなんだろう…)のですが、今回はこの定義のもとお話しさせてください。</p>
+<p>そうじゃないと、SNSとの違いが曖昧になっちゃったり、話がややこしくなりそうなので…</p>
+<hr>
+<h2 id="3">マッチングシステムの3パターン</h2>
+<p>さてそんな形で定義したマッチングシステムですが、システムとして考えると以下の3パターンに分類できるかと思います。</p>
+<p>それぞれ、システムとして考えた時の特徴をまとめていきますね。</p>
+<hr>
+<h3 id="heading1">掲示板方式</h3>
+<p><img src="./img/1.png" alt="掲示板方式画像.png"></p>
+<p>もっともシンプルなシステムとして考えると、この形になるのではないでしょうか。</p>
+<p>かの有名なクレイグスリストもこの形ですね。</p>
+<p>クラウドワークス、ジモティーもこの形になるのではないでしょうか。</p>
+<p>掲示板方式のシステムがどんなものかというのをあらためてまとめると以下のようになるかと思います。</p>
+<pre><code>1. 「受領者」が要件・希望を記入
+2. 「提供者」が「受領者」の記入した要件・希望にマッチしたものを提供できると考えた時「応募」を行う
+3. 「応募」 があった「提供者」の中から、「受領者」が適切な「提供者」を選んでマッチング
+</code></pre><p>掲示板方式のメリットですが、以下のようなものが挙げられますね。</p>
+<pre><code>1. システム構築が容易(SNSと近しい)
+2. 柔軟なニーズに対応可能なシステムが構築しやすい
+3. 「受領者」となるユーザーが一定数以上いればアクティブなシステムのように見える(「受領者」の数がネットワーク効果に与える影響が大きい)
+</code></pre><p>一方、デメリットとしてはこのような感じかと。</p>
+<pre><code>1. アクティブな「提供者」が一定数いないと「受領者」が要件・希望を入力しづらい
+2. 「受領者」の入力内容に依存するため、契約までのステップが複雑化しがち
+3. 「受領者」目線で最適なマッチングが発生しづらいため、「受領者」への提供価値の担保が難しい
+</code></pre><p>「掲示板」というタイトルからもわかる通り、あくまで投稿をする(= 「受領者」が希望を書き込む)サービスなので、その投稿を増やす施策に工夫が必要にもかかわらず、それが難しいというシステム構造だと言えます。</p>
+<p>逆に言えば、そこさえ乗り越えられればいい感じになるのかもしれません。</p>
+<hr>
+<h3 id="heading2">注文方式</h3>
+<p><img src="./img/2.png" alt="注文方式画像.png"></p>
+<p>つぎに注文方式のシステムです。</p>
+<p>AirBnB、スペースマーケット、ココナラなどがこちらの注文方式を採用していますね。</p>
+<p>あらためてどんなシステムになるのかをまとめてみました。</p>
+<pre><code>1. 「提供者」が提供できるメニューを投稿
+2. 「受領者」が「提供者」のメニューを選んで依頼
+</code></pre><p>すでに掲示板方式よりシンプルな流れが見えますね。</p>
+<p>ではあらためてメリットです。</p>
+<pre><code>1. 「受領者」目線ではシンプルに見えるので、マッチングが発生しやすい(障壁が少ない)
+2. 「提供者」側はコストが高い一方、熱量ある「提供者」同士で競争原理が働きやすい
+3. 「受領者」は数あるメニューから選べるので納得感あるマッチングがおきやすい
+</code></pre><p>スタンダードなマッチングシステムと聞いて想像されるのがこちらだと思います。</p>
+<p>やっぱり多くの方が採用するだけのメリットがあります。</p>
+<p>とくに「受領者」側にとってメリットが多いことがこちらのシステムの特徴ですね。</p>
+<p>「受領者」のニーズ&gt;「提供者」のニーズになりやすいシーンではこちらのシステムが有効と言えます。</p>
+<p>以下デメリットです。</p>
+<pre><code>1. メニューが不足しているとマッチングが成立しづらい
+2. システム的にメニューにない対応ができない
+3. 「受領者」側の動きが他の受領者に見えづらいためアクティブなシステムかどうかがわかりづらい
+</code></pre><p>こちらのデメリットについてはネットワーク効果の観点でいうと、どちらも参入障壁になりうるとも捉えられるかと思います。</p>
+<p>後発組が不利になりやすい構造です。</p>
+<hr>
+<h3 id="heading3">即時対応方式</h3>
+<p><img src="./img/3.png" alt="即時対応方式画像.png"></p>
+<p>最後に即時対応方式です。</p>
+<p>こちらはかなり例外的な仕組みといえます。</p>
+<p>Uber、Uber eatsがこの枠ですね。</p>
+<p>Uberしか登場してませんが、この形態のマッチングシステムはアメリカでも「Uber for x」と呼ばれる形です。</p>
+<p><a href="https://blog.btrax.com/jp/uberforx/">必要な時にだけ利用 -オンデマンド型サービス15選【Uber for X】</a></p>
+<p>「誰に頼んでも変わらない」ニーズにすぐ対応できるのが強みです。</p>
+<p>あらためて、仕組みは以下のようになります。</p>
+<pre><code>1. 「受領者」が希望を入力(もはや申請)
+2. システム側が自動でアクティブな「提供者」を選定(または一番早く立候補した人など)
+</code></pre><p>「受領者」「提供者」の両方から見てすごくシンプルで完成度の高いマッチング方式と言えます。</p>
+<p>ただ「提供者」によるスキルの場合、「受領者」は「提供者」を選びたいはずなのでこの方式は向きませんね。</p>
+<p>属人的でないスキル(= 配送、運転、軽作業など)に適したマッチング方法と言えそうです。</p>
+<p>システム的に見たメリットは以下のようになります。</p>
+<pre><code>1. 「受領者」「提供者」双方にストレスを感じさせない設計のため、リテンションが高くなりやすい
+2. マッチングを自動化できるという強みから、「提供者」のモチベーションを維持しやすい(実は最短距離の人じゃなくて…とか)
+3. ユーザーの導線がシンプルなので、UIがシンプルな設計にできる
+</code></pre><p>シンプルな画面操作はユーザーだけでなく開発者から見ても大きなメリットになりますね。</p>
+<p>一方、デメリットです。</p>
+<pre><code>1. マッチングアルゴリズムどうする問題
+2. 即時性が強みなので、通知周りを強く意識したシステムである必要がある(画面外も含めた導線設計が必要)
+3. 通知が前提なので、webからスタートするのが難しい
+</code></pre><p>デメリットとして「webからスタートするのが難しい」とあります。</p>
+<p>これは、webシステムの方がアプリよりもユーザー獲得コストが安くなりやすいため、はじめの一歩としては難しいのかなあと思いあげてみました。</p>
+<hr>
+<h2 id="heading4">まとめ</h2>
+<p>さて今回は、マッチングシステムを開発したい！という方のためにマッチングシステムの3パターンを紹介してみました。</p>
+<p>システムで提供したいサービスや、ドメインによって適切な形が変わってくるかと思いますので、ぜひ参考にしてみてくださいね。</p>
+<p>このシリーズの次回として、どんなマッチングサービスにせよ設計時に考慮すべきポイントをまとめているので、そちらもぜひ記事が上がったら読んでください。</p>
+<hr>
+<h2 id="heading5">参考にした記事</h2>
+<ul>
+<li><a href="https://www.slideshare.net/cyberagent/kpi-80160837">マッチングサービスにおけるKPIの話</a></li>
+<li><a href="https://blog.btrax.com/jp/uberforx/">必要な時にだけ利用 -オンデマンド型サービス15選【Uber for X】</a></li>
+</ul>
+  </div>
+  <footer>
+    <ul class="stats">
+  
+    
+    
+      <li class="categories">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="https://cpx.business/categories/other">Other</a></li>
+          
+        </ul>
+      </li>
+    
+  
+  
+    
+    
+      <li class="tags">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="https://cpx.business/tags/dev">dev</a></li>
+          
+        </ul>
+      </li>
+    
+  
+</ul>
+
+  </footer>
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "dachiken" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+
+
+<div class="pagination">
+  
+    <a href="https://cpx.business/blog/seo-in-hugo/" class="button"><div class="previous"><div>[Hugo]SEOのためにやったことをまとめてみた</div></div></a>
+  
+  
+</div>
+
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最近の投稿</h1>
+      </header>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/first-step-for-create-matching-system/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/first-step-for-create-matching-system.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/first-step-for-create-matching-system/">マッチングシステム構築はじめの一歩 ざっくりシステム3パターン</a></h1>
+          <time class="published" datetime="">2020-05-23</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/seo-in-hugo/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/seo-in-hugo.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/seo-in-hugo/">[Hugo]SEOのためにやったことをまとめてみた</a></h1>
+          <time class="published" datetime="">2020-05-20</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/notion-how-to-use/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/notion-how-to-use.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/notion-how-to-use/">[Notion]1000ページ以上でも無料化！僕なりの使い方をまとめます</a></h1>
+          <time class="published" datetime="">2020-05-20</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/workona-how-to-use/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/workona-how-to-use.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/workona-how-to-use/">[Workona]chromeの拡張機能Workonaがすばらしいというおはなし</a></h1>
+          <time class="published" datetime="">2020-05-20</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/file-structure-for-mastering-hugo/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/file-structure-for-mastering-hugo.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/file-structure-for-mastering-hugo/">[Hugo]Hugoを使いこなすためのオススメファイル構造</a></h1>
+          <time class="published" datetime="">2020-05-13</time>
+        </header>
+      </article>
+      
+      
+        <a href="https://cpx.business/blog/" class="button">続きを見る</a>
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="https://cpx.business/categories">カテゴリー</a></h1>
+        </header>
+        <ul>
+          
+            
+          
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/rails/">rails<span class="count">14</span></a>
+            
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/hugo/">hugo<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/other/">other<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/tools/">tools<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/web%E3%83%9E%E3%83%BC%E3%82%B1/">webマーケ<span class="count">1</span></a>
+            
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/kenjiadachi" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//facebook.com/DACH1KEN" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+<li><a href="//instagram.com/dach1ken" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
+
+<li><a href="//twitter.com/dach1_ken" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+  
+  <p class="copyright">
+    
+      dachiken
+    . <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.60.1' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="https://cpx.business/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="https://cpx.business/js/bundle.min.e0c399b948d3cf5c3a5e3badb94023d0b064a19ac39fd8cd79fb9f57fa4d1091.js" integrity="sha256-4MOZuUjTz1w6XjutuUAj0LBkoZrDn9jNefufV/pNEJE="></script>
+    <script src="https://cpx.business/js/add-on.js"></script>
+    </div>
+  </body>
+</html>
