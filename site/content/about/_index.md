@@ -5,18 +5,16 @@ date = "2020-03-07"
 description = "ここまで見ていただいてありがとうございます！"
 tags = ["Heroku"]
 categories = ["Other"]
-images  = ["img/main/profile.png"]
+images  = ["img/main/profile2.png"]
 type = "post"
 draft =  false
 +++
 
+![プロフィール画像](/img/main/profile2.png)
+
 はじめましての方ははじめまして。
 
 このページを作成しているだちけんと申します。
-
-株式会社ムジカルの取締役をしています。
-
-webアプリケーションの開発、webマーケティングを担当しています。
 
 Hugoで作成したこのブログは、「自分の備忘録かつ他の人にも役立つように」をコンセプトに記事をPCに向かっていこうと思いますので、ぜひいろいろ斜め読みしていただければなと思います。
 
