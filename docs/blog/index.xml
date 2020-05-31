@@ -7,10 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>dachiken</copyright>
-    <lastBuildDate>Sat, 23 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 31 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cpx.business/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Node.js]eslintことはじめ ~キレイなJSコードを担保しよう~</title>
+      <link>https://cpx.business/blog/how-to-use-eslint/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-use-eslint/</guid>
+      <description>&lt;p&gt;最近テストにはまっています。&lt;/p&gt;
+&lt;p&gt;いらんことに脳のリソースをさかれない状態で開発を進めたいですよね。&lt;/p&gt;
+&lt;p&gt;そんなわけで今回は、JavaScriptの静的検証ツールeslintをご紹介します。&lt;/p&gt;
+&lt;hr&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Rails]RSpecことはじめ ~使いやすい環境構築~</title>
+      <link>https://cpx.business/blog/how-to-use-rspec/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-use-rspec/</guid>
+      <description>&lt;p&gt;最近テストにはまっています。&lt;/p&gt;
+&lt;p&gt;いらんことに脳のリソースをさかれない状態で開発を進めたいですよね。&lt;/p&gt;
+&lt;p&gt;そんなわけで今回は、Ruby on Railsの代表的なテストツールRSpecをご紹介します。&lt;/p&gt;
+&lt;hr&gt;</description>
+    </item>
     
     <item>
       <title>マッチングシステム構築はじめの一歩 ざっくりシステム3パターン</title>

@@ -7,16 +7,14 @@ tags = ["Rails", "RSpec"]
 categories = ["Rails"]
 images  = ["img/header/how-to-use-rspec.png"]
 type = "post"
-draft =  true
+draft =  false
 +++
 
-Hugoをつかってこのページを作ってみたので、作り方をまとめてみました。
+最近テストにはまっています。
 
-ローカルでは、Dockerを用いて仮想環境上で動かしています。
+いらんことに脳のリソースをさかれない状態で開発を進めたいですよね。
 
-また、ホスティングサービスはGitHub Pagesを用いています。
-
-この記事では、HugoをDocker上で動かし、それをGitHub Pagesで公開するまでをご紹介します。
+そんなわけで今回は、Ruby on Railsの代表的なテストツールRSpecをご紹介します。
 
 -------
 
@@ -30,328 +28,91 @@ Hugoをつかってこのページを作ってみたので、作り方をまと�
 
 -------
 
-### Hugoとは？
+### RSpecとは
 
-[Hugoの公式ページ](https://gohugo.io/)によると、
+[こちらの記事](https://machiiro.github.io/bootcamp/rspec/base/01_about.html)が分かりやすかったので引用させていただきます。
 
-> Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.
+> RSpec とは、Ruby における BDD (behavior driven development、ビヘイビア駆動開発) のためのテストフレームワークです。 BDD という言葉に聞き慣れないかもしれませんが、 テストコードを、自然言語を用いて要求仕様のように (Spec = 仕様) 記述するための手法です。
 
-Google翻訳にぶちこむと
+テストによって振る舞いを決めるためのツールということですね。
 
-> Hugoは、最も人気なオープンソースの静的サイトジェネレーターの1つです。その驚くべき速度と柔軟性により、HugoはWebサイトの構築を再び楽しくします。
-
-とのことです。
-
-これまで、BlogなどはWordPressが主流でしたが、わざわざすべての機能を管理画面からしなくてもよくない？という流れから、このような静的サイトジェネレーターが流行り出しているのかなあという個人的な見解です。
-
-WordPress、ちょっと触っただけでも結構めんどくさいですもんね…
-
-その点、このような静的サイトジェネレーターだとファイルの移動とかするだけで簡単に思った通りになる、というのがいいところかなあと思います。
-
-Hugo以外にも
-
-- [Jekyll](https://jekyllrb.com/)
-- [Hexo](https://hexo.io/)
-- [Gatsby](https://www.gatsbyjs.org/)
-
-などが有名ですね。
+TDD(テスト駆動開発)の基盤となっているBDDという概念についてはまた別記事でご紹介したいと思います。
 
 -------
 
-### Dockerとは？
+## 使ってみましょう
 
-これも[Dockerの公式ページ](https://www.docker.com/why-docker)によると、
+それでは早速RSpecを使ってみましょう。
 
-> The only independent container platform that enables organizations to seamlessly build, share and run any application, anywhere—from hybrid cloud to the edge.
+僕が個人的にイチオシの本があるので、こちらをもとに進めます。
 
-はたまたGoogle翻訳にぶちこむと
+[Everyday Rails - RSpecによるRailsテスト入門](https://leanpub.com/everydayrailsrspec-jp)
 
-> 組織がハイブリッドクラウドからエッジまで、あらゆるアプリケーションをシームレスに構築、共有、実行できるようにする唯一の独立したコンテナプラットフォーム。
-
-誰とでも簡単に開発環境を共有できるプラットフォーム、といった感じですかね。
-
-僕個人としては、けっこう一人で開発などすることが多いのであまりそのような面では恩恵を受けられていないのですが、ローカルのPCの環境をできるだけ汚したくないので、新しいPCに変えてからはDockerを個人でも使用するようにしています。
-
-`rbenv`とか`pyenv`とかあるにはあるけどめんどくさいですもんね。
-
-こっちのバージョンでは入ってるけど、こっちでは入ってなかったっけ？とか。
-
-そーゆーのもふくめて、簡単に作って壊してできるのがDockerのよさかなあと個人でやっている身からは思います。
-
--------
-
-### GitHub Pagesとは？
-
-最後はGitHub Pagesですね。
-
-もちろんこれも[公式ページ](https://help.github.com/en/github/working-with-github-pages/about-github-pages)からとってきました。
-
-> GitHub Pages is a static site hosting service that takes HTML, CSS, and JavaScript files straight from a repository on GitHub, optionally runs the files through a build process, and publishes a website.
-
-Google翻訳にぶちこんで
-
-> GitHub Pagesは、GitHubのリポジトリから直接HTML、CSS、およびJavaScriptファイルを取得し、オプションでビルドプロセスを介してファイルを実行し、Webサイトを公開する静的サイトホスティングサービスです。
-
-ということです。Hugoでgenerateした静的サイトをこちらで公開できるんですね。
-
-他にも有名なものとしては
-
-- [Netlify](https://www.netlify.com/)
-- [Firebase Hosting](https://firebase.google.com/products/hosting/)
-
-などがありますね。
-
-[Heroku](https://heroku.com/)も使おうと思えば使えるんじゃないでしょうか。
-
-わざわざHerokuを使う意味がよくわかりませんが…
-
--------
-
-## つくっていきましょう
-
-さあ、いよいよつくっていきましょう。
-
--------
-
-### Dockerの環境準備
-
-はじめに、Dockerの環境を準備します。
-
-あたらしいディレクトリを作成して、その中に以下の2ファイルをいれてください。
-
-```bash
-# Dockerfile
-
-FROM node:8
-
-# Download and install hugo
-ENV HUGO_VERSION 0.60.1
-ENV HUGO_BINARY hugo_extended_${HUGO_VERSION}_Linux-64bit.deb
-
-RUN curl -sL -o /tmp/hugo.deb \
-    https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} && \
-    dpkg -i /tmp/hugo.deb && \
-    rm /tmp/hugo.deb && \
-    mkdir /usr/share/blog
-
-WORKDIR /usr/share/blog
-
-RUN  npm -g config set user root && \
-     npm install -g firebase-tools
-
-# Expose default hugo port
-EXPOSE 1313
-
-# Automatically build site
-ONBUILD ADD site/ /usr/share/blog
-ONBUILD RUN hugo -d /usr/share/nginx/html/
-
-# By default, serve site
-ENV HUGO_BASE_URL http://localhost:1313
-CMD hugo server -b ${HUGO_BASE_URL} --bind=0.0.0.0
+さて、早速ですが`Gemfile`に以下を追記してください。
 
 ```
+# Gemfile
 
-```yml
-# docker-compose.yml
-
-version: '3'
-services:
-  web:
-    build: .
-    image: my/hugo
-    volumes:
-      - ./site:/usr/share/blog
-    ports:
-      - "1313:1313"
-    stdin_open: true
-    tty: true
+# 省略
+group :development, :test do
+  # 省略
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+end
 ```
 
-後述しますが、使いたいHugoのthemeがHugoのversionが0.60以上じゃないと使えなかったので、参考にしたサイトから少し修正してあります。
+その後`bundle install`を実行してください。
 
--------
+そのまま脳死で`rails g rspec:install`としてください。
 
-### Hugoの設定
-
-次にHugoの設定です。
-
-Dockerfileをおいたディレクトリにターミナルで移動したのち、下記コマンドを入力します。
-
-`docker-compose run -w /usr/share web hugo new site blog`
-
-すると、こんな返事があったあと、直下に`site`というディレクトリができているはずです。
+すると、以下のような感じになるはずです。
 
 ```
-Creating network "************_default" with the default driver
-Congratulations! Your new Hugo site is created in /usr/share/blog.
-
-Just a few more steps and you're ready to go:
-
-1. Download a theme into the same-named folder.
-   Choose a theme from https://themes.gohugo.io/ or
-   create your own with the "hugo new theme <THEMENAME>" command.
-2. Perhaps you want to add some content. You can add single files
-   with "hugo new <SECTIONNAME>/<FILENAME>.<FORMAT>".
-3. Start the built-in live server via "hugo server".
-
-Visit https://gohugo.io/ for quickstart guide and full documentation.
+Running via Spring preloader in process 9045
+      create  .rspec
+      create  spec
+      create  spec/spec_helper.rb
+      create  spec/rails_helper.rb
 ```
 
-とりあえず記事を書きはじめたい場合は、
-
-`docker-compose run web hugo new post/sample-page.md`
-
-などで記事を作成し、書きはじめてください。
-
-ここあたりで`git init`など、gitが使える準備をしておくのがいいかもですね。
-
-
-さて、ここでテーマの設定をしましょう。
-
-今回は`hugo-theme-dream`というテーマを適用しています。
-
-[Hugoのテーマページ](https://themes.gohugo.io/hugo-theme-dream/)
-
-ターミナルで、以下のように入力してください。
-場所は`Dockerfile`のあるディレクトリ直下での入力を想定しています。
-
-`git submodule add https://github.com/g1eny0ung/hugo-theme-dream.git site/themes/hugo-theme-dream`
-
-この後に、`site`直下の`config.toml`を以下のように書き換えましょう。
-
-```toml
-baseurl = "https://*****.github.io/*****/" # 後ほどGitHub Pagesの設定ができたらこちらを修正します。
-languageCode = "ja"
-defaultContentLanguage = "ja"
-title = "Title"
-theme = "hugo-theme-dream"
-
-# パスの指定。これをしないとcssがうまく反映されません。
-canonifyurls = true
-
-# copyright = ""
-
-# googleAnalyticsのIDをここに入力
-googleAnalytics = "*************"
-
-# disqusのShortnameをここに入力(コメントできるようにしたい場合)
-disqusShortname = "*************"
-
-enableRobotsTXT = true
-
-[params]
-  background = "black"
-  # backgroundImage = "/me/background.jpg"
-  linkColor = "seagreen"
-
-  author = "*************"
-  # description = ""
-
-  # static以降のURLを指定します。
-  avatar = "/images/avatar.png"
-
-  motto = "****************"
-
-  # この辺は入れたい人はどうぞ
-  # email = ""
-  # github = ""
-  # linkedin = ""
-  # codepen = ""
-  # stackoverflow = ""
-
-  siteStartYear = 2020
-
-  # favicon = "/favicon.ico"
-
-  # dark mode
-  darkLinkColor = "darkseagreen"
-  darkNav = true
-  dark404Button = true
+その後、それぞれのファイルを編集していきましょう。
 
 ```
-------------
+# config/application.rb
 
-#### 2020/02/29追記
-
-お気づきの方もいらっしゃるかもしれませんが、こちらのページのテーマを変えました。
-
-`hugo-theme-dream` → `hugo-future-imperfect-slim` に変更しています。
-
-テーマごとに`config.toml`の設定も結構変わってくるので、`themes/[テーマ名]/exampleSite/config.toml`をコピペして、作りなおすのが早いかと思います。
-
------------
-
-現状どんな感じか見たい場合は、
-
-`docker-compose up`
-
-でサーバーを立ち上げ、`http://localhost:1313`を見てみてください。
-
-すると、ローカル上ではうまく動いているはずです！
-
--------
-
-### GitHub Pagesで公開
-
-さて、いよいよGitHub Pagesで公開しましょう。
-
-今回、GitHubにpushするまではできる前提とさせてください。
-
-多分この辺りはたくさん紹介してくれているページがあるかと思いますので…
-
-さて、GitHubにpushすると、こんな感じになっているはずです。
-
-違いとしては、`update.sh`はまだないはずなので、こちらを追加しておいてください。
-
-```sh
-# update.sh
-
-#!/bin/bash
-
-# 既存のdocsフォルダの削除
-rm -rf docs
-
-# docsファイルの作成
-docker-compose exec web hugo
-
-# docsファイルの移動
-mv site/public docs
-
-# Commit comment
-ct="$(date +'%Y:%m:%d-%H:%M:%S')"
-
-# Management
-git add .
-git commit -m $ct
-git push
+config.generators do |g|
+  g.test_framework :rspec,
+  fixtures: false,
+  view_specs: false,
+  helper_specs: false,
+  routing_specs: false
+end
 ```
 
-![githubの設定1](./img/1.png)
+```
+# .rspec
 
-ここまでいけばもうすぐです。
+--require spec_helper
+--format documentation
+```
 
-Dockerfileをおいたディレクトリで、以下のコマンドを入力してください。
+```
+# spec/rails_helper.rb
 
-`sh update.sh`
+# 省略
+RSpec.configure do |config|
 
-すると、自動で静的ページを作成し、それを直下の`docs`に移動、GitHubにpushまでしてくれるはずです。
+  # 省略
+  config.include FactoryBot::Syntax::Methods
 
-GitHubのページを更新してみると、以下のようになっていませんか？(docsができているはず)
+end
+```
 
-![githubの設定2](./img/2.png)
+こんな感じで設定すれば、キレイに動くはずです。
 
-こうなっていれば、Settingsに移動し、部分を選択されているものに変えてください。
+またテストの書き方については別記事で書きますね。
 
-![githubの設定3](./img/3.png)
-
-すると、緑色の部分にあるURLで静的ページとして公開されているはずです。
-
-(最初はとくに反映まで時間がかかります。気長に待ちましょう。)
-
-これでポートフォリオサイトの完成です！
-
-修正して公開したい場合は、再度`sh update.sh`と打ち込めば自動で反映されるはずです。
+今日はこのあたりで。
 
 -------
 

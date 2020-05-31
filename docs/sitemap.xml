@@ -3,18 +3,68 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://cpx.business/blog/how-to-use-eslint/</loc>
+    <lastmod>2020-05-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/blog/how-to-use-rspec/</loc>
+    <lastmod>2020-05-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cpx.business/blog/</loc>
-    <lastmod>2020-05-23T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cpx.business/categories/</loc>
-    <lastmod>2020-05-23T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cpx.business/</loc>
-    <lastmod>2020-05-23T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/tags/eslint/</loc>
+    <lastmod>2020-05-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/tags/javascript/</loc>
+    <lastmod>2020-05-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/tags/node.js/</loc>
+    <lastmod>2020-05-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/categories/node.js/</loc>
+    <lastmod>2020-05-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/categories/rails/</loc>
+    <lastmod>2020-05-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/tags/rails/</loc>
+    <lastmod>2020-05-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/tags/rspec/</loc>
+    <lastmod>2020-05-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/tags/</loc>
+    <lastmod>2020-05-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -24,11 +74,6 @@
   
   <url>
     <loc>https://cpx.business/categories/other/</loc>
-    <lastmod>2020-05-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cpx.business/tags/</loc>
     <lastmod>2020-05-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -118,12 +163,12 @@
   </url>
   
   <url>
-    <loc>https://cpx.business/tags/web%E3%83%9E%E3%83%BC%E3%82%B1/</loc>
+    <loc>https://cpx.business/categories/web%E3%83%9E%E3%83%BC%E3%82%B1/</loc>
     <lastmod>2020-05-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cpx.business/categories/web%E3%83%9E%E3%83%BC%E3%82%B1/</loc>
+    <loc>https://cpx.business/tags/web%E3%83%9E%E3%83%BC%E3%82%B1/</loc>
     <lastmod>2020-05-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -164,16 +209,6 @@
   
   <url>
     <loc>https://cpx.business/tags/error/</loc>
-    <lastmod>2019-06-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cpx.business/tags/rails/</loc>
-    <lastmod>2019-06-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cpx.business/categories/rails/</loc>
     <lastmod>2019-06-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -229,11 +264,6 @@
   
   <url>
     <loc>https://cpx.business/blog/how-to-retain-the-information-of-bootstrap4-tab-using-js-cookie/</loc>
-    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cpx.business/tags/javascript/</loc>
     <lastmod>2018-08-13T00:00:00+00:00</lastmod>
   </url>
   
