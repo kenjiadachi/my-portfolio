@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Usecase on CPX</title>
+    <link>https://cpx.business/tags/usecase/</link>
+    <description>Recent content in Usecase on CPX</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>dachiken</copyright>
+    <lastBuildDate>Sat, 25 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://cpx.business/tags/usecase/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Rails]Usecaseクラスを上手に扱おう</title>
+      <link>https://cpx.business/blog/how-to-use-usecase-in-rails/</link>
+      <pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-use-usecase-in-rails/</guid>
+      <description>&lt;p&gt;Railsを触っていくと、どうしてもデフォルトの機能だけではController層がどんどん大きくなっていきますよね。&lt;/p&gt;
+&lt;p&gt;重複する処理を作ったりすることもあるので、どんどん内部との処理はUsecase層に振り分けていくのがいいかと思っています。&lt;/p&gt;
+&lt;p&gt;今回は、Usecase層とは？というところからどのように振り分けていく基準は？というところまでご紹介していければと思います！&lt;/p&gt;
+&lt;hr&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

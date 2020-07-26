@@ -1,0 +1,22 @@
+/*
+  This css file is for individual users to restyle items for their personal site,
+  or for the implementation of features specifically for their site. Anything that
+  is an official part of the theme (ex. Pull Requests) should be included in main.css
+  and follow the formatting and style given.
+*/
+.post>footer .stats li {
+  max-width: 100%;
+}
+
+.post>footer .stats li.categories {
+  margin-right: 10px;
+}
+
+
+/* #site-main > article > div > section.profile {
+  margin: 1.5em auto;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #
+  
+} */

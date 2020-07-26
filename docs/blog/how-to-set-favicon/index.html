@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+  
+  
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TKRT9JJ');</script>
+  
+
+
+  <meta charset="utf-8">
+<title>[Hugo]faviconを設定する方法 - CPX</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://cpx.business/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cpx.business/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cpx.business/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://cpx.business/favicon/site.webmanifest">
+  
+    <link rel="mask-icon" href="https://cpx.business/favicon/safari-pinned-tab.svg" color="#ffffff">
+    <link rel="shortcut icon" href="https://cpx.business/favicon/favicon.ico">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.60.1" /><meta itemprop="name" content="[Hugo]faviconを設定する方法">
+<meta itemprop="description" content="Hugoをつかっているこのページにfaviconを設定してみました">
+<meta itemprop="datePublished" content="2020-02-28T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-02-28T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="268">
+<meta itemprop="image" content="https://cpx.business/img/header/how-to-set-favicon.png">
+
+
+
+<meta itemprop="keywords" content="Hugo,favicon," /><meta property="og:title" content="[Hugo]faviconを設定する方法" />
+<meta property="og:description" content="Hugoをつかっているこのページにfaviconを設定してみました" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cpx.business/blog/how-to-set-favicon/" />
+<meta property="og:image" content="https://cpx.business/img/header/how-to-set-favicon.png" />
+<meta property="article:published_time" content="2020-02-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-02-28T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://cpx.business/img/header/how-to-set-favicon.png"/>
+
+<meta name="twitter:title" content="[Hugo]faviconを設定する方法"/>
+<meta name="twitter:description" content="Hugoをつかっているこのページにfaviconを設定してみました"/>
+<meta name="twitter:site" content="@dach1_ken"/>
+<link rel="stylesheet" href="https://cpx.business/css/bundle.min.122bf077d53f56b1f764db5a8c387dd81587f604dbf07bbf3f86a62b06e00ca9.css" integrity="sha256-Eivwd9U/VrH3ZNtajDh92BWH9gTb8Hu/P4amKwbgDKk=">
+        <link rel="stylesheet" href="https://cpx.business/css/add-on.css">
+</head>
+
+  <body>
+    
+
+  
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKRT9JJ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+
+
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="https://cpx.business/">
+        
+          CPX
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu">
+      
+        
+          
+          
+            <a href="https://cpx.business/" class="link"><i class='fa fa-home'></i> Home</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://cpx.business/about/" class="link"><i class='far fa-id-card'></i> About</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://cpx.business/blog/" class="link"><i class='far fa-newspaper'></i> Blog</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://cpx.business/categories/" class="link"><i class='fas fa-sitemap'></i> Categories</a>
+          
+        
+      
+      <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      
+    </menu>
+    
+    <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    
+    <a href="#site-nav" class="nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  
+  
+    <menu id="share-menu" class="flyout-menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=%5bHugo%5dfavicon%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&amp;url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-set-favicon%2f" target="_blank" rel="noopener" class="share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcpx.business%2fblog%2fhow-to-set-favicon%2f" target="_blank" rel="noopener" class="share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-set-favicon%2f&amp;title=%5bHugo%5dfavicon%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" target="_blank" rel="noopener" class="share-btn reddit">
+          <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-set-favicon%2f&amp;title=%5bHugo%5dfavicon%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" target="_blank" rel="noopener" class="share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-set-favicon%2f&amp;description=%5bHugo%5dfavicon%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" target="_blank" rel="noopener" class="share-btn pinterest">
+          <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check out this post by Kenji%20Adachi&amp;body=https%3a%2f%2fcpx.business%2fblog%2fhow-to-set-favicon%2f" target="_blank" class="share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro">
+  <a href="https://cpx.business/"><img src="https://cpx.business/img/main/logo.png" class="" width="120" alt="logo" /></a>
+  
+  <main>
+    <p>ロキソニンとカフェインからこれらの記事は錬成されています</p>
+  </main>
+  
+</section>
+
+      <main id="site-main">
+        <article class="post">
+  <header>
+  <div class="title">
+    
+        <h2><a href="https://cpx.business/blog/how-to-set-favicon/">[Hugo]faviconを設定する方法</a></h2>
+    
+    
+        <p>Hugoをつかっているこのページにfaviconを設定してみました</p>
+    
+</div>
+  <div class="meta">
+    <time class="published" datetime="2020-02-28 00:00:00 &#43;0000 UTC">
+      2020-02-28
+    </time>
+    <span class="author">Kenji Adachi</span>
+    
+      <p>2 分で読めます</p>
+    
+  </div>
+</header>
+
+  <section id="socnet-share">
+    
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=%5bHugo%5dfavicon%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&amp;url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-set-favicon%2f" target="_blank" rel="noopener" class="share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcpx.business%2fblog%2fhow-to-set-favicon%2f" target="_blank" rel="noopener" class="share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-set-favicon%2f&amp;title=%5bHugo%5dfavicon%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" target="_blank" rel="noopener" class="share-btn reddit">
+          <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-set-favicon%2f&amp;title=%5bHugo%5dfavicon%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" target="_blank" rel="noopener" class="share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-set-favicon%2f&amp;description=%5bHugo%5dfavicon%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" target="_blank" rel="noopener" class="share-btn pinterest">
+          <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check out this post by Kenji%20Adachi&amp;body=https%3a%2f%2fcpx.business%2fblog%2fhow-to-set-favicon%2f" target="_blank" class="share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+  </section>
+  
+  <a href="https://cpx.business/blog/how-to-set-favicon/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-set-favicon.png" alt="">
+    
+  </a>
+
+
+  <div class="content">
+    <div id="toc">
+      <h2>目次</h2>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#heading">ことばの紹介</a>
+      <ul>
+        <li><a href="#favicon">faviconとは？</a></li>
+        <li><a href="#hugo">Hugoとは？</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading1">設定していきましょう</a>
+      <ul>
+        <li><a href="#favicon1">faviconを作成する</a></li>
+        <li><a href="#hugo1">Hugoの設定を行う</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading2">参考にしたサイト</a></li>
+    <li><a href="#heading3">こちらもぜひご一緒に！</a></li>
+  </ul>
+</nav>
+      <hr>
+    </div>
+    <section class="profile">
+  <h4> この記事はこんな人が書いています</h2>
+  <img src="https://cpx.business/img/main/icon2.png" class="circle" width="80" alt="icon">
+  <b>だちけん</b>
+  <p>
+    株式会社ムジカルを設立し、webアプリケーションの開発、webマーケティングを担当しています。<br><br>
+    webアプリケーションでは、Vue.js、Ruby on Rails、Node.jsを用いての開発が得意です。<br><br>
+    まったくゼロの状態から、要件定義を含めてシステム開発にとりかかったことで、幅広い知識を学習しながらよしなに進めるスキルを身につけました。<br><br>
+    フリーランスとして、エンジニアリングやコンサルティングも行なっています。<br><br>
+    詳しくは<a href="https://cpx.business/about">about</a>を読んでみてください。
+  </p>
+</section>
+<hr>
+
+    <p>Hugoで作成したこちらのページに、faviconを設定してみました。</p>
+<p>この記事では、Hugoで作られたページにfaviconを設定する方法についてご紹介します。</p>
+<hr>
+<h2 id="heading">ことばの紹介</h2>
+<p>まずは知らない方もいるかと思うので、ことばの紹介から。</p>
+<p>わかってるよ！って人は飛ばしてください。</p>
+<hr>
+<h3 id="favicon">faviconとは？</h3>
+<p>こちらの<a href="https://ferret-plus.com/387">ferretさんの記事</a>が効果も含めわかり易かったので引用します。</p>
+<blockquote>
+<p>ファビコンとは、Webブラウザでページを開いた際、タブ部分に表示されるアイコンを指します。タブブラウザ（1つの画面で複数のページが開けるブラウザ）で複数のタブを開いた時に、ファビコンはページを判別する際の目印となります。</p>
+</blockquote>
+<blockquote>
+<p>タブを開きすぎて、見たいホームページがどのタブなのかを見失ってしまったという経験をしたことはありませんか？
+そういった迷子になってしまったユーザーに対して、ファビコンを目印に目当てのホームページみつけてもらうことも可能になります。</p>
+</blockquote>
+<blockquote>
+<p>また、ユーザーがホームページをお気に入りに登録した際にも、ファビコンがあるのと無いのとでは印象と見つけやすさが変わってきます。</p>
+</blockquote>
+<p>まあ、あったほうがいいよね、という感じですね。</p>
+<p>なければないで全然いいとは思うのですが、ぼくはなんとなくこだわりたかったので作成しました。</p>
+<hr>
+<h3 id="hugo">Hugoとは？</h3>
+<p>こちらについては詳しく、<a href="../../blog/how-to-create-this-page/#hugo">このページ</a>で紹介しています。</p>
+<p>いろいろテーマを設定できるのが便利ですね。</p>
+<p>こちらのページでは、現在<code>hugo-future-imperfect-slim</code>というテーマを設定しています。</p>
+<hr>
+<h2 id="heading1">設定していきましょう</h2>
+<p>さあ、いよいよ設定していきましょう。</p>
+<hr>
+<h3 id="favicon1">faviconを作成する</h3>
+<p>まずはfaviconを作らないといけませんね。</p>
+<p>ぼくは<a href="https://www.favicon-generator.org/">こちら</a>のサイトを使用しました。</p>
+<p>スマートフォン向けのfaviconも自動で大量に生成してくれるのですごく便利です。</p>
+<p>ほかにもいくつかfaviconを作成するためのサイトがあるので紹介しますね。</p>
+<ul>
+<li><a href="http://www.favicon.cc/">favicon.cc</a></li>
+<li><a href="http://favicon-generator.org/editor/">Favicon generator</a></li>
+<li><a href="http://www.favikon.com/">favikon</a></li>
+<li><a href="http://tools.dynamicdrive.com/favicon/">favicon generator</a></li>
+</ul>
+<p>いろいろ試してみたのですが、最初にあげた<a href="https://www.favicon-generator.org/">Favicon &amp; App Icon Generator</a>が一番使いやすいように思いました。</p>
+<p>ほかにも、ぼくの使用しているテーマ<code>hugo-future-imperfect-slim</code>では、<a href="https://realfavicongenerator.net/">RealFaviconGenerator</a>が推奨されていました。</p>
+<p>version指定とかができるのかな？と思いますが試していません…</p>
+<p>まあいずれかのサイトでサクッと作ってしまいましょう。</p>
+<p>画像ベースで作成するときは、ベースの画像を正方形にしておくといらないところに気を使わずに済むのでオススメです。</p>
+<hr>
+<h3 id="hugo1">Hugoの設定を行う</h3>
+<p><strong>※こちらはテーマごとに設定が異なります！</strong></p>
+<p>いよいよHugoの設定です。</p>
+<p>冒頭にもある通り、こちらはテーマごとに設定が異なりそうです。</p>
+<p>詳しくは<a href="https://discourse.gohugo.io/t/should-themes-include-favicons/10033">こちら</a>に書いているのですが、faviconをテーマに含めるべきか？というのが議論されています。</p>
+<p>作ってみればわかるのですが、faviconが無数に増えすぎてテーマに含めていいのか？という議論になっていますね。</p>
+<p>こちらでは、「<code>config.toml</code>で設定できるようにテーマも設定するべき」という結論になっていますが、テーマによってはその設定をそもそも入れていないこともありそうです。</p>
+<hr>
+<p>さて、今回僕が使用しているテーマ<code>hugo-future-imperfect-slim</code>では<code>config.toml</code>で設定できるようになっていましたのでこちらで設定してみます。</p>
+<p>設定できるかどうか？は設定しているテーマの<code>exampleSite/config.toml</code>をみれば判断できそうですね。</p>
+<p>ちなみに、<code>hugo-future-imperfect-slim</code>の<code>exampleSite/config.toml</code>ではこんな感じになっていました。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#75715e"># config.toml</span>
+
+<span style="color:#75715e"># 省略</span>
+
+[<span style="color:#a6e22e">params</span>]
+  <span style="color:#75715e"># 省略</span>
+
+  [<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">meta</span>]
+    <span style="color:#75715e"># Sets the meta tag description</span>
+    <span style="color:#a6e22e">description</span>         = <span style="color:#e6db74">&#34;A theme by HTML5 UP, ported by Julio Pescador. Slimmed and enhanced by Patrick Collins. Multilingual by StatnMap. Powered by Hugo.&#34;</span>
+    <span style="color:#75715e"># Sets the meta tag author</span>
+    <span style="color:#a6e22e">author</span>              = <span style="color:#e6db74">&#34;HTML5UP and Hugo&#34;</span>
+    <span style="color:#75715e"># If you would like to add more comprehensive favicon support passed root</span>
+    <span style="color:#75715e"># directory favicon.ico, utlize this funtion. It is recommened to use</span>
+    <span style="color:#75715e"># https://realfavicongenerator.net to generate your icons as that is the basis</span>
+    <span style="color:#75715e"># for the theme&#39;s naming.</span>
+    <span style="color:#a6e22e">favicon</span>             = <span style="color:#66d9ef">false</span>
+    <span style="color:#a6e22e">svg</span>                 = <span style="color:#66d9ef">true</span>
+    <span style="color:#a6e22e">faviconVersion</span>      = <span style="color:#e6db74">&#34;1&#34;</span>
+    <span style="color:#a6e22e">msColor</span>             = <span style="color:#e6db74">&#34;#ffffff&#34;</span> <span style="color:#75715e"># Copy from the https://realfavicongenerator.net</span>
+    <span style="color:#a6e22e">iOSColor</span>            = <span style="color:#e6db74">&#34;#ffffff&#34;</span> <span style="color:#75715e"># Copy from the https://realfavicongenerator.net</span>
+
+</code></pre></div><p>こちらの、<code>favicon</code>、<code>svg</code>、<code>faviconVersion</code>、<code>msColor</code>、<code>iOSColor</code>の項目がfaviconの設定に関わってそうですね。</p>
+<p>ぼくは、これらをこのような設定に変えました。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#75715e"># config.toml</span>
+
+<span style="color:#75715e"># 省略</span>
+
+[<span style="color:#a6e22e">params</span>]
+  <span style="color:#75715e"># 省略</span>
+
+  [<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">meta</span>]
+    <span style="color:#75715e"># Sets the meta tag description</span>
+    <span style="color:#a6e22e">description</span>         = <span style="color:#e6db74">&#34;&#34;</span>
+    <span style="color:#75715e"># Sets the meta tag author</span>
+    <span style="color:#a6e22e">author</span>              = <span style="color:#e6db74">&#34;kenji adachi&#34;</span>
+    <span style="color:#75715e"># If you would like to add more comprehensive favicon support passed root</span>
+    <span style="color:#75715e"># directory favicon.ico, utlize this funtion. It is recommened to use</span>
+    <span style="color:#75715e"># https://realfavicongenerator.net to generate your icons as that is the basis</span>
+    <span style="color:#75715e"># for the theme&#39;s naming.</span>
+    <span style="color:#a6e22e">favicon</span>             = <span style="color:#66d9ef">true</span>
+    <span style="color:#a6e22e">svg</span>                 = <span style="color:#66d9ef">true</span>
+    <span style="color:#a6e22e">faviconVersion</span>      = <span style="color:#e6db74">&#34;&#34;</span>
+    <span style="color:#a6e22e">msColor</span>             = <span style="color:#e6db74">&#34;#ffffff&#34;</span> <span style="color:#75715e"># Copy from the https://realfavicongenerator.net</span>
+    <span style="color:#a6e22e">iOSColor</span>            = <span style="color:#e6db74">&#34;#ffffff&#34;</span> <span style="color:#75715e"># Copy from the https://realfavicongenerator.net</span>
+
+</code></pre></div><p>大事なのは、<code>faviconVersion = &quot;&quot;</code>の部分ですかね。</p>
+<p>これに値が入っていると、<code>?v=1</code>というパラメータがついたfavicon設定データを探しているようです。</p>
+<p>この設定を行ったあと、作成したfaviconファイル一式を<code>static/favicon</code>内にまとめて入れます。</p>
+<p>最後に、jsonファイルの名前を<code>site.webmanifest</code>に変更すれば、faviconの設定が完了しました！</p>
+<hr>
+<h2 id="heading2">参考にしたサイト</h2>
+<ul>
+<li><a href="https://xn--v6q832hwdkvom.com/post/hugo%E3%81%A7favicon%E3%82%92%E3%81%A4%E3%81%91%E3%82%88%E3%81%86/">Hugoでfaviconをつけよう</a></li>
+<li><a href="https://ferret-plus.com/387">ファビコンとは〜設置すべき理由と無料で簡単に作成できるツールを紹介</a></li>
+</ul>
+<hr>
+<h2 id="heading3">こちらもぜひご一緒に！</h2>
+<ul>
+<li><a href="../../blog/how-to-create-this-page/">[Hugo]Docker上で管理できるポートフォリオを作ってみたよ</a></li>
+<li><a href="../../blog/file-structure-for-mastering-hugo/">[Hugo]Hugoを使いこなすためのオススメファイル構造</a></li>
+</ul>
+  </div>
+  <footer>
+    <ul class="stats">
+  
+    
+    
+      <li class="categories">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="https://cpx.business/categories/hugo">Hugo</a></li>
+          
+        </ul>
+      </li>
+    
+  
+  
+    
+    
+      <li class="tags">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="https://cpx.business/tags/hugo">Hugo</a></li>
+          
+            
+            <li><a class="article-category-link" href="https://cpx.business/tags/favicon">favicon</a></li>
+          
+        </ul>
+      </li>
+    
+  
+</ul>
+
+  </footer>
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "dachiken" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+
+
+<div class="pagination">
+  
+    <a href="https://cpx.business/blog/how-to-create-this-page/" class="button"><div class="previous"><div>[Hugo]Docker上で管理できるポートフォリオを作ってみたよ</div></div></a>
+  
+  
+    <a href="https://cpx.business/blog/how-to-create-seo-articles/" class="button"><div class="next"><div>[Webマーケ]SEOに効果的な記事を書く方法</div></div></a>
+  
+</div>
+
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最近の投稿</h1>
+      </header>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-use-usecase-in-rails/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-use-usecase-in-rails.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-use-usecase-in-rails/">[Rails]Usecaseクラスを上手に扱おう</a></h1>
+          <time class="published" datetime="">2020-07-25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-use-json-rails-activerecord/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-use-json-rails-activerecord.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-use-json-rails-activerecord/">[Rails]MySQLのJSON型をActiveRecordで扱おう</a></h1>
+          <time class="published" datetime="">2020-07-24</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-use-eslint/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-use-eslint.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-use-eslint/">[Node.js]eslintことはじめ ~キレイなJSコードを担保しよう~</a></h1>
+          <time class="published" datetime="">2020-05-31</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-use-rspec/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-use-rspec.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-use-rspec/">[Rails]RSpecことはじめ ~使いやすい環境構築~</a></h1>
+          <time class="published" datetime="">2020-05-31</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/first-step-for-create-matching-system/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/first-step-for-create-matching-system.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/first-step-for-create-matching-system/">マッチングシステム構築はじめの一歩 ざっくりシステム3パターン</a></h1>
+          <time class="published" datetime="">2020-05-23</time>
+        </header>
+      </article>
+      
+      
+        <a href="https://cpx.business/blog/" class="button">続きを見る</a>
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="https://cpx.business/categories">カテゴリー</a></h1>
+        </header>
+        <ul>
+          
+            
+          
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/rails/">rails<span class="count">17</span></a>
+            
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/hugo/">hugo<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/other/">other<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/tools/">tools<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/node.js/">node.js<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/web%E3%83%9E%E3%83%BC%E3%82%B1/">webマーケ<span class="count">1</span></a>
+            
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/kenjiadachi" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//facebook.com/DACH1KEN" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+<li><a href="//instagram.com/dach1ken" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
+
+<li><a href="//twitter.com/dach1_ken" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+  
+  <p class="copyright">
+    
+      dachiken
+    . <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.60.1' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="https://cpx.business/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="https://cpx.business/js/bundle.min.e0c399b948d3cf5c3a5e3badb94023d0b064a19ac39fd8cd79fb9f57fa4d1091.js" integrity="sha256-4MOZuUjTz1w6XjutuUAj0LBkoZrDn9jNefufV/pNEJE="></script>
+    <script src="https://cpx.business/js/add-on.js"></script>
+    </div>
+  </body>
+</html>

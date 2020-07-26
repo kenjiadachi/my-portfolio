@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+  
+  
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TKRT9JJ');</script>
+  
+
+
+  <meta charset="utf-8">
+<title>[Hugo]Hugoを使いこなすためのオススメファイル構造 - CPX</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://cpx.business/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cpx.business/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cpx.business/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://cpx.business/favicon/site.webmanifest">
+  
+    <link rel="mask-icon" href="https://cpx.business/favicon/safari-pinned-tab.svg" color="#ffffff">
+    <link rel="shortcut icon" href="https://cpx.business/favicon/favicon.ico">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.60.1" /><meta itemprop="name" content="[Hugo]Hugoを使いこなすためのオススメファイル構造">
+<meta itemprop="description" content="しばらくHugoを使う中で気づいたのが、よくファイル構造に迷わされるということ">
+<meta itemprop="datePublished" content="2020-05-13T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-05-13T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="165">
+<meta itemprop="image" content="https://cpx.business/img/header/file-structure-for-mastering-hugo.png">
+
+
+
+<meta itemprop="keywords" content="Hugo," /><meta property="og:title" content="[Hugo]Hugoを使いこなすためのオススメファイル構造" />
+<meta property="og:description" content="しばらくHugoを使う中で気づいたのが、よくファイル構造に迷わされるということ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cpx.business/blog/file-structure-for-mastering-hugo/" />
+<meta property="og:image" content="https://cpx.business/img/header/file-structure-for-mastering-hugo.png" />
+<meta property="article:published_time" content="2020-05-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-13T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://cpx.business/img/header/file-structure-for-mastering-hugo.png"/>
+
+<meta name="twitter:title" content="[Hugo]Hugoを使いこなすためのオススメファイル構造"/>
+<meta name="twitter:description" content="しばらくHugoを使う中で気づいたのが、よくファイル構造に迷わされるということ"/>
+<meta name="twitter:site" content="@dach1_ken"/>
+<link rel="stylesheet" href="https://cpx.business/css/bundle.min.122bf077d53f56b1f764db5a8c387dd81587f604dbf07bbf3f86a62b06e00ca9.css" integrity="sha256-Eivwd9U/VrH3ZNtajDh92BWH9gTb8Hu/P4amKwbgDKk=">
+        <link rel="stylesheet" href="https://cpx.business/css/add-on.css">
+</head>
+
+  <body>
+    
+
+  
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKRT9JJ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+
+
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="https://cpx.business/">
+        
+          CPX
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu">
+      
+        
+          
+          
+            <a href="https://cpx.business/" class="link"><i class='fa fa-home'></i> Home</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://cpx.business/about/" class="link"><i class='far fa-id-card'></i> About</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://cpx.business/blog/" class="link"><i class='far fa-newspaper'></i> Blog</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://cpx.business/categories/" class="link"><i class='fas fa-sitemap'></i> Categories</a>
+          
+        
+      
+      <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      
+    </menu>
+    
+    <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    
+    <a href="#site-nav" class="nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  
+  
+    <menu id="share-menu" class="flyout-menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=%5bHugo%5dHugo%e3%82%92%e4%bd%bf%e3%81%84%e3%81%93%e3%81%aa%e3%81%99%e3%81%9f%e3%82%81%e3%81%ae%e3%82%aa%e3%82%b9%e3%82%b9%e3%83%a1%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e6%a7%8b%e9%80%a0&amp;url=https%3a%2f%2fcpx.business%2fblog%2ffile-structure-for-mastering-hugo%2f" target="_blank" rel="noopener" class="share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcpx.business%2fblog%2ffile-structure-for-mastering-hugo%2f" target="_blank" rel="noopener" class="share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fcpx.business%2fblog%2ffile-structure-for-mastering-hugo%2f&amp;title=%5bHugo%5dHugo%e3%82%92%e4%bd%bf%e3%81%84%e3%81%93%e3%81%aa%e3%81%99%e3%81%9f%e3%82%81%e3%81%ae%e3%82%aa%e3%82%b9%e3%82%b9%e3%83%a1%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e6%a7%8b%e9%80%a0" target="_blank" rel="noopener" class="share-btn reddit">
+          <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcpx.business%2fblog%2ffile-structure-for-mastering-hugo%2f&amp;title=%5bHugo%5dHugo%e3%82%92%e4%bd%bf%e3%81%84%e3%81%93%e3%81%aa%e3%81%99%e3%81%9f%e3%82%81%e3%81%ae%e3%82%aa%e3%82%b9%e3%82%b9%e3%83%a1%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e6%a7%8b%e9%80%a0" target="_blank" rel="noopener" class="share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcpx.business%2fblog%2ffile-structure-for-mastering-hugo%2f&amp;description=%5bHugo%5dHugo%e3%82%92%e4%bd%bf%e3%81%84%e3%81%93%e3%81%aa%e3%81%99%e3%81%9f%e3%82%81%e3%81%ae%e3%82%aa%e3%82%b9%e3%82%b9%e3%83%a1%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e6%a7%8b%e9%80%a0" target="_blank" rel="noopener" class="share-btn pinterest">
+          <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check out this post by Kenji%20Adachi&amp;body=https%3a%2f%2fcpx.business%2fblog%2ffile-structure-for-mastering-hugo%2f" target="_blank" class="share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro">
+  <a href="https://cpx.business/"><img src="https://cpx.business/img/main/logo.png" class="" width="120" alt="logo" /></a>
+  
+  <main>
+    <p>ロキソニンとカフェインからこれらの記事は錬成されています</p>
+  </main>
+  
+</section>
+
+      <main id="site-main">
+        <article class="post">
+  <header>
+  <div class="title">
+    
+        <h2><a href="https://cpx.business/blog/file-structure-for-mastering-hugo/">[Hugo]Hugoを使いこなすためのオススメファイル構造</a></h2>
+    
+    
+        <p>しばらくHugoを使う中で気づいたのが、よくファイル構造に迷わされるということ</p>
+    
+</div>
+  <div class="meta">
+    <time class="published" datetime="2020-05-13 00:00:00 &#43;0000 UTC">
+      2020-05-13
+    </time>
+    <span class="author">Kenji Adachi</span>
+    
+      <p>1 分で読めます</p>
+    
+  </div>
+</header>
+
+  <section id="socnet-share">
+    
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=%5bHugo%5dHugo%e3%82%92%e4%bd%bf%e3%81%84%e3%81%93%e3%81%aa%e3%81%99%e3%81%9f%e3%82%81%e3%81%ae%e3%82%aa%e3%82%b9%e3%82%b9%e3%83%a1%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e6%a7%8b%e9%80%a0&amp;url=https%3a%2f%2fcpx.business%2fblog%2ffile-structure-for-mastering-hugo%2f" target="_blank" rel="noopener" class="share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcpx.business%2fblog%2ffile-structure-for-mastering-hugo%2f" target="_blank" rel="noopener" class="share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fcpx.business%2fblog%2ffile-structure-for-mastering-hugo%2f&amp;title=%5bHugo%5dHugo%e3%82%92%e4%bd%bf%e3%81%84%e3%81%93%e3%81%aa%e3%81%99%e3%81%9f%e3%82%81%e3%81%ae%e3%82%aa%e3%82%b9%e3%82%b9%e3%83%a1%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e6%a7%8b%e9%80%a0" target="_blank" rel="noopener" class="share-btn reddit">
+          <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcpx.business%2fblog%2ffile-structure-for-mastering-hugo%2f&amp;title=%5bHugo%5dHugo%e3%82%92%e4%bd%bf%e3%81%84%e3%81%93%e3%81%aa%e3%81%99%e3%81%9f%e3%82%81%e3%81%ae%e3%82%aa%e3%82%b9%e3%82%b9%e3%83%a1%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e6%a7%8b%e9%80%a0" target="_blank" rel="noopener" class="share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcpx.business%2fblog%2ffile-structure-for-mastering-hugo%2f&amp;description=%5bHugo%5dHugo%e3%82%92%e4%bd%bf%e3%81%84%e3%81%93%e3%81%aa%e3%81%99%e3%81%9f%e3%82%81%e3%81%ae%e3%82%aa%e3%82%b9%e3%82%b9%e3%83%a1%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e6%a7%8b%e9%80%a0" target="_blank" rel="noopener" class="share-btn pinterest">
+          <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check out this post by Kenji%20Adachi&amp;body=https%3a%2f%2fcpx.business%2fblog%2ffile-structure-for-mastering-hugo%2f" target="_blank" class="share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+  </section>
+  
+  <a href="https://cpx.business/blog/file-structure-for-mastering-hugo/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/file-structure-for-mastering-hugo.png" alt="">
+    
+  </a>
+
+
+  <div class="content">
+    <div id="toc">
+      <h2>目次</h2>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#hugo">Hugoのファイル構造機能</a>
+      <ul>
+        <li><a href="#heading">デフォルト</a></li>
+        <li><a href="#heading1">ページバンドル</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading4">オススメファイル構造</a>
+      <ul>
+        <li><a href="#heading5">記事と記事内の画像はリーフバンドルで設定</a></li>
+        <li><a href="#static">ヘッダー画像がある場合は、static内に入れる</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading6">参考にした記事</a></li>
+    <li><a href="#heading7">こちらもぜひご一緒に！</a></li>
+  </ul>
+</nav>
+      <hr>
+    </div>
+    <section class="profile">
+  <h4> この記事はこんな人が書いています</h2>
+  <img src="https://cpx.business/img/main/icon2.png" class="circle" width="80" alt="icon">
+  <b>だちけん</b>
+  <p>
+    株式会社ムジカルを設立し、webアプリケーションの開発、webマーケティングを担当しています。<br><br>
+    webアプリケーションでは、Vue.js、Ruby on Rails、Node.jsを用いての開発が得意です。<br><br>
+    まったくゼロの状態から、要件定義を含めてシステム開発にとりかかったことで、幅広い知識を学習しながらよしなに進めるスキルを身につけました。<br><br>
+    フリーランスとして、エンジニアリングやコンサルティングも行なっています。<br><br>
+    詳しくは<a href="https://cpx.business/about">about</a>を読んでみてください。
+  </p>
+</section>
+<hr>
+
+    <p>しばらくHugoを使う中で気づいたのが、よくファイル構造に迷わされるということ。</p>
+<p>いろいろ方法は準備してくれているのですが、そのどれをどのタイミングで使うかにいつも迷ってしまうんですよね…</p>
+<p>3ヶ月ほどHugoを使ってきたので、その中で落ち着いたファイル構造について今回はまとめてみました。</p>
+<hr>
+<h2 id="hugo">Hugoのファイル構造機能</h2>
+<p>まずはそもそも、ファイル構造の機能をまとめてみました。</p>
+<hr>
+<h3 id="heading">デフォルト</h3>
+<p>デフォルトの機能では、ファイル構造はこのようになるかと思います。</p>
+<pre><code>.
+├── content
+|   └── posts
+|       ├── firstpost.md  // &lt;- https://example.com/posts/firstpost/
+|       └── secondpost.md // &lt;- https://example.com/posts/secondpost/
+└── static
+    ├── img1.png
+    └── img2.png
+</code></pre><p>このような形で、画像を挿入したい場合は<code>static</code>フォルダ内に入れて、<code>{{- $image := resources.Get “img1.png” -}}</code>このような形で呼び出すのが基本の設定となっています。</p>
+<hr>
+<h3 id="heading1">ページバンドル</h3>
+<p>先ほどご紹介したデフォルトの機能では、画像を差し替えたい！となった場合に遠くの<code>static</code>ディレクトリを管理せねばならず、不便ですよね。</p>
+<p>そこで、ページバンドルという方法がHugoには準備されています。</p>
+<p>ページバンドルには、リーフバンドル、ブランチバンドルという2種類があるので今からそれらの詳細になります。</p>
+<p><a href="https://maku77.github.io/hugo/misc/page-bundle.html">こちら</a>のページがすごく分かりやすかったので、参照させていただきます。</p>
+<p>(個人的に使いやすいリーフ版ドルをメインにご紹介したいので、順序は逆になっています。)</p>
+<pre><code>.
+└── content
+    └── about
+    |   ├── index.md // &lt;- https://example.com/about/ (リーフバンドル)
+    |   └── img
+    |       └── img1.png
+    └── posts
+        ├── _index.md // &lt;- https://example.com/posts/ (ブランチバンドル)
+        ├── img1.png
+        └── happy
+            └── index.md // &lt;- https://example.com/posts/happy/ness/ (リーフバンドル)
+</code></pre><hr>
+<h4 id="heading2">リーフバンドル</h4>
+<p>リーフ(葉)なので、一番先端になるイメージ。</p>
+<p>index.htmlをつくれば、以降はすべてこの中身として扱われます。</p>
+<blockquote>
+<ul>
+<li><code>index.md</code>を持つディレクトリ。いわゆるシングルページに、専用のディレクトリを割り当てたもの。</li>
+<li>入れ子で別のバンドルは含められない。だから、ブランチ（枝）に対して、リーフ（葉）という名前が付けられている。</li>
+<li>リソースファイル用のサブディレクトリを持つことができる。このディレクトリ以下に置いた <code>index.md</code>以外のファイルは、どんなに深いディレクトリに置こうが、この Leaf Bundle のリソースである。だから、<code>index.md</code>から参照する画像ファイルは、それ以下の階層であればどこにでも置ける。</li>
+<li>Markdown ファイル (.md) でさえ、このディレクトリ内に配置したら、Leaf Bundle のリソースという扱いになる（単独で表示する記事ページとはみなされない）。</li>
+</ul>
+</blockquote>
+<hr>
+<h4 id="heading3">ブランチバンドル</h4>
+<p>こちらは、ブランチ(枝)なので、その先がある可能性もあるイメージですね。</p>
+<blockquote>
+<ul>
+<li><code>_index.md</code> を持つディレクトリ。いわゆるセクションページに、画像などのリソースをくっつけたもの。</li>
+<li>入れ子で別のバンドルを含むことができる（子ページを持てることと同義）。</li>
+<li>リソースファイル用のサブディレクトリを持つことはできない（サブディレクトリは、あくまで別のページ用に作るものである）。だから、<code>_index.md</code>から参照する画像ファイルなどは、<code>_index.md</code>と同じディレクトリ内に並べて置く必要がある。</li>
+<li>このディレクトリ以下に配置した Markdown ファイル (.md) は、別の独立したシングルページとして存在することになる（当たり前のように思えるけど、下の Leaf Bundle の場合はちょっと違う扱いになる）。</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="heading4">オススメファイル構造</h2>
+<p>さて、ようやくぼくのオススメファイル構造のご紹介です。</p>
+<p>以下のような感じですね。</p>
+<p>みて分かる通り、リーフバンドルをベースに活用しています。</p>
+<pre><code>.
+├── content
+|   └── posts
+|       └── &lt;blogName&gt;  
+|           ├── index.md // &lt;- https://example.com/&lt;blogName&gt;/ (リーフバンドル)
+|           └── img
+|               └── 1.png
+└── static
+    └── header
+        └── &lt;blogName&gt;.png
+</code></pre><p>ポイントは以下の2つですね。</p>
+<hr>
+<h3 id="heading5">記事と記事内の画像はリーフバンドルで設定</h3>
+<p>基本的にはリーフバンドルを活用しています。</p>
+<p><code>&lt;blogName&gt;/index.md</code>が記事ですね。</p>
+<p>その中で使う画像は、基本的には<code>&lt;blogName&gt;/img</code>内に入れています。</p>
+<hr>
+<h3 id="static">ヘッダー画像がある場合は、static内に入れる</h3>
+<p>ただ、ヘッダー画像の場合は注意が必要です。</p>
+<p>ヘッダー画像はリーフバンドルでは管理できないようなので、ヘッダー画像のみ<code>static/header</code>に入れる運用としています。</p>
+<p>ややこしいので、<code>&lt;blogName&gt;.png</code>にしています。</p>
+<p>ほかにも、<code>static</code>内には<code>favicon</code>や<code>css/add-on.css</code>、<code>js/add-on.css</code>などが入っています。</p>
+<p>今日はこのあたりで。</p>
+<hr>
+<h2 id="heading6">参考にした記事</h2>
+<ul>
+<li><a href="https://maku77.github.io/hugo/misc/page-bundle.html">画像ファイルを Markdown ファイルと同じディレクトリに置く (Page Bundle)</a></li>
+<li><a href="https://gohugo.io/content-management/page-bundles">Page Bundles - HUGO</a></li>
+</ul>
+<hr>
+<h2 id="heading7">こちらもぜひご一緒に！</h2>
+<ul>
+<li><a href="../../blog/how-to-set-favicon/">[Hugo]faviconを設定する方法</a></li>
+<li><a href="../../blog/how-to-create-this-page/">[Hugo]Docker上で管理できるポートフォリオを作ってみたよ</a></li>
+</ul>
+  </div>
+  <footer>
+    <ul class="stats">
+  
+    
+    
+      <li class="categories">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="https://cpx.business/categories/hugo">Hugo</a></li>
+          
+        </ul>
+      </li>
+    
+  
+  
+    
+    
+      <li class="tags">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="https://cpx.business/tags/hugo">Hugo</a></li>
+          
+        </ul>
+      </li>
+    
+  
+</ul>
+
+  </footer>
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "dachiken" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+
+
+<div class="pagination">
+  
+    <a href="https://cpx.business/blog/how-to-move-from-bitbucket-to-github/" class="button"><div class="previous"><div>[Git]BitbucketからGitHubに移行しました</div></div></a>
+  
+  
+    <a href="https://cpx.business/blog/workona-how-to-use/" class="button"><div class="next"><div>[Workona]chromeの拡張機能Workonaがすばらしいというおはなし</div></div></a>
+  
+</div>
+
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最近の投稿</h1>
+      </header>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-use-usecase-in-rails/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-use-usecase-in-rails.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-use-usecase-in-rails/">[Rails]Usecaseクラスを上手に扱おう</a></h1>
+          <time class="published" datetime="">2020-07-25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-use-json-rails-activerecord/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-use-json-rails-activerecord.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-use-json-rails-activerecord/">[Rails]MySQLのJSON型をActiveRecordで扱おう</a></h1>
+          <time class="published" datetime="">2020-07-24</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-use-eslint/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-use-eslint.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-use-eslint/">[Node.js]eslintことはじめ ~キレイなJSコードを担保しよう~</a></h1>
+          <time class="published" datetime="">2020-05-31</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-use-rspec/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-use-rspec.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-use-rspec/">[Rails]RSpecことはじめ ~使いやすい環境構築~</a></h1>
+          <time class="published" datetime="">2020-05-31</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/first-step-for-create-matching-system/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/first-step-for-create-matching-system.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/first-step-for-create-matching-system/">マッチングシステム構築はじめの一歩 ざっくりシステム3パターン</a></h1>
+          <time class="published" datetime="">2020-05-23</time>
+        </header>
+      </article>
+      
+      
+        <a href="https://cpx.business/blog/" class="button">続きを見る</a>
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="https://cpx.business/categories">カテゴリー</a></h1>
+        </header>
+        <ul>
+          
+            
+          
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/rails/">rails<span class="count">17</span></a>
+            
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/hugo/">hugo<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/other/">other<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/tools/">tools<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/node.js/">node.js<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/web%E3%83%9E%E3%83%BC%E3%82%B1/">webマーケ<span class="count">1</span></a>
+            
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/kenjiadachi" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//facebook.com/DACH1KEN" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+<li><a href="//instagram.com/dach1ken" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
+
+<li><a href="//twitter.com/dach1_ken" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+  
+  <p class="copyright">
+    
+      dachiken
+    . <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.60.1' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="https://cpx.business/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="https://cpx.business/js/bundle.min.e0c399b948d3cf5c3a5e3badb94023d0b064a19ac39fd8cd79fb9f57fa4d1091.js" integrity="sha256-4MOZuUjTz1w6XjutuUAj0LBkoZrDn9jNefufV/pNEJE="></script>
+    <script src="https://cpx.business/js/add-on.js"></script>
+    </div>
+  </body>
+</html>

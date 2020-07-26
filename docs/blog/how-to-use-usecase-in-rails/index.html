@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+  
+  
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TKRT9JJ');</script>
+  
+
+
+  <meta charset="utf-8">
+<title>[Rails]Usecaseクラスを上手に扱おう - CPX</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://cpx.business/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cpx.business/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cpx.business/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://cpx.business/favicon/site.webmanifest">
+  
+    <link rel="mask-icon" href="https://cpx.business/favicon/safari-pinned-tab.svg" color="#ffffff">
+    <link rel="shortcut icon" href="https://cpx.business/favicon/favicon.ico">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.60.1" /><meta itemprop="name" content="[Rails]Usecaseクラスを上手に扱おう">
+<meta itemprop="description" content="fat controllerを防ぎましょう">
+<meta itemprop="datePublished" content="2020-07-25T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-07-25T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="235">
+<meta itemprop="image" content="https://cpx.business/img/header/how-to-use-usecase-in-rails.png">
+
+
+
+<meta itemprop="keywords" content="Rails,Usecase," /><meta property="og:title" content="[Rails]Usecaseクラスを上手に扱おう" />
+<meta property="og:description" content="fat controllerを防ぎましょう" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cpx.business/blog/how-to-use-usecase-in-rails/" />
+<meta property="og:image" content="https://cpx.business/img/header/how-to-use-usecase-in-rails.png" />
+<meta property="article:published_time" content="2020-07-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-25T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://cpx.business/img/header/how-to-use-usecase-in-rails.png"/>
+
+<meta name="twitter:title" content="[Rails]Usecaseクラスを上手に扱おう"/>
+<meta name="twitter:description" content="fat controllerを防ぎましょう"/>
+<meta name="twitter:site" content="@dach1_ken"/>
+<link rel="stylesheet" href="https://cpx.business/css/bundle.min.122bf077d53f56b1f764db5a8c387dd81587f604dbf07bbf3f86a62b06e00ca9.css" integrity="sha256-Eivwd9U/VrH3ZNtajDh92BWH9gTb8Hu/P4amKwbgDKk=">
+        <link rel="stylesheet" href="https://cpx.business/css/add-on.css">
+</head>
+
+  <body>
+    
+
+  
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKRT9JJ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+
+
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="https://cpx.business/">
+        
+          CPX
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu">
+      
+        
+          
+          
+            <a href="https://cpx.business/" class="link"><i class='fa fa-home'></i> Home</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://cpx.business/about/" class="link"><i class='far fa-id-card'></i> About</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://cpx.business/blog/" class="link"><i class='far fa-newspaper'></i> Blog</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://cpx.business/categories/" class="link"><i class='fas fa-sitemap'></i> Categories</a>
+          
+        
+      
+      <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      
+    </menu>
+    
+    <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    
+    <a href="#site-nav" class="nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  
+  
+    <menu id="share-menu" class="flyout-menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=%5bRails%5dUsecase%e3%82%af%e3%83%a9%e3%82%b9%e3%82%92%e4%b8%8a%e6%89%8b%e3%81%ab%e6%89%b1%e3%81%8a%e3%81%86&amp;url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-usecase-in-rails%2f" target="_blank" rel="noopener" class="share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-usecase-in-rails%2f" target="_blank" rel="noopener" class="share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-usecase-in-rails%2f&amp;title=%5bRails%5dUsecase%e3%82%af%e3%83%a9%e3%82%b9%e3%82%92%e4%b8%8a%e6%89%8b%e3%81%ab%e6%89%b1%e3%81%8a%e3%81%86" target="_blank" rel="noopener" class="share-btn reddit">
+          <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-usecase-in-rails%2f&amp;title=%5bRails%5dUsecase%e3%82%af%e3%83%a9%e3%82%b9%e3%82%92%e4%b8%8a%e6%89%8b%e3%81%ab%e6%89%b1%e3%81%8a%e3%81%86" target="_blank" rel="noopener" class="share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-usecase-in-rails%2f&amp;description=%5bRails%5dUsecase%e3%82%af%e3%83%a9%e3%82%b9%e3%82%92%e4%b8%8a%e6%89%8b%e3%81%ab%e6%89%b1%e3%81%8a%e3%81%86" target="_blank" rel="noopener" class="share-btn pinterest">
+          <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check out this post by Kenji%20Adachi&amp;body=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-usecase-in-rails%2f" target="_blank" class="share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro">
+  <a href="https://cpx.business/"><img src="https://cpx.business/img/main/logo.png" class="" width="120" alt="logo" /></a>
+  
+  <main>
+    <p>ロキソニンとカフェインからこれらの記事は錬成されています</p>
+  </main>
+  
+</section>
+
+      <main id="site-main">
+        <article class="post">
+  <header>
+  <div class="title">
+    
+        <h2><a href="https://cpx.business/blog/how-to-use-usecase-in-rails/">[Rails]Usecaseクラスを上手に扱おう</a></h2>
+    
+    
+        <p>fat controllerを防ぎましょう</p>
+    
+</div>
+  <div class="meta">
+    <time class="published" datetime="2020-07-25 00:00:00 &#43;0000 UTC">
+      2020-07-25
+    </time>
+    <span class="author">Kenji Adachi</span>
+    
+      <p>2 分で読めます</p>
+    
+  </div>
+</header>
+
+  <section id="socnet-share">
+    
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=%5bRails%5dUsecase%e3%82%af%e3%83%a9%e3%82%b9%e3%82%92%e4%b8%8a%e6%89%8b%e3%81%ab%e6%89%b1%e3%81%8a%e3%81%86&amp;url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-usecase-in-rails%2f" target="_blank" rel="noopener" class="share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-usecase-in-rails%2f" target="_blank" rel="noopener" class="share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-usecase-in-rails%2f&amp;title=%5bRails%5dUsecase%e3%82%af%e3%83%a9%e3%82%b9%e3%82%92%e4%b8%8a%e6%89%8b%e3%81%ab%e6%89%b1%e3%81%8a%e3%81%86" target="_blank" rel="noopener" class="share-btn reddit">
+          <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-usecase-in-rails%2f&amp;title=%5bRails%5dUsecase%e3%82%af%e3%83%a9%e3%82%b9%e3%82%92%e4%b8%8a%e6%89%8b%e3%81%ab%e6%89%b1%e3%81%8a%e3%81%86" target="_blank" rel="noopener" class="share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-usecase-in-rails%2f&amp;description=%5bRails%5dUsecase%e3%82%af%e3%83%a9%e3%82%b9%e3%82%92%e4%b8%8a%e6%89%8b%e3%81%ab%e6%89%b1%e3%81%8a%e3%81%86" target="_blank" rel="noopener" class="share-btn pinterest">
+          <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check out this post by Kenji%20Adachi&amp;body=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-usecase-in-rails%2f" target="_blank" class="share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+  </section>
+  
+  <a href="https://cpx.business/blog/how-to-use-usecase-in-rails/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-use-usecase-in-rails.png" alt="">
+    
+  </a>
+
+
+  <div class="content">
+    <div id="toc">
+      <h2>目次</h2>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#heading">ことばの紹介</a>
+      <ul>
+        <li><a href="#fat-controller">fat controllerとは</a></li>
+        <li><a href="#usecase">Usecase層とは</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading1">使ってみましょう</a></li>
+    <li><a href="#heading2">参考にした記事</a></li>
+  </ul>
+</nav>
+      <hr>
+    </div>
+    <section class="profile">
+  <h4> この記事はこんな人が書いています</h2>
+  <img src="https://cpx.business/img/main/icon2.png" class="circle" width="80" alt="icon">
+  <b>だちけん</b>
+  <p>
+    株式会社ムジカルを設立し、webアプリケーションの開発、webマーケティングを担当しています。<br><br>
+    webアプリケーションでは、Vue.js、Ruby on Rails、Node.jsを用いての開発が得意です。<br><br>
+    まったくゼロの状態から、要件定義を含めてシステム開発にとりかかったことで、幅広い知識を学習しながらよしなに進めるスキルを身につけました。<br><br>
+    フリーランスとして、エンジニアリングやコンサルティングも行なっています。<br><br>
+    詳しくは<a href="https://cpx.business/about">about</a>を読んでみてください。
+  </p>
+</section>
+<hr>
+
+    <p>Railsを触っていくと、どうしてもデフォルトの機能だけではController層がどんどん大きくなっていきますよね。</p>
+<p>重複する処理を作ったりすることもあるので、どんどん内部との処理はUsecase層に振り分けていくのがいいかと思っています。</p>
+<p>今回は、Usecase層とは？というところからどのように振り分けていく基準は？というところまでご紹介していければと思います！</p>
+<hr>
+<h2 id="heading">ことばの紹介</h2>
+<p>まずは知らない方もいるかと思うので、ことばの紹介から。</p>
+<p>わかってるよ！って人は飛ばしてください。</p>
+<hr>
+<h3 id="fat-controller">fat controllerとは</h3>
+<p><a href="https://qiita.com/nunulk/items/6ed409345efb6ee4f660">こちらの記事</a>から引用させていただきます。</p>
+<blockquote>
+<p>簡潔にいえば、行数が多く（個人的には Controller だとひとつのメソッドが NCLOC で 50 行を超えると Fat 感を感じます、みなさんはいかがでしょうか）、行数が多いがために処理の流れを追うことが難しく、しばしば不具合の原因になるクラスのことをいうのだと思います。</p>
+</blockquote>
+<blockquote>
+<p>本記事では、ただ行数が多いというだけでなく、複数のメソッドで処理が重複していたり、メソッドの中で条件分岐が発生したりして、ひとつの変更が他の部分に及ぼす影響を検知しづらい状態にあるコントローラーを想定しています。</p>
+</blockquote>
+<blockquote>
+<p>巨大なクラスであっても、そこに含まれるデータや関数が高凝集・低結合であれば問題ないと考えます。大事なのは「不具合の原因になる」ということであって、すべての巨大なクラスが悪である、ということではないと思っています。</p>
+</blockquote>
+<p>個人的にはControllerの責務として、データを受け取って返却することまでだと思っているので、それを加工、保存するのはUseCaseに切り分けるのが綺麗かなあと思っています。</p>
+<p>このあたりは、Clean Architecture周りのごにゃごにゃ ( <del>宗教戦争</del> ) をざっくりみておけばいいかと思います。</p>
+<p>(個人的にはバックエンドはUsecase層つくってあとはRailsに従うぐらいがちょうどいいと思っています。)</p>
+<hr>
+<h3 id="usecase">Usecase層とは</h3>
+<p>さっきから出てきている<a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">The Clean Architecture</a>から引用です。</p>
+<p>とりあえずあるあるの図も貼っておきますね。</p>
+<p><img src="./img/1.jpg" alt="イメージ画像"></p>
+<blockquote>
+<p>The software in this layer contains application specific business rules. It encapsulates and implements all of the use cases of the system. These use cases orchestrate the flow of data to and from the entities, and direct those entities to use their enterprise wide business rules to achieve the goals of the use case.</p>
+</blockquote>
+<blockquote>
+<p>We do not expect changes in this layer to affect the entities. We also do not expect this layer to be affected by changes to externalities such as the database, the UI, or any of the common frameworks. This layer is isolated from such concerns.</p>
+</blockquote>
+<blockquote>
+<p>We do, however, expect that changes to the operation of the application will affect the use-cases and therefore the software in this layer. If the details of a use-case change, then some code in this layer will certainly be affected.</p>
+</blockquote>
+<p>Google翻訳に突っ込むと</p>
+<blockquote>
+<p>この層のソフトウェアには、アプリケーション固有のビジネスルールが含まれています。システムのすべてのユースケースをカプセル化して実装します。これらのユースケースは、エンティティとの間のデータフローを調整し、エンタープライズ全体のビジネスルールを使用してユースケースの目標を達成するようにそれらのエンティティに指示します。</p>
+</blockquote>
+<blockquote>
+<p>このレイヤーの変更がエンティティに影響を与えることは想定されていません。また、このレイヤーがデータベース、UI、または任意の一般的なフレームワークなどの外部性の変更による影響を受けることも想定していません。この層はそのような懸念から隔離されています。</p>
+</blockquote>
+<blockquote>
+<p>ただし、アプリケーションの操作を変更すると、ユースケースに影響が及ぶため、このレイヤーのソフトウェアに影響が出ると予想しています。ユースケースの詳細が変更されると、このレイヤーの一部のコードが確実に影響を受けます。</p>
+</blockquote>
+<p>エンティティと聞くとDDDの話とかとの関連が出てくる感じですが、一旦その辺の話は無しにしましょう。</p>
+<p>とりあえず、Railsの場合はActiveRecordでupdateやsaveなどのメソッドが継承されているモデルにデータの保存などは任されていて、そのモデルの操作を依頼する元はUsecaseにまとめましょうという話だと思っています。</p>
+<p>(理解が浅いので、書き直していく前提で書いています。)</p>
+<hr>
+<h2 id="heading1">使ってみましょう</h2>
+<p>それでは早速サンプルをあげますね。</p>
+<p>できるだけシンプルなUsecaseとして、UserのUpdateをするだけのUsecaseを書いてみました。</p>
+<pre><code># app/controllers/users_controller.rb
+
+def update
+  result = Users::UpdateUsecase.new(params).execute
+  render json: result, status: result.status
+end
+
+</code></pre><pre><code># app/usecases/users/update_usecase.rb
+
+def initialize(params)
+  @user = User.find(params[:id])
+  @params = params.require(:user).permit(User::PERMIT_PARAMS)
+end
+
+def execute
+  if @user.update!(@params)
+    {
+      status: 200,
+      message: 'User update!'
+    }
+  else
+    {
+      status: 500,
+      message: 'Error!'
+    }
+  end
+end
+
+</code></pre><p>こんな感じにすると、テストが書きやすくなりますよね。</p>
+<p>Usecaseのテストとモデルのテストだけちゃんと書いとけば、安心感が出てきます。</p>
+<p>こんな感じで、Railsの感じで上手にUsecaseを扱っていきましょう。</p>
+<hr>
+<h2 id="heading2">参考にした記事</h2>
+<ul>
+<li><a href="https://qiita.com/nunulk/items/6ed409345efb6ee4f660">LaravelでFat Controllerを防ぐ5つのTips</a></li>
+<li><a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">The Clean Architecture</a></li>
+</ul>
+  </div>
+  <footer>
+    <ul class="stats">
+  
+    
+    
+      <li class="categories">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="https://cpx.business/categories/rails">Rails</a></li>
+          
+        </ul>
+      </li>
+    
+  
+  
+    
+    
+      <li class="tags">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="https://cpx.business/tags/rails">Rails</a></li>
+          
+            
+            <li><a class="article-category-link" href="https://cpx.business/tags/usecase">Usecase</a></li>
+          
+        </ul>
+      </li>
+    
+  
+</ul>
+
+  </footer>
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "dachiken" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+
+
+<div class="pagination">
+  
+    <a href="https://cpx.business/blog/how-to-use-json-rails-activerecord/" class="button"><div class="previous"><div>[Rails]MySQLのJSON型をActiveRecordで扱おう</div></div></a>
+  
+  
+</div>
+
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>最近の投稿</h1>
+      </header>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-use-usecase-in-rails/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-use-usecase-in-rails.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-use-usecase-in-rails/">[Rails]Usecaseクラスを上手に扱おう</a></h1>
+          <time class="published" datetime="">2020-07-25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-use-json-rails-activerecord/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-use-json-rails-activerecord.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-use-json-rails-activerecord/">[Rails]MySQLのJSON型をActiveRecordで扱おう</a></h1>
+          <time class="published" datetime="">2020-07-24</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-use-eslint/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-use-eslint.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-use-eslint/">[Node.js]eslintことはじめ ~キレイなJSコードを担保しよう~</a></h1>
+          <time class="published" datetime="">2020-05-31</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/how-to-use-rspec/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/how-to-use-rspec.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/how-to-use-rspec/">[Rails]RSpecことはじめ ~使いやすい環境構築~</a></h1>
+          <time class="published" datetime="">2020-05-31</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="https://cpx.business/blog/first-step-for-create-matching-system/" class="image featured">
+    
+      <img src="https://cpx.business/img/header/first-step-for-create-matching-system.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="https://cpx.business/blog/first-step-for-create-matching-system/">マッチングシステム構築はじめの一歩 ざっくりシステム3パターン</a></h1>
+          <time class="published" datetime="">2020-05-23</time>
+        </header>
+      </article>
+      
+      
+        <a href="https://cpx.business/blog/" class="button">続きを見る</a>
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="https://cpx.business/categories">カテゴリー</a></h1>
+        </header>
+        <ul>
+          
+            
+          
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/rails/">rails<span class="count">17</span></a>
+            
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/hugo/">hugo<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/other/">other<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/tools/">tools<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/node.js/">node.js<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="https://cpx.business/categories/web%E3%83%9E%E3%83%BC%E3%82%B1/">webマーケ<span class="count">1</span></a>
+            
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/kenjiadachi" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//facebook.com/DACH1KEN" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+<li><a href="//instagram.com/dach1ken" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
+
+<li><a href="//twitter.com/dach1_ken" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+  
+  <p class="copyright">
+    
+      dachiken
+    . <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.60.1' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="https://cpx.business/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="https://cpx.business/js/bundle.min.e0c399b948d3cf5c3a5e3badb94023d0b064a19ac39fd8cd79fb9f57fa4d1091.js" integrity="sha256-4MOZuUjTz1w6XjutuUAj0LBkoZrDn9jNefufV/pNEJE="></script>
+    <script src="https://cpx.business/js/add-on.js"></script>
+    </div>
+  </body>
+</html>

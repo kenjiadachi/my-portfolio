@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ActiveRecord on CPX</title>
+    <link>https://cpx.business/tags/activerecord/</link>
+    <description>Recent content in ActiveRecord on CPX</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>dachiken</copyright>
+    <lastBuildDate>Fri, 24 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://cpx.business/tags/activerecord/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Rails]MySQLのJSON型をActiveRecordで扱おう</title>
+      <link>https://cpx.business/blog/how-to-use-json-rails-activerecord/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-use-json-rails-activerecord/</guid>
+      <description>&lt;p&gt;MySQL5.7から、JSON型のカラムを作成することができるようになりました。&lt;/p&gt;
+&lt;p&gt;それに伴い、Rails5からActiveRecordでJSON型を扱えるようになっています。&lt;/p&gt;
+&lt;p&gt;タグやカウンタなどに活用できますよ。&lt;/p&gt;
+&lt;p&gt;(個人的にはタグは検索まで考えるとリレーション組んだ方がいいかと思いますが…)&lt;/p&gt;
+&lt;hr&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on CPX</title>
+    <link>https://cpx.business/categories/</link>
+    <description>Recent content in Categories on CPX</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>dachiken</copyright>
+    <lastBuildDate>Sat, 25 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://cpx.business/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Rails</title>
+      <link>https://cpx.business/categories/rails/</link>
+      <pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/categories/rails/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Node.js</title>
+      <link>https://cpx.business/categories/node.js/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/categories/node.js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Other</title>
+      <link>https://cpx.business/categories/other/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/categories/other/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://cpx.business/categories/hugo/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/categories/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tools</title>
+      <link>https://cpx.business/categories/tools/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/categories/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webマーケ</title>
+      <link>https://cpx.business/categories/web%E3%83%9E%E3%83%BC%E3%82%B1/</link>
+      <pubDate>Sun, 10 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/categories/web%E3%83%9E%E3%83%BC%E3%82%B1/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Workona on CPX</title>
+    <link>https://cpx.business/tags/workona/</link>
+    <description>Recent content in Workona on CPX</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>dachiken</copyright>
+    <lastBuildDate>Wed, 20 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://cpx.business/tags/workona/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Workona]chromeの拡張機能Workonaがすばらしいというおはなし</title>
+      <link>https://cpx.business/blog/workona-how-to-use/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/workona-how-to-use/</guid>
+      <description>いくつかの作業を同時並行的に進めると、どうしてもタブ管理が煩雑になってしまいますよね。
+そこで僕が最近使っているChromeの拡張機能、Workonaをご紹介します。
+ Workonaとは？ 安定の公式ページから引っ張ってこようと思ってたのですがいいのが見つからず…
+こちらがわかりやすかったので引用させていただきます。
+ 仕事、調べ物、YouTubeで暇つぶしなど、Chromeを立ち上げてしばらくすると雑多なタブが並び始めます。
+  そこで一気にタブを閉じたいところですが、例えば特定のプロジェクトの最中の場合「毎回立ち上げるサイト」が決まっていて、これらのサイトをまた1から開いていくのは時間と手間の無駄になってしまいます。
+  このような「毎回立ち上げるサイト」をひとかたまりにしてラベルを貼って保存、必要なときに一気に開いてくれるのが【Workona】です。
+ そう、タブをまとめて全部開いてくれる、というのがめっちゃ便利なんですよね…！
+ 実際の運用方法 僕も使い始めてまだそんなに経ってないのですが、現状こんな画面で運用しています。
+この、defaultなどのワークスペースを開くと、自動で登録しているページを全部開いてくれるのが超便利です。
+だいたいタスクの対応する時って複数ページを見ながら管理したりすると思うのですが、そんな時に「一旦作業を途中で止めてページを開く」というのがなくなったのですごくストレスフリーに作業ができている実感があります。
+今はまだ簡単なご紹介ですが、また運用方法などまとまり次第追記していこうと思います。</description>
+    </item>
+    
+  </channel>
+</rss>

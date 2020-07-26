@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>partial on CPX</title>
+    <link>https://cpx.business/tags/partial/</link>
+    <description>Recent content in partial on CPX</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>dachiken</copyright>
+    <lastBuildDate>Thu, 02 Aug 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://cpx.business/tags/partial/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Rails]render partial collectionでeach_with_indexができる話</title>
+      <link>https://cpx.business/blog/how-to-each_with_index-in-render-partial-collection/</link>
+      <pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-each_with_index-in-render-partial-collection/</guid>
+      <description>partial内でindexも使いたい場合はどうするのかなーと思い調べてみました。
+ ※こちらの記事は、Qiitaにて公開していたものを2020/03/01にこちらに移行しています。
+元記事はこちら
+※現在はこちらのページのURLのみ記載されています。
+ 困りごと 調べはじめるきっかけはこの記事でした。
+パーシャルをrenderする際のパフォーマンスに関する注意点
+とりあえず、each内でrender partial: &#39;posts/post&#39;, locals: { post: post }みたいにそれぞれにlocalsで変数渡すぐらいならrender partial: &#39;posts/post&#39;, collection: @postsみたいにcollectionにしちゃおう！その方が高速だよ！という話でした。
+この記事を読んでさっそく自分の書いたコードを直していたのですが、どうするんだろう…ってなったのがこの部分。
+/ view.html.haml - post.comments.each_with_index do |comment, idx| = render partial: &#39;posts/partials/comment&#39;, locals: {comment: comment, idx: idx} このように、partial内でindexも使いたい場合はどうするのかなーと思い調べてみました。
+ 解決策 / view.html.haml = render partial: &#39;posts/partials/comment&#39;, collection: post.comments, as: :comment / posts/partials/_comment.html.haml - if comment_counter == 0 -# 一つ目の挙動 - else -# それ以外の挙動 このように、asで指定したcommentに_counterをつけると、indexの役割をはたしてくれそう。
+Render partial with collection has &amp;ldquo;hidden&amp;rdquo; indexのコメントにありました。</description>
+    </item>
+    
+  </channel>
+</rss>
