@@ -7,10 +7,36 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>dachiken</copyright>
-    <lastBuildDate>Sat, 25 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cpx.business/categories/rails/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Rails]ridgepoleを使おう</title>
+      <link>https://cpx.business/blog/how-to-use-ridgepole/</link>
+      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-use-ridgepole/</guid>
+      <description>&lt;p&gt;&lt;code&gt;bundle exec rails db:migrate&lt;/code&gt;ってこれまで何回実行したことでしょうか。&lt;/p&gt;
+&lt;p&gt;migrationファイルが間違っていたら&lt;code&gt;bundle exec rails db:rollback&lt;/code&gt;して、みたいな…&lt;/p&gt;
+&lt;p&gt;初心者のうちは特に経験することが多いんじゃないでしょうか。&lt;/p&gt;
+&lt;p&gt;今日はそんなmigrationを行わなくてもいいようなgemの&lt;code&gt;ridgepole&lt;/code&gt;をご紹介します。&lt;/p&gt;
+&lt;hr&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Rails]rails_best_practicesを使おう</title>
+      <link>https://cpx.business/blog/how-to-use-rails-best-practices/</link>
+      <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-use-rails-best-practices/</guid>
+      <description>&lt;p&gt;リファクタリング、CI、コードレビュー。&lt;/p&gt;
+&lt;p&gt;どんな言葉が適切かはわからないのですが、最近こんな文脈にハマっています。&lt;/p&gt;
+&lt;p&gt;自分は間違ってないんだなという気持ちにさせてくれるのがすごく素敵…&lt;/p&gt;
+&lt;p&gt;今回はそんなツールの中の一つ、rails_best_practicesというgemを紹介したいと思います。&lt;/p&gt;
+&lt;hr&gt;</description>
+    </item>
     
     <item>
       <title>[Rails]Usecaseクラスを上手に扱おう</title>
