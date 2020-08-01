@@ -84,5 +84,4 @@ bundle exec ridgepole --config ./config/database.yml --file ./db/Schemafile --ap
 
 ## 参考にした記事
 
-- [Rails Best Practices](https://rails-bestpractices.com/)
-- [flyerhzm/rails_best_practices - GitHub](https://github.com/flyerhzm/rails_best_practices)
+- [winebarrel/ridgepole - GitHub](https://github.com/winebarrel/ridgepole)

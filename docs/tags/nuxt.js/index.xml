@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nuxt.js on CPX</title>
+    <link>https://cpx.business/tags/nuxt.js/</link>
+    <description>Recent content in Nuxt.js on CPX</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>dachiken</copyright>
+    <lastBuildDate>Fri, 31 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://cpx.business/tags/nuxt.js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Heroku]Docker環境をHerokuにあげる</title>
+      <link>https://cpx.business/blog/how-to-deploy-on-heroku-with-docker/</link>
+      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-deploy-on-heroku-with-docker/</guid>
+      <description>&lt;p&gt;近年(といっても数年前からですが…)コンテナ、Dockerなどでインフラ管理をするのがますます当たり前になってきますね。&lt;/p&gt;
+&lt;p&gt;最近知ったのですが、Herokuでもコンテナ管理できるようなので試してみました。&lt;/p&gt;
+&lt;hr&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

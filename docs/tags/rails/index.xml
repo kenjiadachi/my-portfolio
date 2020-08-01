@@ -13,6 +13,17 @@
     
     
     <item>
+      <title>[Heroku]Docker環境をHerokuにあげる</title>
+      <link>https://cpx.business/blog/how-to-deploy-on-heroku-with-docker/</link>
+      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-deploy-on-heroku-with-docker/</guid>
+      <description>&lt;p&gt;近年(といっても数年前からですが…)コンテナ、Dockerなどでインフラ管理をするのがますます当たり前になってきますね。&lt;/p&gt;
+&lt;p&gt;最近知ったのですが、Herokuでもコンテナ管理できるようなので試してみました。&lt;/p&gt;
+&lt;hr&gt;</description>
+    </item>
+    
+    <item>
       <title>[Rails]ridgepoleを使おう</title>
       <link>https://cpx.business/blog/how-to-use-ridgepole/</link>
       <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>

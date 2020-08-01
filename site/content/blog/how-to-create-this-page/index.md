@@ -58,7 +58,7 @@ Hugo以外にも
 
 -------
 
-### Dockerとは？
+### Dockerとは
 
 これも[Dockerの公式ページ](https://www.docker.com/why-docker)によると、
 

@@ -3,20 +3,16 @@ author = "Kenji Adachi"
 title = "[Heroku]Docker環境をHerokuにあげる"
 date = "2020-07-31"
 description = "時代はコンテナ管理"
-tags = ["Rails", "refactor"]
-categories = ["Rails"]
+tags = ["Heroku", "Docker", "Nuxt.js", "Rails"]
+categories = ["other"]
 images  = ["img/header/how-to-deploy-on-heroku-with-docker.png"]
 type = "post"
-draft =  true
+draft =  false
 +++
 
-`bundle exec rails db:migrate`ってこれまで何回実行したことでしょうか。
+近年(といっても数年前からですが…)コンテナ、Dockerなどでインフラ管理をするのがますます当たり前になってきますね。
 
-migrationファイルが間違っていたら`bundle exec rails db:rollback`して、みたいな…
-
-初心者のうちは特に経験することが多いんじゃないでしょうか。
-
-今日はそんなmigrationを行わなくてもいいようなgemの`ridgepole`をご紹介します。
+最近知ったのですが、Herokuでもコンテナ管理できるようなので試してみました。
 
 -------
 
@@ -32,21 +28,37 @@ migrationファイルが間違っていたら`bundle exec rails db:rollback`し�
 
 ### Herokuとは
 
-Rails界隈ではめちゃめちゃ有名なcookpadのメンバーの方が作られたスキーマ管理用のgemです。
+[Herokuの公式ページ](https://jp.heroku.com/what)から引用してきました。
 
-migrationファイルのようにファイルをどんどん追加していく形ではなく、`schemafile`を適宜変更していく形でスキーマ管理をおこないます。
+> Herokuはインフラストラクチャ管理が不要なクラウドベースのPaaS(サービスとしてのプラットフォーム)で、開発チームがアプリの開発、配信、監視、スケールに集中できます。
 
-現状と`schemafile`との差分を抽出して自動でスキーマを変更してくれる感じですね。
+個人開発でインフラこだわりたくない時にとりあえず使えるサービスですね。
+
+まずはHeroku、その後AWSなイメージです。
+
+複雑なアプリケーションになってきたらAWSに移行していく感じですかね。
 
 -------
 
-### dockerとは
+### Dockerとは
 
-Rails界隈ではめちゃめちゃ有名なcookpadのメンバーの方が作られたスキーマ管理用のgemです。
+これも[Dockerの公式ページ](https://www.docker.com/why-docker)によると、
 
-migrationファイルのようにファイルをどんどん追加していく形ではなく、`schemafile`を適宜変更していく形でスキーマ管理をおこないます。
+> The only independent container platform that enables organizations to seamlessly build, share and run any application, anywhere—from hybrid cloud to the edge.
 
-現状と`schemafile`との差分を抽出して自動でスキーマを変更してくれる感じですね。
+Google翻訳にぶちこむと
+
+> 組織がハイブリッドクラウドからエッジまで、あらゆるアプリケーションをシームレスに構築、共有、実行できるようにする唯一の独立したコンテナプラットフォーム。
+
+誰とでも簡単に開発環境を共有できるプラットフォーム、といった感じですかね。
+
+僕個人としては、けっこう一人で開発などすることが多いのであまりそのような面では恩恵を受けられていないのですが、ローカルのPCの環境をできるだけ汚したくないので、新しいPCに変えてからはDockerを個人でも使用するようにしています。
+
+`rbenv`とか`pyenv`とかあるにはあるけどめんどくさいですもんね。
+
+こっちのバージョンでは入ってるけど、こっちでは入ってなかったっけ？とか。
+
+そーゆーのもふくめて、簡単に作って壊してできるのがDockerのよさかなあと個人でやっている身からは思います。
 
 -------
 
@@ -54,45 +66,104 @@ migrationファイルのようにファイルをどんどん追加していく�
 
 それでは早速使っていきましょう。
 
-まずはgemfileに追加しましょう。
+今回は、nuxt.js、railsの2種類のアプリケーションをデプロイしてみようと思います。
+
+### nuxt.jsをデプロイ
+
+結論言うとこんな感じです。
+
+[こちらの記事](https://blog.cloud-acct.com/posts/u-nuxtjs-herokudeploy-dcokerfile)のほぼまるパクリですが…
 
 ```
-# gemfile
+# heroku.yml
 
-gem 'ridgepole'
+build:
+  docker:
+    web: Dockerfile.prd
+  config:
+    WORKDIR: app
+    API_URL: ############### ←rails側のURLを記入
+run:
+  web: yarn run start
+```
+
+```
+# Dockerfile.prd
+
+FROM node:14.4.0-alpine
+
+ARG WORKDIR
+ARG CONTAINER_PORT
+ARG API_URL
+
+ENV HOME=/${WORKDIR} \
+    LANG=C.UTF-8 \
+    TZ=Asia/Tokyo \
+    HOST=0.0.0.0  \
+    API_URL=${API_URL} \
+    NPM_CONFIG_PRODUCTION=false
+
+WORKDIR ${HOME}
+
+COPY package*.json ./
+RUN yarn install
+
+COPY . .
+
+RUN yarn run build
+
+EXPOSE ${CONTAINER_PORT}
 
 ```
 
-その後、`schemafile`を作成します。
+この
+
+### railsをデプロイ
+
+こちらも回答から。
+
+[こちらの記事](https://blog.cloud-acct.com/posts/u-nuxtjs-heroku-push)のほぼまるパクリです。
 
 ```
-# /db/Schemafile
+# heroku.yml
 
-create_table "users", force: :cascade do |t|
-  t.string "name", null: false
-  t.string "email", null: false
-  t.string "image"
-  t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
-  t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+build:
+  docker:
+    web: Dockerfile
+  config:
+    WORKDIR: app
+run:
+  web: bundle exec puma -C config/heroku_puma.rb
+
+```
+
+```
+# config/heroku_puma.rb
+
+workers Integer(ENV.fetch('WEB_CONCURRENCY', 2))
+
+max_threads_count = ENV.fetch('RAILS_MAX_THREADS', 5)
+min_threads_count = ENV.fetch('RAILS_MIN_THREADS') { max_threads_count }
+threads min_threads_count, max_threads_count
+
+preload_app!
+
+rackup DefaultRackup
+port ENV.fetch('PORT', 3000)
+environment ENV.fetch('RAILS_ENV') { 'development' }
+
+on_worker_boot do
+  ActiveRecord::Base.establish_connection
 end
-
 ```
 
-書き方とかはGitHubの[README](https://github.com/winebarrel/ridgepole)がわかりやすいんですよね。(優しい…)
-
-こんな感じで、`schemafile`を触りましょう。
-
-そのあとは、下記コマンドで実行しましょう。
-
-```
-bundle exec ridgepole --config ./config/database.yml --file ./db/Schemafile --apply
-```
-
-こんな感じで、ridgepoleで便利にスキーマ管理をおこないましょう！
+その後、`heroku stack:set container`を実行後にデプロイすれば完了です。
 
 -------
 
 ## 参考にした記事
 
-- [Rails Best Practices](https://rails-bestpractices.com/)
-- [flyerhzm/rails_best_practices - GitHub](https://github.com/flyerhzm/rails_best_practices)
+- [Herokuとは | Heroku](https://jp.heroku.com/what)
+- [Why Docker? | Docker](https://www.docker.com/why-docker)
+- [Dockerfile解説編。Docker環境のNuxt.jsをHerokuにデプロイする(1/2) - 独学プログラマ](https://blog.cloud-acct.com/posts/u-nuxtjs-herokudeploy-dcokerfile)
+- [デプロイ完結編。Docker環境のNuxt.jsをHerokuにデプロイする(2/2) - 独学プログラマ](https://blog.cloud-acct.com/posts/u-nuxtjs-heroku-push)

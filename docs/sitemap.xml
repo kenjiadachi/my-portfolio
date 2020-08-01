@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://cpx.business/blog/how-to-deploy-on-heroku-with-docker/</loc>
+    <lastmod>2020-07-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cpx.business/blog/how-to-use-ridgepole/</loc>
     <lastmod>2020-07-31T00:00:00+00:00</lastmod>
   </url>
@@ -23,12 +28,32 @@
   </url>
   
   <url>
-    <loc>https://cpx.business/categories/rails/</loc>
+    <loc>https://cpx.business/tags/docker/</loc>
+    <lastmod>2020-07-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/tags/heroku/</loc>
+    <lastmod>2020-07-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/tags/nuxt.js/</loc>
+    <lastmod>2020-07-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/categories/other/</loc>
     <lastmod>2020-07-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cpx.business/tags/rails/</loc>
+    <lastmod>2020-07-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cpx.business/categories/rails/</loc>
     <lastmod>2020-07-31T00:00:00+00:00</lastmod>
   </url>
   
@@ -88,12 +113,12 @@
   </url>
   
   <url>
-    <loc>https://cpx.business/categories/node.js/</loc>
+    <loc>https://cpx.business/tags/node.js/</loc>
     <lastmod>2020-05-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cpx.business/tags/node.js/</loc>
+    <loc>https://cpx.business/categories/node.js/</loc>
     <lastmod>2020-05-31T00:00:00+00:00</lastmod>
   </url>
   
@@ -104,11 +129,6 @@
   
   <url>
     <loc>https://cpx.business/tags/dev/</loc>
-    <lastmod>2020-05-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cpx.business/categories/other/</loc>
     <lastmod>2020-05-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -133,12 +153,12 @@
   </url>
   
   <url>
-    <loc>https://cpx.business/tags/hugo/</loc>
+    <loc>https://cpx.business/categories/hugo/</loc>
     <lastmod>2020-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cpx.business/categories/hugo/</loc>
+    <loc>https://cpx.business/tags/hugo/</loc>
     <lastmod>2020-05-20T00:00:00+00:00</lastmod>
   </url>
   
@@ -198,12 +218,12 @@
   </url>
   
   <url>
-    <loc>https://cpx.business/tags/web%E3%83%9E%E3%83%BC%E3%82%B1/</loc>
+    <loc>https://cpx.business/categories/web%E3%83%9E%E3%83%BC%E3%82%B1/</loc>
     <lastmod>2020-05-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cpx.business/categories/web%E3%83%9E%E3%83%BC%E3%82%B1/</loc>
+    <loc>https://cpx.business/tags/web%E3%83%9E%E3%83%BC%E3%82%B1/</loc>
     <lastmod>2020-05-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -219,11 +239,6 @@
   
   <url>
     <loc>https://cpx.business/blog/how-to-create-this-page/</loc>
-    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cpx.business/tags/docker/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -364,11 +379,6 @@
   
   <url>
     <loc>https://cpx.business/blog/how-to-create-blog-in-rails/</loc>
-    <lastmod>2018-03-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cpx.business/tags/heroku/</loc>
     <lastmod>2018-03-24T00:00:00+00:00</lastmod>
   </url>
   
