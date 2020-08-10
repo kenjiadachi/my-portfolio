@@ -2,7 +2,7 @@
 author = "Kenji Adachi"
 title = "[git]submoduleを使いこなそう"
 date = "2020-08-01"
-description = "migrationファイルより簡単に管理できます"
+description = "git管理を切り分けたいそこのあなたに"
 tags = ["Rails", "refactor"]
 categories = ["Rails"]
 images  = ["img/header/how-to-use-git-submodule.png"]

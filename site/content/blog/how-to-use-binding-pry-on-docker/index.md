@@ -1,22 +1,18 @@
 +++
 author = "Kenji Adachi"
-title = "[HUGO]GitHub Actionsで自動デプロイする"
-date = "2020-08-01"
-description = "migrationファイルより簡単に管理できます"
+title = "[Rails]Docker環境上でbinding.pryを使う"
+date = "2020-08-02"
+description = "デバッグツールを使いこなしましょう"
 tags = ["Rails", "refactor"]
 categories = ["Rails"]
-images  = ["img/header/how-to-deploy-with-github-actions.png"]
+images  = ["img/header/how-to-use-binding-pry-on-docker.png"]
 type = "post"
-draft =  true
+draft =  false
 +++
 
-`bundle exec rails db:migrate`ってこれまで何回実行したことでしょうか。
+`binding.pry`。とりあえずデバッグのときに何回も試すアレですね。
 
-migrationファイルが間違っていたら`bundle exec rails db:rollback`して、みたいな…
-
-初心者のうちは特に経験することが多いんじゃないでしょうか。
-
-今日はそんなmigrationを行わなくてもいいようなgemの`ridgepole`をご紹介します。
+今回はそれをDocker上でできる方法をご紹介します。
 
 -------
 
@@ -30,13 +26,25 @@ migrationファイルが間違っていたら`bundle exec rails db:rollback`し�
 
 -------
 
-### ridgepoleとは
+### pryとは
 
-Rails界隈ではめちゃめちゃ有名なcookpadのメンバーの方が作られたスキーマ管理用のgemです。
+[pry-byebugのGitHub](https://github.com/deivid-rodriguez/pry-byebug)からとってきました。
 
-migrationファイルのようにファイルをどんどん追加していく形ではなく、`schemafile`を適宜変更していく形でスキーマ管理をおこないます。
+> Adds step-by-step debugging and stack navigation capabilities to pry using byebug.
 
-現状と`schemafile`との差分を抽出して自動でスキーマを変更してくれる感じですね。
+> To use, invoke pry normally. No need to start your script or app differently. Execution will stop in the first statement after your `binding.pry`.
+
+Google翻訳にぶちこむと
+
+> byebugを使用して、段階的なデバッグおよびスタックナビゲーション機能を追加します。 
+
+> 使用するには、通常どおりpryを呼び出します。スクリプトやアプリを別に起動する必要はありません。 
+
+> `binding.pry`の後の最初のステートメントで実行が停止します。
+
+はい。デバッグツールという感じですね。
+
+とりあえず使っておいて損はないツールだと思います。
 
 -------
 
@@ -49,39 +57,64 @@ migrationファイルのようにファイルをどんどん追加していく�
 ```
 # gemfile
 
-gem 'ridgepole'
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
-```
-
-その後、`schemafile`を作成します。
-
-```
-# /db/Schemafile
-
-create_table "users", force: :cascade do |t|
-  t.string "name", null: false
-  t.string "email", null: false
-  t.string "image"
-  t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
-  t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+  # デバッグツール
+  gem 'pry-rails'
+  gem 'pry-byebug'
 end
 
 ```
 
-書き方とかはGitHubの[README](https://github.com/winebarrel/ridgepole)がわかりやすいんですよね。(優しい…)
+その後、`bundle install`を忘れず実行してください。
 
-こんな感じで、`schemafile`を触りましょう。
+docker環境だと、`docker-compose build`やり直しがいいと思います。
 
-そのあとは、下記コマンドで実行しましょう。
+僕の場合、spring環境を別に作成しているため同期がうまく取れないようなんですよね…
+
+(また調べてまとめておきたいと思います。)
+
+-------
+
+そのあと、気になるところに`binding.pry`を記入してください。
 
 ```
-bundle exec ridgepole --config ./config/database.yml --file ./db/Schemafile --apply
+# /app/controllers/users_controller.rb
+
+class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :update, :destroy]
+
+  # POST /users
+  def create
+    binding.pry # こんな感じ！
+    @user = User.find_or_initialize_by(uid: params[:uid])
+    if @user.update(user_params)
+      render json: @user, status: :created
+    else
+      render json: @user.errors, status: :unprocessable_entity
+    end
+  end
+
+  # 以下省略
+end
+
 ```
 
-こんな感じで、ridgepoleで便利にスキーマ管理をおこないましょう！
+その後、`docker attach <コンテナID>`を実行後に動かすと`binding.pry`を入力していたところで止まってくれますよ。
+
+-------
+
+## おまけ
+
+pryの使い方、こちらで知らないものいっぱいご紹介いただいていたので、参考までに載せておきます。
+
+[今更聞けないpryの使い方と便利プラグイン集 - Qiita](https://qiita.com/k0kubun/items/b118e9ccaef8707c4d9f)
 
 -------
 
 ## 参考にした記事
 
-- [winebarrel/ridgepole - GitHub](https://github.com/winebarrel/ridgepole)
+- [deivid-rodriguez/pry-byebug - GitHub](https://github.com/deivid-rodriguez/pry-byebug)
+- [今更聞けないpryの使い方と便利プラグイン集 - Qiita](https://qiita.com/k0kubun/items/b118e9ccaef8707c4d9f)

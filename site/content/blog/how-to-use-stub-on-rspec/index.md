@@ -2,7 +2,7 @@
 author = "Kenji Adachi"
 title = "[Rails]RSpecでstubを上手に使おう"
 date = "2020-08-01"
-description = "migrationファイルより簡単に管理できます"
+description = "stubを使いこなして疎結合なコードとテストを書きましょう"
 tags = ["Rails", "refactor"]
 categories = ["Rails"]
 images  = ["img/header/how-to-use-stub-on-rspec.png"]

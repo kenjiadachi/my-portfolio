@@ -7,10 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>dachiken</copyright>
-    <lastBuildDate>Fri, 31 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 02 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cpx.business/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[CircleCI]CircleCIを上手に使おう</title>
+      <link>https://cpx.business/blog/how-to-use-circleci/</link>
+      <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-use-circleci/</guid>
+      <description>&lt;p&gt;CIツールで企業では一番ポピュラーに使われているのでは？というCircleCI。&lt;/p&gt;
+&lt;p&gt;使いはじめはPRを作成する度怒られてイラだちを覚えるツールでしたが、今はすっかり通った時の快感に魅了されています。&lt;/p&gt;
+&lt;p&gt;今回は、そんなCircleCIを使いこなせるようになりたいということで自分の環境に追加してみたので、そのやり方をご紹介します。&lt;/p&gt;
+&lt;hr&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Circleci]slackに通知を送ろう</title>
+      <link>https://cpx.business/blog/how-to-send-notify-by-circleci/</link>
+      <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-send-notify-by-circleci/</guid>
+      <description>&lt;p&gt;CIツールで企業では一番ポピュラーに使われているのでは？というCircleCI。&lt;/p&gt;
+&lt;p&gt;使いはじめはPRを作成する度怒られてイラだちを覚えるツールでしたが、今はすっかり通った時の快感に魅了されています。&lt;/p&gt;
+&lt;p&gt;ただ、いまだに待ち時間はソワソワするんですよね…&lt;/p&gt;
+&lt;p&gt;今回はソワソワをおさえるため、slackに通知を送るようにしてみました。&lt;/p&gt;
+&lt;hr&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Rails]Docker環境上でbinding.pryを使う</title>
+      <link>https://cpx.business/blog/how-to-use-binding-pry-on-docker/</link>
+      <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-use-binding-pry-on-docker/</guid>
+      <description>&lt;p&gt;&lt;code&gt;binding.pry&lt;/code&gt;。とりあえずデバッグのときに何回も試すアレですね。&lt;/p&gt;
+&lt;p&gt;今回はそれをDocker上でできる方法をご紹介します。&lt;/p&gt;
+&lt;hr&gt;</description>
+    </item>
     
     <item>
       <title>[Heroku]Docker環境をHerokuにあげる</title>

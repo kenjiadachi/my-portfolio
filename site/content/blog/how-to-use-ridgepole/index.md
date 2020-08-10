@@ -55,6 +55,8 @@ gem 'ridgepole'
 
 その後、`schemafile`を作成します。
 
+`bundle install`は忘れず実行してくださいね。
+
 ```
 # /db/Schemafile
 

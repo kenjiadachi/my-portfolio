@@ -1,11 +1,11 @@
 +++
 author = "Kenji Adachi"
-title = "[Rails]Docker環境上でbinding.pryを使う"
+title = "[HUGO]GitHub Actionsで自動デプロイする"
 date = "2020-08-01"
 description = "migrationファイルより簡単に管理できます"
 tags = ["Rails", "refactor"]
 categories = ["Rails"]
-images  = ["img/header/how-to-use-binding-pry-on-docker.png"]
+images  = ["img/header/how-to-deploy-with-github-actions.png"]
 type = "post"
 draft =  true
 +++

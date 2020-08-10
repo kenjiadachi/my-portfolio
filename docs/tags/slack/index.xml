@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>slack on CPX</title>
+    <link>https://cpx.business/tags/slack/</link>
+    <description>Recent content in slack on CPX</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>dachiken</copyright>
+    <lastBuildDate>Sun, 02 Aug 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://cpx.business/tags/slack/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Circleci]slackに通知を送ろう</title>
+      <link>https://cpx.business/blog/how-to-send-notify-by-circleci/</link>
+      <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-send-notify-by-circleci/</guid>
+      <description>&lt;p&gt;CIツールで企業では一番ポピュラーに使われているのでは？というCircleCI。&lt;/p&gt;
+&lt;p&gt;使いはじめはPRを作成する度怒られてイラだちを覚えるツールでしたが、今はすっかり通った時の快感に魅了されています。&lt;/p&gt;
+&lt;p&gt;ただ、いまだに待ち時間はソワソワするんですよね…&lt;/p&gt;
+&lt;p&gt;今回はソワソワをおさえるため、slackに通知を送るようにしてみました。&lt;/p&gt;
+&lt;hr&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
