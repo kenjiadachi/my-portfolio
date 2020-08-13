@@ -1,22 +1,22 @@
 +++
 author = "Kenji Adachi"
 title = "[git]submoduleを使いこなそう"
-date = "2020-08-01"
+date = "2020-08-12"
 description = "git管理を切り分けたいそこのあなたに"
 tags = ["Rails", "refactor"]
 categories = ["Rails"]
 images  = ["img/header/how-to-use-git-submodule.png"]
 type = "post"
-draft =  true
+draft =  false
 +++
 
-`bundle exec rails db:migrate`ってこれまで何回実行したことでしょうか。
+近年のwebサービスだと、フロントとバックで別サーバーになっていたりすることが多いと思います。
 
-migrationファイルが間違っていたら`bundle exec rails db:rollback`して、みたいな…
+大きなサービスになってくると、そこにバッチサーバーが入ったり、アカウント管理だけ切り出して…とか。
 
-初心者のうちは特に経験することが多いんじゃないでしょうか。
+マイクロサービス化的な話かと思いますが、サービス自体はシンプルになる一方インフラはどんどん複雑になってきますよね。
 
-今日はそんなmigrationを行わなくてもいいようなgemの`ridgepole`をご紹介します。
+そんな昨今、手放せないスキルであるgitのsubmoduleについて今回はご紹介します。
 
 -------
 
@@ -30,13 +30,19 @@ migrationファイルが間違っていたら`bundle exec rails db:rollback`し�
 
 -------
 
-### ridgepoleとは
+### submoduleとは
 
-Rails界隈ではめちゃめちゃ有名なcookpadのメンバーの方が作られたスキーマ管理用のgemです。
+[git-scmのサイト](https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%81%95%E3%81%BE%E3%81%96%E3%81%BE%E3%81%AA%E3%83%84%E3%83%BC%E3%83%AB-%E3%82%B5%E3%83%96%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB)から引用します。
 
-migrationファイルのようにファイルをどんどん追加していく形ではなく、`schemafile`を適宜変更していく形でスキーマ管理をおこないます。
+> サブモジュールを使うと、ある Git リポジトリを別の Git リポジトリのサブディレクトリとして扱うことができるようになります。
 
-現状と`schemafile`との差分を抽出して自動でスキーマを変更してくれる感じですね。
+> これで、別のリポジトリをプロジェクト内にクローンしても自分のコミットは別管理とすることができるようになります。
+
+ということで、Git管理している1部分を切り出して管理できる仕組みのようなイメージですね。
+
+Rubyだと、gemにしちゃえばいいじゃん！となるかもしれませんが、それはそれで大変なので…
+
+gem化するほどじゃないけど、他のプロジェクトでもこの部分使いたい！とかなったときに使う形です。
 
 -------
 
@@ -44,44 +50,70 @@ migrationファイルのようにファイルをどんどん追加していく�
 
 それでは早速使っていきましょう。
 
-まずはgemfileに追加しましょう。
+今回は、こんな感じのプロジェクトを切り分けてみたいと思います。
 
-```
-# gemfile
-
-gem 'ridgepole'
+現状はapp直下でのみgit管理しているものを、front、backそれぞれsubmodule化して切り出していこうと思います。
 
 ```
 
-その後、`schemafile`を作成します。
-
-```
-# /db/Schemafile
-
-create_table "users", force: :cascade do |t|
-  t.string "name", null: false
-  t.string "email", null: false
-  t.string "image"
-  t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
-  t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
-end
+app
+|
+├-- front
+|
+└-- back
 
 ```
 
-書き方とかはGitHubの[README](https://github.com/winebarrel/ridgepole)がわかりやすいんですよね。(優しい…)
+作業手順としては
 
-こんな感じで、`schemafile`を触りましょう。
+1. それぞれをmasterとしてgit管理を開始
 
-そのあとは、下記コマンドで実行しましょう。
+2. 新しくapp_02を作成
+
+3. app_02にsubmoduleとしてfront、backを取り込み
+
+という手順でいこうと思います。
+
+-------
+
+### それぞれをmasterとしてgit管理を開始
+
+はい。やってください。
+
+-------
+
+### 新しくapp_02を作成
+
+これもいい感じにやってください。
+
+-------
+
+### app_02にsubmoduleとしてfront、backを取り込み
+
+さあ、ここからですね。
+
+app_02の直下で下記を実行してください。
 
 ```
-bundle exec ridgepole --config ./config/database.yml --file ./db/Schemafile --apply
+git submodule add <frontのGitHubURL> front
+
+git submodule add <backのGitHubURL> back
 ```
 
-こんな感じで、ridgepoleで便利にスキーマ管理をおこないましょう！
+これで、app_02内にfront、backそれぞれディレクトリができていると思います。
+
+その後、例えばfrontを修正した際は下記手順でgitの管理をしてください。
+
+1. frontでgitの変更を記録
+
+2. appでsubmoduleの更新
+
+これでプロジェクトを切り出して管理できますね。
+
+今日はこのあたりで。
 
 -------
 
 ## 参考にした記事
 
-- [winebarrel/ridgepole - GitHub](https://github.com/winebarrel/ridgepole)
+- [Git - サブモジュール](https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%81%95%E3%81%BE%E3%81%96%E3%81%BE%E3%81%AA%E3%83%84%E3%83%BC%E3%83%AB-%E3%82%B5%E3%83%96%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB)から引用します。

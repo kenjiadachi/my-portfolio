@@ -12,7 +12,7 @@
 
 
   <meta charset="utf-8">
-<title>[Workona]chromeの拡張機能Workonaがすばらしいというおはなし - CPX</title>
+<title>[git]submoduleを使いこなそう - CPX</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -28,27 +28,27 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-<meta name="generator" content="Hugo 0.60.1" /><meta itemprop="name" content="[Workona]chromeの拡張機能Workonaがすばらしいというおはなし">
-<meta itemprop="description" content="ブックマークというかタブ全体を一括管理できます">
-<meta itemprop="datePublished" content="2020-05-20T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-05-20T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="14">
-<meta itemprop="image" content="https://cpx.business/img/header/workona-how-to-use.png">
+<meta name="generator" content="Hugo 0.60.1" /><meta itemprop="name" content="[git]submoduleを使いこなそう">
+<meta itemprop="description" content="git管理を切り分けたいそこのあなたに">
+<meta itemprop="datePublished" content="2020-08-12T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-08-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="61">
+<meta itemprop="image" content="https://cpx.business/img/header/how-to-use-git-submodule.png">
 
 
 
-<meta itemprop="keywords" content="Workona,tools," /><meta property="og:title" content="[Workona]chromeの拡張機能Workonaがすばらしいというおはなし" />
-<meta property="og:description" content="ブックマークというかタブ全体を一括管理できます" />
+<meta itemprop="keywords" content="Rails,refactor," /><meta property="og:title" content="[git]submoduleを使いこなそう" />
+<meta property="og:description" content="git管理を切り分けたいそこのあなたに" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cpx.business/blog/workona-how-to-use/" />
-<meta property="og:image" content="https://cpx.business/img/header/workona-how-to-use.png" />
-<meta property="article:published_time" content="2020-05-20T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-05-20T00:00:00+00:00" />
+<meta property="og:url" content="https://cpx.business/blog/how-to-use-git-submodule/" />
+<meta property="og:image" content="https://cpx.business/img/header/how-to-use-git-submodule.png" />
+<meta property="article:published_time" content="2020-08-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-08-12T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://cpx.business/img/header/workona-how-to-use.png"/>
+<meta name="twitter:image" content="https://cpx.business/img/header/how-to-use-git-submodule.png"/>
 
-<meta name="twitter:title" content="[Workona]chromeの拡張機能Workonaがすばらしいというおはなし"/>
-<meta name="twitter:description" content="ブックマークというかタブ全体を一括管理できます"/>
+<meta name="twitter:title" content="[git]submoduleを使いこなそう"/>
+<meta name="twitter:description" content="git管理を切り分けたいそこのあなたに"/>
 <meta name="twitter:site" content="@dach1_ken"/>
 <link rel="stylesheet" href="https://cpx.business/css/bundle.min.122bf077d53f56b1f764db5a8c387dd81587f604dbf07bbf3f86a62b06e00ca9.css" integrity="sha256-Eivwd9U/VrH3ZNtajDh92BWH9gTb8Hu/P4amKwbgDKk=">
         <link rel="stylesheet" href="https://cpx.business/css/add-on.css">
@@ -122,37 +122,37 @@
 
   
     
-    <a href="//twitter.com/share?text=%5bWorkona%5dchrome%e3%81%ae%e6%8b%a1%e5%bc%b5%e6%a9%9f%e8%83%bdWorkona%e3%81%8c%e3%81%99%e3%81%b0%e3%82%89%e3%81%97%e3%81%84%e3%81%a8%e3%81%84%e3%81%86%e3%81%8a%e3%81%af%e3%81%aa%e3%81%97&amp;url=https%3a%2f%2fcpx.business%2fblog%2fworkona-how-to-use%2f" target="_blank" rel="noopener" class="share-btn twitter">
+    <a href="//twitter.com/share?text=%5bgit%5dsubmodule%e3%82%92%e4%bd%bf%e3%81%84%e3%81%93%e3%81%aa%e3%81%9d%e3%81%86&amp;url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-git-submodule%2f" target="_blank" rel="noopener" class="share-btn twitter">
         <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
       </a>
   
 
   
-      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcpx.business%2fblog%2fworkona-how-to-use%2f" target="_blank" rel="noopener" class="share-btn facebook">
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-git-submodule%2f" target="_blank" rel="noopener" class="share-btn facebook">
         <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
         </a>
   
 
   
-    <a href="//www.reddit.com/submit?url=https%3a%2f%2fcpx.business%2fblog%2fworkona-how-to-use%2f&amp;title=%5bWorkona%5dchrome%e3%81%ae%e6%8b%a1%e5%bc%b5%e6%a9%9f%e8%83%bdWorkona%e3%81%8c%e3%81%99%e3%81%b0%e3%82%89%e3%81%97%e3%81%84%e3%81%a8%e3%81%84%e3%81%86%e3%81%8a%e3%81%af%e3%81%aa%e3%81%97" target="_blank" rel="noopener" class="share-btn reddit">
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-git-submodule%2f&amp;title=%5bgit%5dsubmodule%e3%82%92%e4%bd%bf%e3%81%84%e3%81%93%e3%81%aa%e3%81%9d%e3%81%86" target="_blank" rel="noopener" class="share-btn reddit">
           <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
         </a>
   
 
   
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcpx.business%2fblog%2fworkona-how-to-use%2f&amp;title=%5bWorkona%5dchrome%e3%81%ae%e6%8b%a1%e5%bc%b5%e6%a9%9f%e8%83%bdWorkona%e3%81%8c%e3%81%99%e3%81%b0%e3%82%89%e3%81%97%e3%81%84%e3%81%a8%e3%81%84%e3%81%86%e3%81%8a%e3%81%af%e3%81%aa%e3%81%97" target="_blank" rel="noopener" class="share-btn linkedin">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-git-submodule%2f&amp;title=%5bgit%5dsubmodule%e3%82%92%e4%bd%bf%e3%81%84%e3%81%93%e3%81%aa%e3%81%9d%e3%81%86" target="_blank" rel="noopener" class="share-btn linkedin">
             <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
           </a>
   
 
   
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcpx.business%2fblog%2fworkona-how-to-use%2f&amp;description=%5bWorkona%5dchrome%e3%81%ae%e6%8b%a1%e5%bc%b5%e6%a9%9f%e8%83%bdWorkona%e3%81%8c%e3%81%99%e3%81%b0%e3%82%89%e3%81%97%e3%81%84%e3%81%a8%e3%81%84%e3%81%86%e3%81%8a%e3%81%af%e3%81%aa%e3%81%97" target="_blank" rel="noopener" class="share-btn pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-git-submodule%2f&amp;description=%5bgit%5dsubmodule%e3%82%92%e4%bd%bf%e3%81%84%e3%81%93%e3%81%aa%e3%81%9d%e3%81%86" target="_blank" rel="noopener" class="share-btn pinterest">
           <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
         </a>
   
 
   
-        <a href="mailto:?subject=Check out this post by Kenji%20Adachi&amp;body=https%3a%2f%2fcpx.business%2fblog%2fworkona-how-to-use%2f" target="_blank" class="share-btn email" data-proofer-ignore>
+        <a href="mailto:?subject=Check out this post by Kenji%20Adachi&amp;body=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-git-submodule%2f" target="_blank" class="share-btn email" data-proofer-ignore>
           <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
         </a>
   
@@ -177,15 +177,15 @@
   <header>
   <div class="title">
     
-        <h2><a href="https://cpx.business/blog/workona-how-to-use/">[Workona]chromeの拡張機能Workonaがすばらしいというおはなし</a></h2>
+        <h2><a href="https://cpx.business/blog/how-to-use-git-submodule/">[git]submoduleを使いこなそう</a></h2>
     
     
-        <p>ブックマークというかタブ全体を一括管理できます</p>
+        <p>git管理を切り分けたいそこのあなたに</p>
     
 </div>
   <div class="meta">
-    <time class="published" datetime="2020-05-20 00:00:00 &#43;0000 UTC">
-      2020-05-20
+    <time class="published" datetime="2020-08-12 00:00:00 &#43;0000 UTC">
+      2020-08-12
     </time>
     <span class="author">Kenji Adachi</span>
     
@@ -202,37 +202,37 @@
 
   
     
-    <a href="//twitter.com/share?text=%5bWorkona%5dchrome%e3%81%ae%e6%8b%a1%e5%bc%b5%e6%a9%9f%e8%83%bdWorkona%e3%81%8c%e3%81%99%e3%81%b0%e3%82%89%e3%81%97%e3%81%84%e3%81%a8%e3%81%84%e3%81%86%e3%81%8a%e3%81%af%e3%81%aa%e3%81%97&amp;url=https%3a%2f%2fcpx.business%2fblog%2fworkona-how-to-use%2f" target="_blank" rel="noopener" class="share-btn twitter">
+    <a href="//twitter.com/share?text=%5bgit%5dsubmodule%e3%82%92%e4%bd%bf%e3%81%84%e3%81%93%e3%81%aa%e3%81%9d%e3%81%86&amp;url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-git-submodule%2f" target="_blank" rel="noopener" class="share-btn twitter">
         <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
       </a>
   
 
   
-      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcpx.business%2fblog%2fworkona-how-to-use%2f" target="_blank" rel="noopener" class="share-btn facebook">
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-git-submodule%2f" target="_blank" rel="noopener" class="share-btn facebook">
         <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
         </a>
   
 
   
-    <a href="//www.reddit.com/submit?url=https%3a%2f%2fcpx.business%2fblog%2fworkona-how-to-use%2f&amp;title=%5bWorkona%5dchrome%e3%81%ae%e6%8b%a1%e5%bc%b5%e6%a9%9f%e8%83%bdWorkona%e3%81%8c%e3%81%99%e3%81%b0%e3%82%89%e3%81%97%e3%81%84%e3%81%a8%e3%81%84%e3%81%86%e3%81%8a%e3%81%af%e3%81%aa%e3%81%97" target="_blank" rel="noopener" class="share-btn reddit">
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-git-submodule%2f&amp;title=%5bgit%5dsubmodule%e3%82%92%e4%bd%bf%e3%81%84%e3%81%93%e3%81%aa%e3%81%9d%e3%81%86" target="_blank" rel="noopener" class="share-btn reddit">
           <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
         </a>
   
 
   
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcpx.business%2fblog%2fworkona-how-to-use%2f&amp;title=%5bWorkona%5dchrome%e3%81%ae%e6%8b%a1%e5%bc%b5%e6%a9%9f%e8%83%bdWorkona%e3%81%8c%e3%81%99%e3%81%b0%e3%82%89%e3%81%97%e3%81%84%e3%81%a8%e3%81%84%e3%81%86%e3%81%8a%e3%81%af%e3%81%aa%e3%81%97" target="_blank" rel="noopener" class="share-btn linkedin">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-git-submodule%2f&amp;title=%5bgit%5dsubmodule%e3%82%92%e4%bd%bf%e3%81%84%e3%81%93%e3%81%aa%e3%81%9d%e3%81%86" target="_blank" rel="noopener" class="share-btn linkedin">
             <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
           </a>
   
 
   
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcpx.business%2fblog%2fworkona-how-to-use%2f&amp;description=%5bWorkona%5dchrome%e3%81%ae%e6%8b%a1%e5%bc%b5%e6%a9%9f%e8%83%bdWorkona%e3%81%8c%e3%81%99%e3%81%b0%e3%82%89%e3%81%97%e3%81%84%e3%81%a8%e3%81%84%e3%81%86%e3%81%8a%e3%81%af%e3%81%aa%e3%81%97" target="_blank" rel="noopener" class="share-btn pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-git-submodule%2f&amp;description=%5bgit%5dsubmodule%e3%82%92%e4%bd%bf%e3%81%84%e3%81%93%e3%81%aa%e3%81%9d%e3%81%86" target="_blank" rel="noopener" class="share-btn pinterest">
           <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
         </a>
   
 
   
-        <a href="mailto:?subject=Check out this post by Kenji%20Adachi&amp;body=https%3a%2f%2fcpx.business%2fblog%2fworkona-how-to-use%2f" target="_blank" class="share-btn email" data-proofer-ignore>
+        <a href="mailto:?subject=Check out this post by Kenji%20Adachi&amp;body=https%3a%2f%2fcpx.business%2fblog%2fhow-to-use-git-submodule%2f" target="_blank" class="share-btn email" data-proofer-ignore>
           <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
         </a>
   
@@ -240,9 +240,9 @@
 
   </section>
   
-  <a href="https://cpx.business/blog/workona-how-to-use/" class="image featured">
+  <a href="https://cpx.business/blog/how-to-use-git-submodule/" class="image featured">
     
-      <img src="https://cpx.business/img/header/workona-how-to-use.png" alt="">
+      <img src="https://cpx.business/img/header/how-to-use-git-submodule.png" alt="">
     
   </a>
 
@@ -252,8 +252,19 @@
       <h2>目次</h2>
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#workona">Workonaとは？</a></li>
-    <li><a href="#heading">実際の運用方法</a></li>
+    <li><a href="#heading">ことばの紹介</a>
+      <ul>
+        <li><a href="#submodule">submoduleとは</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading1">使ってみましょう</a>
+      <ul>
+        <li><a href="#mastergit">それぞれをmasterとしてgit管理を開始</a></li>
+        <li><a href="#app02">新しくapp_02を作成</a></li>
+        <li><a href="#app02submodulefrontback">app_02にsubmoduleとしてfront、backを取り込み</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading2">参考にした記事</a></li>
   </ul>
 </nav>
       <hr>
@@ -272,30 +283,81 @@
 </section>
 <hr>
 
-    <p>いくつかの作業を同時並行的に進めると、どうしてもタブ管理が煩雑になってしまいますよね。</p>
-<p>そこで僕が最近使っているChromeの拡張機能、Workonaをご紹介します。</p>
+    <p>近年のwebサービスだと、フロントとバックで別サーバーになっていたりすることが多いと思います。</p>
+<p>大きなサービスになってくると、そこにバッチサーバーが入ったり、アカウント管理だけ切り出して…とか。</p>
+<p>マイクロサービス化的な話かと思いますが、サービス自体はシンプルになる一方インフラはどんどん複雑になってきますよね。</p>
+<p>そんな昨今、手放せないスキルであるgitのsubmoduleについて今回はご紹介します。</p>
 <hr>
-<h2 id="workona">Workonaとは？</h2>
-<p>安定の公式ページから引っ張ってこようと思ってたのですがいいのが見つからず…</p>
-<p><a href="https://www.doghands.com/workona-chrome-extension/">こちら</a>がわかりやすかったので引用させていただきます。</p>
-<blockquote>
-<p>仕事、調べ物、YouTubeで暇つぶしなど、Chromeを立ち上げてしばらくすると雑多なタブが並び始めます。</p>
-</blockquote>
-<blockquote>
-<p>そこで一気にタブを閉じたいところですが、例えば特定のプロジェクトの最中の場合「毎回立ち上げるサイト」が決まっていて、これらのサイトをまた1から開いていくのは時間と手間の無駄になってしまいます。</p>
-</blockquote>
-<blockquote>
-<p>このような「毎回立ち上げるサイト」をひとかたまりにしてラベルを貼って保存、必要なときに一気に開いてくれるのが【Workona】です。</p>
-</blockquote>
-<p>そう、タブをまとめて全部開いてくれる、というのがめっちゃ便利なんですよね…！</p>
+<h2 id="heading">ことばの紹介</h2>
+<p>まずは知らない方もいるかと思うので、ことばの紹介から。</p>
+<p>わかってるよ！って人は飛ばしてください。</p>
 <hr>
-<h2 id="heading">実際の運用方法</h2>
-<p>僕も使い始めてまだそんなに経ってないのですが、現状こんな画面で運用しています。</p>
-<p><img src="./img/1.png" alt="workona画面画像"></p>
-<p>この、<code>default</code>などのワークスペースを開くと、自動で登録しているページを全部開いてくれるのが超便利です。</p>
-<p>だいたいタスクの対応する時って複数ページを見ながら管理したりすると思うのですが、そんな時に「一旦作業を途中で止めてページを開く」というのがなくなったのですごくストレスフリーに作業ができている実感があります。</p>
-<p>今はまだ簡単なご紹介ですが、また運用方法などまとまり次第追記していこうと思います。</p>
+<h3 id="submodule">submoduleとは</h3>
+<p><a href="https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%81%95%E3%81%BE%E3%81%96%E3%81%BE%E3%81%AA%E3%83%84%E3%83%BC%E3%83%AB-%E3%82%B5%E3%83%96%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">git-scmのサイト</a>から引用します。</p>
+<blockquote>
+<p>サブモジュールを使うと、ある Git リポジトリを別の Git リポジトリのサブディレクトリとして扱うことができるようになります。</p>
+</blockquote>
+<blockquote>
+<p>これで、別のリポジトリをプロジェクト内にクローンしても自分のコミットは別管理とすることができるようになります。</p>
+</blockquote>
+<p>ということで、Git管理している1部分を切り出して管理できる仕組みのようなイメージですね。</p>
+<p>Rubyだと、gemにしちゃえばいいじゃん！となるかもしれませんが、それはそれで大変なので…</p>
+<p>gem化するほどじゃないけど、他のプロジェクトでもこの部分使いたい！とかなったときに使う形です。</p>
+<hr>
+<h2 id="heading1">使ってみましょう</h2>
+<p>それでは早速使っていきましょう。</p>
+<p>今回は、こんな感じのプロジェクトを切り分けてみたいと思います。</p>
+<p>現状はapp直下でのみgit管理しているものを、front、backそれぞれsubmodule化して切り出していこうと思います。</p>
+<pre><code>
+app
+|
+├-- front
+|
+└-- back
 
+</code></pre><p>作業手順としては</p>
+<ol>
+<li>
+<p>それぞれをmasterとしてgit管理を開始</p>
+</li>
+<li>
+<p>新しくapp_02を作成</p>
+</li>
+<li>
+<p>app_02にsubmoduleとしてfront、backを取り込み</p>
+</li>
+</ol>
+<p>という手順でいこうと思います。</p>
+<hr>
+<h3 id="mastergit">それぞれをmasterとしてgit管理を開始</h3>
+<p>はい。やってください。</p>
+<hr>
+<h3 id="app02">新しくapp_02を作成</h3>
+<p>これもいい感じにやってください。</p>
+<hr>
+<h3 id="app02submodulefrontback">app_02にsubmoduleとしてfront、backを取り込み</h3>
+<p>さあ、ここからですね。</p>
+<p>app_02の直下で下記を実行してください。</p>
+<pre><code>git submodule add &lt;frontのGitHubURL&gt; front
+
+git submodule add &lt;backのGitHubURL&gt; back
+</code></pre><p>これで、app_02内にfront、backそれぞれディレクトリができていると思います。</p>
+<p>その後、例えばfrontを修正した際は下記手順でgitの管理をしてください。</p>
+<ol>
+<li>
+<p>frontでgitの変更を記録</p>
+</li>
+<li>
+<p>appでsubmoduleの更新</p>
+</li>
+</ol>
+<p>これでプロジェクトを切り出して管理できますね。</p>
+<p>今日はこのあたりで。</p>
+<hr>
+<h2 id="heading2">参考にした記事</h2>
+<ul>
+<li><a href="https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%81%95%E3%81%BE%E3%81%96%E3%81%BE%E3%81%AA%E3%83%84%E3%83%BC%E3%83%AB-%E3%82%B5%E3%83%96%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">Git - サブモジュール</a>から引用します。</li>
+</ul>
   </div>
   <footer>
     <ul class="stats">
@@ -306,7 +368,7 @@
         <ul>
           
             
-            <li><a class="article-category-link" href="https://cpx.business/categories/tools">Tools</a></li>
+            <li><a class="article-category-link" href="https://cpx.business/categories/rails">Rails</a></li>
           
         </ul>
       </li>
@@ -319,10 +381,10 @@
         <ul>
           
             
-            <li><a class="article-category-link" href="https://cpx.business/tags/workona">Workona</a></li>
+            <li><a class="article-category-link" href="https://cpx.business/tags/rails">Rails</a></li>
           
             
-            <li><a class="article-category-link" href="https://cpx.business/tags/tools">tools</a></li>
+            <li><a class="article-category-link" href="https://cpx.business/tags/refactor">refactor</a></li>
           
         </ul>
       </li>
@@ -361,10 +423,8 @@
 
 <div class="pagination">
   
-    <a href="https://cpx.business/blog/file-structure-for-mastering-hugo/" class="button"><div class="previous"><div>[Hugo]Hugoを使いこなすためのオススメファイル構造</div></div></a>
+    <a href="https://cpx.business/blog/how-to-use-circleci/" class="button"><div class="previous"><div>[CircleCI]CircleCIを上手に使おう</div></div></a>
   
-  
-    <a href="https://cpx.business/blog/notion-how-to-use/" class="button"><div class="next"><div>[Notion]1000ページ以上でも無料化！僕なりの使い方をまとめます</div></div></a>
   
 </div>
 

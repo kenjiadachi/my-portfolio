@@ -7,10 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>dachiken</copyright>
-    <lastBuildDate>Sun, 02 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cpx.business/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[git]submoduleを使いこなそう</title>
+      <link>https://cpx.business/blog/how-to-use-git-submodule/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpx.business/blog/how-to-use-git-submodule/</guid>
+      <description>&lt;p&gt;近年のwebサービスだと、フロントとバックで別サーバーになっていたりすることが多いと思います。&lt;/p&gt;
+&lt;p&gt;大きなサービスになってくると、そこにバッチサーバーが入ったり、アカウント管理だけ切り出して…とか。&lt;/p&gt;
+&lt;p&gt;マイクロサービス化的な話かと思いますが、サービス自体はシンプルになる一方インフラはどんどん複雑になってきますよね。&lt;/p&gt;
+&lt;p&gt;そんな昨今、手放せないスキルであるgitのsubmoduleについて今回はご紹介します。&lt;/p&gt;
+&lt;hr&gt;</description>
+    </item>
     
     <item>
       <title>[CircleCI]CircleCIを上手に使おう</title>
